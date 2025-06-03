@@ -1,67 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- 🔍 Configurações essenciais -->
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 🎯 Título e descrição -->
   <title>Hidroponia Inteligente – Agroverso</title>
   <meta name="description" content="Soluções modulares de hidroponia inteligente Agroverso com controle digital, sensores de nutrientes, pH e automação regenerativa. Cultive com inteligência e precisão." />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/favicon.ico" />
-</head>
-<body>
-  <header class="header-principal">
-    <div class="logo-container">
-      <img src="assets/logo.svg" alt="Logotipo Agroverso" class="logo-refinada" />
-      <div class="texto-logo">
-        <h1 class="titulo-site">Agroverso</h1>
-        <p class="slogan">Tecnologia regenerativa com <strong>sabedoria</strong>, <strong>força</strong> e <strong>beleza</strong></p>
-      </div>
-    </div>
-  </header>
+  <meta name="keywords" content="hidroponia, agroverso, cultivo inteligente, sensores, agricultura urbana" />
+  <meta name="author" content="Instituto Graciliana Maria da Conceição" />
 
-  <main class="conteudo-produto">
+  <!-- 🌐 Open Graph -->
+  <meta property="og:title" content="Hidroponia Inteligente – Agroverso" />
+  <meta property="og:description" content="Tecnologia regenerativa de cultivo com sensores, controle digital e eficiência total. Conheça a solução Agroverso." />
+  <meta property="og:image" content="https://agroverso.tec.br/assets/produto2.jpg" />
+  <meta property="og:url" content="https://agroverso.tec.br/produto-hidroponia.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- 🎨 Recursos visuais -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ⬆️ Cabeçalho institucional -->
+  <div data-include="partials/header.html"></div>
+
+  <main class="conteudo-produto" role="main" aria-labelledby="titulo-hidroponia">
     <section class="produto-destaque">
-      <h2>Hidroponia Inteligente</h2>
-      <p class="subtitulo-produto">Cultivo de precisão com sensores e automação regenerativa</p>
-      <img src="assets/produto2.jpg" alt="Sistema de Hidroponia Inteligente" class="imagem-produto" />
+      <h2 id="titulo-hidroponia">Hidroponia Inteligente</h2>
+      <p class="subtitulo-produto">
+        Cultivo de precisão com sensores, automação regenerativa e controle digital
+      </p>
+      <img src="assets/Produto2.jpg"
+           alt="Sistema de Hidroponia Inteligente Agroverso"
+           class="imagem-produto"
+           loading="lazy"
+           decoding="async"
+           width="600"
+           height="400" />
     </section>
 
     <section class="descricao-produto">
       <h3>Sobre o sistema</h3>
       <p>
         A <strong>Hidroponia Inteligente Agroverso</strong> integra sensores de pH, temperatura e nutrientes
-        com estrutura modular e verticalizada. Controlada digitalmente por aplicativo ou painel web,
-        ela garante máxima eficiência no uso da água e crescimento otimizado das plantas.
+        com estrutura modular e verticalizada. O controle é realizado via aplicativo ou painel web,
+        garantindo máxima eficiência no uso de água e crescimento otimizado das plantas.
       </p>
 
       <h3>Benefícios principais</h3>
       <ul>
-        <li>💧 Economia de até 90% de água comparado ao cultivo tradicional</li>
+        <li>💧 Economia de até 90% de água em comparação ao cultivo tradicional</li>
         <li>📊 Monitoramento em tempo real de parâmetros ambientais</li>
-        <li>🧠 Automação de dosagens e correções de nutrientes</li>
+        <li>🧠 Automação das dosagens e correções de nutrientes</li>
         <li>🏢 Aplicável em estufas urbanas, telhados, containers e galpões</li>
-        <li>📱 Controle remoto via app e integração com dashboards web</li>
+        <li>📱 Controle remoto via app com dashboard integrado</li>
       </ul>
 
       <h3>Aplicações recomendadas</h3>
       <p>
-        Ideal para hortas comerciais, programas de alimentação urbana, escolas, produtores urbanos
-        e comunidades regenerativas em qualquer escala.
+        Ideal para hortas comerciais, programas de alimentação urbana, escolas, produtores urbanos e
+        comunidades regenerativas em qualquer escala.
       </p>
 
       <div class="botao-whatsapp">
-        <a href="https://wa.me/5511963372373?text=Olá! Tenho interesse no sistema de Hidroponia Inteligente do Agroverso e gostaria de um orçamento personalizado." target="_blank" class="whatsapp-btn">
-          Solicitar orçamento via WhatsApp
+        <a href="https://wa.me/5511963372373?text=Olá! Tenho interesse no sistema de Hidroponia Inteligente do Agroverso e gostaria de um orçamento personalizado."
+           target="_blank"
+           rel="noopener noreferrer"
+           class="whatsapp-btn"
+           aria-label="Solicitar orçamento de Hidroponia Inteligente via WhatsApp">
+          📲 Solicitar orçamento via WhatsApp
         </a>
       </div>
     </section>
-
   </main>
 
-  <footer class="footer">
-    <p>© 2025 Agroverso – Todos os direitos reservados.</p>
-    <p>Uma iniciativa do Instituto Graciliana Maria da Conceição</p>
-    <p><a href="index.html" class="footer-link">Voltar à página principal</a></p>
-  </footer>
+  <!-- ⬇️ Rodapé institucional -->
+  <div data-include="partials/footer.html"></div>
+  <script src="scripts/includes.js" defer></script>
 </body>
 </html>

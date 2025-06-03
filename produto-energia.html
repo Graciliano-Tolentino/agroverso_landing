@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- 🔍 Configurações essenciais -->
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 🎯 SEO e identidade -->
   <title>Energia Solar Inteligente – Agroverso</title>
   <meta name="description" content="Conheça o sistema Agroverso de Energia Solar Inteligente. Controle em tempo real, autonomia energética e sustentabilidade regenerativa com tecnologia de ponta." />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/favicon.ico" />
-</head>
-<body>
-  <header class="header-principal">
-    <div class="logo-container">
-      <img src="assets/logo.svg" alt="Logotipo Agroverso" class="logo-refinada" />
-      <div class="texto-logo">
-        <h1 class="titulo-site">Agroverso</h1>
-        <p class="slogan">Tecnologia regenerativa com <strong>sabedoria</strong>, <strong>força</strong> e <strong>beleza</strong></p>
-      </div>
-    </div>
-  </header>
+  <meta name="keywords" content="energia solar, agroverso, painel solar, geração fotovoltaica, autonomia energética" />
+  <meta name="author" content="Instituto Graciliana Maria da Conceição" />
 
-  <main class="conteudo-produto">
+  <!-- 🌐 Open Graph para redes sociais -->
+  <meta property="og:title" content="Energia Solar Inteligente – Agroverso" />
+  <meta property="og:description" content="Transforme sol em autonomia. Conheça o sistema inteligente de energia solar do Agroverso para áreas rurais, estufas e comunidades regenerativas." />
+  <meta property="og:image" content="https://agroverso.tec.br/assets/produto3.jpg" />
+  <meta property="og:url" content="https://agroverso.tec.br/produto-energia.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- 🎨 Recursos visuais -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ⬆️ Cabeçalho institucional -->
+  <div data-include="partials/header.html"></div>
+
+  <main class="conteudo-produto" role="main" aria-labelledby="titulo-energia">
     <section class="produto-destaque">
-      <h2>Energia Solar Inteligente</h2>
-      <p class="subtitulo-produto">Autonomia energética conectada à inteligência digital regenerativa</p>
-      <img src="assets/produto3.jpg" alt="Sistema de Energia Solar Inteligente" class="imagem-produto" />
+      <h2 id="titulo-energia">Energia Solar Inteligente</h2>
+      <p class="subtitulo-produto">
+        Autonomia energética conectada à inteligência digital regenerativa
+      </p>
+      <img src="assets/Produto3.jpg"
+           alt="Sistema de Energia Solar Inteligente Agroverso"
+           class="imagem-produto"
+           loading="lazy"
+           decoding="async"
+           width="600"
+           height="400" />
     </section>
 
     <section class="descricao-produto">
@@ -49,17 +66,19 @@
       </p>
 
       <div class="botao-whatsapp">
-        <a href="https://wa.me/5511963372373?text=Olá! Tenho interesse no sistema de Energia Solar Inteligente do Agroverso e gostaria de mais informações." target="_blank" class="whatsapp-btn">
-          Solicitar orçamento via WhatsApp
+        <a href="https://wa.me/5511963372373?text=Olá! Tenho interesse no sistema de Energia Solar Inteligente do Agroverso e gostaria de mais informações."
+           target="_blank"
+           rel="noopener noreferrer"
+           class="whatsapp-btn"
+           aria-label="Solicitar orçamento de Energia Solar Inteligente via WhatsApp">
+          📲 Solicitar orçamento via WhatsApp
         </a>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>© 2025 Agroverso – Todos os direitos reservados.</p>
-    <p>Uma iniciativa do Instituto Graciliana Maria da Conceição</p>
-    <p><a href="index.html" class="footer-link">Voltar à página principal</a></p>
-  </footer>
+  <!-- ⬇️ Rodapé institucional -->
+  <div data-include="partials/footer.html"></div>
+  <script src="scripts/includes.js" defer></script>
 </body>
 </html>

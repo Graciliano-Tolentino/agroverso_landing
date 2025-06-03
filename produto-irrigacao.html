@@ -1,66 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- 🔍 Configurações essenciais -->
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Irrigação Inteligente – Agroverso</title>
-  <meta name="description" content="Sistema Agroverso de irrigação inteligente com sensores de solo, automação via app e controle regenerativo da água. Agricultura eficiente com inteligência real." />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/favicon.ico" />
-</head>
-<body>
-  <header class="header-principal">
-    <div class="logo-container">
-      <img src="assets/logo.svg" alt="Logotipo Agroverso" class="logo-refinada" />
-      <div class="texto-logo">
-        <h1 class="titulo-site">Agroverso</h1>
-        <p class="slogan">Tecnologia regenerativa com <strong>sabedoria</strong>, <strong>força</strong> e <strong>beleza</strong></p>
-      </div>
-    </div>
-  </header>
 
-  <main class="conteudo-produto">
+  <!-- 🎯 Título e descrição para SEO -->
+  <title>Irrigação Inteligente – Agroverso</title>
+  <meta name="description" content="Sistema Agroverso de irrigação inteligente com sensores de solo, automação via app e controle regenerativo da água. Economize com tecnologia e preserve o solo." />
+  <meta name="keywords" content="irrigação inteligente, agroverso, sensores de solo, agricultura sustentável, agro tecnologia" />
+  <meta name="author" content="Instituto Graciliana Maria da Conceição" />
+
+  <!-- 🌐 Open Graph para redes sociais -->
+  <meta property="og:title" content="Irrigação Inteligente – Agroverso" />
+  <meta property="og:description" content="Tecnologia regenerativa com sensores de solo, controle automatizado e economia de água. Conheça a solução Agroverso." />
+  <meta property="og:image" content="https://agroverso.tec.br/assets/produto1.jpg" />
+  <meta property="og:url" content="https://agroverso.tec.br/produto-irrigacao.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- 📎 Recursos visuais -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ⬆️ Cabeçalho modular -->
+  <div data-include="partials/header.html"></div>
+
+  <main class="conteudo-produto" role="main" aria-labelledby="titulo-irrigacao">
     <section class="produto-destaque">
-      <h2>Irrigação Inteligente</h2>
-      <p class="subtitulo-produto">Eficiência hídrica com sensores, controle remoto e economia regenerativa</p>
-      <img src="assets/produto1.jpg" alt="Sistema de Irrigação Inteligente" class="imagem-produto" />
+      <h2 id="titulo-irrigacao">Irrigação Inteligente</h2>
+      <p class="subtitulo-produto">
+        Eficiência hídrica com sensores, controle remoto e economia regenerativa
+      </p>
+      <img src="assets/Produto1.jpg"
+           alt="Sistema de Irrigação Inteligente Agroverso"
+           class="imagem-produto"
+           loading="lazy"
+           decoding="async"
+           width="600"
+           height="400" />
     </section>
 
     <section class="descricao-produto">
       <h3>Sobre o sistema</h3>
       <p>
-        O sistema de <strong>Irrigação Inteligente Agroverso</strong> integra sensores de umidade, temperatura e previsão climática
-        com controle automatizado por aplicativo. A irrigação ocorre apenas quando necessária, com ajustes em tempo real,
-        promovendo economia de água e saúde do solo.
+        O sistema de <strong>Irrigação Inteligente Agroverso</strong> integra sensores de umidade, temperatura
+        e previsão climática com controle automatizado via app. A irrigação ocorre apenas quando necessária,
+        com ajustes em tempo real, promovendo economia de água e preservação da vida microbiana do solo.
       </p>
 
       <h3>Benefícios principais</h3>
       <ul>
         <li>💧 Economia de até 70% no uso de água com irrigação precisa</li>
-        <li>🌡️ Sensores de solo com análise contínua da umidade e temperatura</li>
-        <li>📲 Acesso remoto e agendamento por aplicativo ou painel web</li>
-        <li>🧠 Integração com dados meteorológicos para predição de irrigação</li>
-        <li>🌱 Preservação da microbiota e estrutura do solo</li>
+        <li>🌡️ Sensores de solo com leitura contínua de umidade e temperatura</li>
+        <li>📲 Controle remoto e agendamento pelo aplicativo Agroverso</li>
+        <li>🧠 Integração com dados meteorológicos para irrigação preditiva</li>
+        <li>🌱 Preserva a estrutura do solo e sua biodiversidade</li>
       </ul>
 
       <h3>Aplicações recomendadas</h3>
       <p>
-        Ideal para hortas, plantações, viveiros, pomares, jardins e projetos de agricultura regenerativa de qualquer escala.
+        Ideal para hortas, plantações, pomares, viveiros, jardins e projetos agroecológicos de qualquer escala.
       </p>
 
       <div class="botao-whatsapp">
-        <a href="https://wa.me/5511963372373?text=Olá! Tenho interesse no sistema de Irrigação Inteligente do Agroverso e gostaria de mais informações e um orçamento." target="_blank" class="whatsapp-btn">
-          Solicitar orçamento via WhatsApp
+        <a href="https://wa.me/5511963372373?text=Olá! Tenho interesse no sistema de Irrigação Inteligente do Agroverso e gostaria de mais informações."
+           target="_blank"
+           rel="noopener noreferrer"
+           class="whatsapp-btn"
+           aria-label="Solicitar orçamento de Irrigação Inteligente via WhatsApp">
+          📲 Solicitar orçamento via WhatsApp
         </a>
       </div>
     </section>
-
   </main>
 
-  <footer class="footer">
-    <p>© 2025 Agroverso – Todos os direitos reservados.</p>
-    <p>Uma iniciativa do Instituto Graciliana Maria da Conceição</p>
-    <p><a href="index.html" class="footer-link">Voltar à página principal</a></p>
-  </footer>
+  <!-- ⬇️ Rodapé modular -->
+  <div data-include="partials/footer.html"></div>
+  <script src="scripts/includes.js" defer></script>
 </body>
 </html>

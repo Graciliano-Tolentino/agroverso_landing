@@ -1,221 +1,103 @@
-/* ===============================================
- 🎨 style.css – Estilos globais do Agroverso
- 🌱 Refinado com precisão regenerativa
- 🔒 Garantido por sabedoria, força e beleza
- =============================================== */
+/* ============================================================
+ 🎠 Carrossel Visual – Agroverso
+ 📐 Estético, responsivo, institucional e regenerativo
+ ============================================================ */
 
-/* 🌍 Reset e base */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background-color: #f6f9f2;
-  color: #1f1f1f;
-  -webkit-font-smoothing: antialiased;
-  scroll-behavior: smooth;
-}
-
-/* 🔝 Cabeçalho */
-header {
-  text-align: center;
-  background: #004225;
-  color: #fff;
-  padding: 3rem 1rem;
-}
-
-.logo {
-  max-width: 3600px;
-  margin-bottom: 1rem;
-}
-
-.titulo-site {
-  font-size: 2.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.slogan {
-  font-style: italic;
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-/* 🛠️ Produtos */
-.produtos {
-  padding: 3rem 1rem;
-  background-color: #ffffff;
-}
-
-.secao-titulo {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  color: #004225;
-  font-weight: 600;
-}
-
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.card {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  width: 300px;
-  text-align: center;
-  padding: 1.5rem;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-}
-
-.card h3 {
-  font-size: 1.3rem;
-  color: #004225;
-  margin-bottom: 0.5rem;
-}
-
-.card p {
-  font-size: 0.95rem;
-  color: #444;
-}
-
-/* 🌿 CTA */
-.cta {
-  background: #e4f8e6;
-  padding: 3rem 1rem;
-  text-align: center;
-}
-
-.cta-texto {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-.whatsapp-btn {
-  display: inline-block;
-  margin: 1rem 0 2rem;
-  background: #25D366;
-  color: white;
-  padding: 0.9rem 1.8rem;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.whatsapp-btn:hover {
-  background: #1eb950;
-}
-
-.form-intro {
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
-  color: #333;
-}
-
-/* 🧾 Formulário de Orçamento */
-.formulario-orcamento {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  max-width: 420px;
-  margin: 0 auto;
-}
-
-.formulario-orcamento label {
-  align-self: flex-start;
-  font-size: 0.9rem;
-  color: #333;
-  font-weight: 500;
-}
-
-input, select, button {
+.carrossel {
+  position: relative;
   width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #bbb;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
+  max-width: 720px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
 }
 
-input:focus, select:focus {
-  outline: none;
-  border-color: #004225;
+.carrossel img {
+  width: 100%;
+  display: none;
+  object-fit: cover;
+  transition: opacity 0.8s ease-in-out;
+  border-radius: 16px;
 }
 
-button {
-  background: #004225;
-  color: white;
-  font-weight: bold;
+.carrossel img.ativo {
+  display: block;
+}
+
+/* 🎯 Botões do carrossel – leves, elegantes e acessíveis */
+
+.carrossel-prev,
+.carrossel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.25);
+  border: none;
+  color: #004225;
+  font-size: 2rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50%;
   cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  backdrop-filter: blur(4px);
 }
 
-button:hover {
-  background: #006633;
+.carrossel-prev:hover,
+.carrossel-next:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-50%) scale(1.08);
 }
 
-/* ⚓ Rodapé */
-.footer {
-  background: #1b1b1b;
-  color: #f0f0f0;
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
+/* Posição dos botões */
+
+.carrossel-prev {
+  left: 16px;
 }
 
-.footer a.footer-link {
-  color: #9be89b;
-  text-decoration: underline;
-  transition: color 0.3s ease;
+.carrossel-next {
+  right: 16px;
 }
 
-.footer a.footer-link:hover {
-  color: #ffffff;
-}
+/* 📱 Responsividade do carrossel para mobile-first */
 
-/* 📱 Responsividade mínima */
 @media (max-width: 768px) {
-  .cards-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 90%;
-  }
-
-  header {
-    padding: 2rem 1rem;
-  }
-
-  .titulo-site {
-    font-size: 1.8rem;
-  }
-
-  .secao-titulo {
+  .carrossel-prev,
+  .carrossel-next {
     font-size: 1.5rem;
+    padding: 0.3rem 0.6rem;
+    backdrop-filter: none;
+    background-color: rgba(255, 255, 255, 0.35);
   }
+
+  .carrossel {
+    border-radius: 12px;
+  }
+
+  .carrossel img {
+    border-radius: 12px;
+  }
+}
+
+/* 🚨 Campo inválido – destaque visual para erro de validação */
+
+input.erro,
+select.erro {
+  border: 2px solid #d92f2f !important;
+  background-color: #ffecec;
+  color: #8b0000;
+}
+
+input.erro::placeholder,
+select.erro option:first-child {
+  color: #aa0000;
+  font-style: italic;
+}
+
+input.erro:focus,
+select.erro:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(217, 47, 47, 0.25);
 }

@@ -4,12 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#004225" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>🌿 Offline • Agroverso</title>
   <style>
     :root {
       --verde: #004225;
       --bege: #f6f9f2;
       --cinza: #666;
+      --cinza-claro: #bbb;
+    }
+
+    html {
+      font-size: 100%;
     }
 
     body {
@@ -23,29 +29,31 @@
       min-height: 100vh;
       padding: 2rem;
       text-align: center;
+      line-height: 1.6;
     }
 
     header img {
-      max-width: 100px;
+      max-width: 96px;
       margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 2px var(--verde));
     }
 
     h1 {
-      font-size: 1.8rem;
-      font-weight: 600;
+      font-size: 2rem;
+      font-weight: 700;
       margin-bottom: 0.75rem;
     }
 
     p {
-      font-size: 1.05rem;
+      font-size: 1.125rem;
       color: var(--cinza);
-      max-width: 440px;
+      max-width: 460px;
     }
 
     footer {
-      margin-top: 2rem;
-      font-size: 0.85rem;
-      color: #999;
+      margin-top: 3rem;
+      font-size: 0.875rem;
+      color: var(--cinza-claro);
     }
   </style>
 </head>
@@ -54,8 +62,8 @@
     <img src="assets/logo-192.png" alt="Logotipo Agroverso" />
     <h1>🌱 Sem conexão com a natureza digital</h1>
     <p>
-      Parece que sua conexão está temporariamente indisponível.<br />
-      Verifique seu sinal ou tente novamente em instantes.
+      Você está em modo offline.<br />
+      Assim que sua conexão retornar, o Agroverso estará totalmente acessível.
     </p>
   </header>
 

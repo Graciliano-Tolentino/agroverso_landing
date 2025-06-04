@@ -1,24 +1,23 @@
 // ======================================================================================
 // 🟢 scripts/login.js – Autenticação Simulada Agroverso
-// 💡 Refatorado com clareza, acessibilidade, modularidade e prontidão para evolução
+// 💡 Refinado com sabedoria, força e beleza
 // ======================================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 🎯 Seletores principais
   const form = document.getElementById("form-login");
   const emailInput = document.getElementById("email");
   const senhaInput = document.getElementById("senha");
   const perfilInput = document.getElementById("perfil");
   const erroMsg = document.getElementById("erro-login");
 
-  // 🧠 Mensagem clara de erro
+  // 🧠 Mensagem clara e acessível de erro
   const mostrarErro = (mensagem) => {
     erroMsg.textContent = mensagem;
     erroMsg.hidden = false;
-    erroMsg.focus?.(); // Acessível para leitores de tela
+    erroMsg.focus?.(); // foco compatível com leitores de tela
   };
 
-  // 🛡️ Validações básicas
+  // 🔍 Validação dos campos do formulário
   const validarCampos = () => {
     const email = emailInput.value.trim();
     const senha = senhaInput.value.trim();
@@ -37,7 +36,26 @@ document.addEventListener("DOMContentLoaded", () => {
     return { email, senha, perfil };
   };
 
-  // 🚀 Evento principal do formulário
+  // ✅ Redirecionamento inteligente por perfil
+  const redirecionarPorPerfil = (perfil) => {
+    if (!perfil || typeof perfil !== "string") {
+      window.location.href = "dashboard.html";
+      return;
+    }
+
+    const caminhos = {
+      administrador: "dashboard-admin.html",
+      gerente: "dashboard-gerente.html",
+      lider: "dashboard-lider.html",
+      tecnico: "dashboard-tecnico.html"
+    };
+
+    const destino = caminhos[perfil.toLowerCase()] || "dashboard.html";
+    console.info(`[Agroverso] Redirecionando para: ${destino}`);
+    window.location.href = destino;
+  };
+
+  // 🚀 Evento de envio do formulário
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     erroMsg.hidden = true;
@@ -45,11 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const dados = validarCampos();
     if (!dados) return;
 
-    // 💾 Simula autenticação e inicia sessão
     sessionStorage.setItem("usuario_email", dados.email);
     sessionStorage.setItem("usuario_perfil", dados.perfil);
 
-    // 🔁 Redireciona para o painel
-    window.location.href = "dashboard.html";
+    redirecionarPorPerfil(dados.perfil);
   });
 });

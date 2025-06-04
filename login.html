@@ -19,6 +19,17 @@
 </head>
 <body class="login-body">
 
+  <!-- 🌐 Cabeçalho institucional -->
+  <header class="header-principal">
+    <nav class="navegacao-principal">
+      <ul class="nav-menu">
+        <li><a href="index.html">🏠 Início</a></li>
+        <li><a href="login.html">🔐 Login</a></li>
+        <li><a href="dashboard.html">📊 Painel</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <main class="login-container">
     <section class="login-box" role="form" aria-labelledby="login-titulo">
       <h1 id="login-titulo" class="login-title">Acesso Seguro ao Sistema Agroverso</h1>
@@ -28,15 +39,12 @@
           Faça login usando seu e-mail institucional, senha pessoal e selecione corretamente seu perfil de acesso.
         </p>
 
-        <!-- Campo de e-mail -->
         <label for="email">E-mail institucional:</label>
         <input type="email" id="email" name="email" class="input-base" placeholder="seunome@agroverso.tec.br" required />
 
-        <!-- Campo de senha -->
         <label for="senha">Senha:</label>
         <input type="password" id="senha" name="senha" class="input-base" placeholder="••••••••" minlength="6" required />
 
-        <!-- Seletor de perfil -->
         <label for="perfil">Perfil de Acesso:</label>
         <select id="perfil" name="perfil" class="input-base" required>
           <option value="">Selecione seu perfil</option>
@@ -46,10 +54,8 @@
           <option value="tecnico">Técnico de Campo</option>
         </select>
 
-        <!-- Botão de envio -->
         <button type="submit" class="btn-primary" aria-label="Entrar no sistema">Entrar</button>
 
-        <!-- Mensagem de erro acessível -->
         <p class="login-error" id="erro-login" role="alert" hidden>
           E-mail, senha ou perfil inválidos. Verifique os dados e tente novamente.
         </p>
@@ -57,56 +63,8 @@
     </section>
   </main>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.getElementById("form-login");
-      const email = document.getElementById("email");
-      const senha = document.getElementById("senha");
-      const perfil = document.getElementById("perfil");
-      const erroLogin = document.getElementById("erro-login");
+  <!-- 🔐 Script de autenticação simulada -->
+  <script src="scripts/login.js"></script>
 
-      form.addEventListener("submit", (e) => {
-        // Reseta o erro anterior
-        erroLogin.hidden = true;
-
-        // Validação básica local
-        if (!email.value || !senha.value || !perfil.value) {
-          erroLogin.textContent = "Todos os campos são obrigatórios.";
-          erroLogin.hidden = false;
-          e.preventDefault();
-          return;
-        }
-
-        // Validação adicional
-        if (senha.value.length < 6) {
-          erroLogin.textContent = "A senha deve conter no mínimo 6 caracteres.";
-          erroLogin.hidden = false;
-          e.preventDefault();
-          return;
-        }
-
-        // (Opcional) lógica de login futuro via backend:
-        /*
-        e.preventDefault();
-        fetch('/api/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: email.value,
-            senha: senha.value,
-            perfil: perfil.value
-          })
-        })
-        .then(res => res.json())
-        .then(data => {
-          if (data.success) {
-            window.location.href = '/painel.html';
-          } else {
-            erroLogin.textContent = data.mensagem || "Credenciais inválidas.";
-            erroLogin.hidden = false;
-          }
-        });
-        */
-      });
-    });
-  </script>
+</body>
+</html>

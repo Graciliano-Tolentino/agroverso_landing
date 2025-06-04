@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- 🌐 Metadados essenciais -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- 🧭 SEO e Acessibilidade -->
+  <title>Login • Agroverso</title>
+  <meta name="description" content="Acesse com segurança o sistema Agroverso. Perfis disponíveis: Administrador Geral, Gerente, Líder de Equipe e Técnico de Campo." />
+  <meta name="keywords" content="login, agroverso, autenticação, sistema, perfis de usuário" />
+  <meta name="author" content="Instituto Graciliana Maria da Conceição" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- 🎨 Estilo institucional -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+</head>
+<body class="login-body">
+
+  <main class="login-container">
+    <section class="login-box" role="form" aria-labelledby="login-titulo">
+      <h1 id="login-titulo" class="login-title">Acesso Seguro ao Sistema Agroverso</h1>
+
+      <form id="form-login" class="login-form" method="POST" novalidate aria-describedby="login-info">
+        <p id="login-info" class="login-info">
+          Faça login usando seu e-mail institucional, senha pessoal e selecione corretamente seu perfil de acesso.
+        </p>
+
+        <!-- Campo de e-mail -->
+        <label for="email">E-mail institucional:</label>
+        <input type="email" id="email" name="email" class="input-base" placeholder="seunome@agroverso.tec.br" required />
+
+        <!-- Campo de senha -->
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" class="input-base" placeholder="••••••••" minlength="6" required />
+
+        <!-- Seletor de perfil -->
+        <label for="perfil">Perfil de Acesso:</label>
+        <select id="perfil" name="perfil" class="input-base" required>
+          <option value="">Selecione seu perfil</option>
+          <option value="administrador">Administrador Geral</option>
+          <option value="gerente">Gerente</option>
+          <option value="lider">Líder de Equipe</option>
+          <option value="tecnico">Técnico de Campo</option>
+        </select>
+
+        <!-- Botão de envio -->
+        <button type="submit" class="btn-primary" aria-label="Entrar no sistema">Entrar</button>
+
+        <!-- Mensagem de erro acessível -->
+        <p class="login-error" id="erro-login" role="alert" hidden>
+          E-mail, senha ou perfil inválidos. Verifique os dados e tente novamente.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("form-login");
+      const email = document.getElementById("email");
+      const senha = document.getElementById("senha");
+      const perfil = document.getElementById("perfil");
+      const erroLogin = document.getElementById("erro-login");
+
+      form.addEventListener("submit", (e) => {
+        // Reseta o erro anterior
+        erroLogin.hidden = true;
+
+        // Validação básica local
+        if (!email.value || !senha.value || !perfil.value) {
+          erroLogin.textContent = "Todos os campos são obrigatórios.";
+          erroLogin.hidden = false;
+          e.preventDefault();
+          return;
+        }
+
+        // Validação adicional
+        if (senha.value.length < 6) {
+          erroLogin.textContent = "A senha deve conter no mínimo 6 caracteres.";
+          erroLogin.hidden = false;
+          e.preventDefault();
+          return;
+        }
+
+        // (Opcional) lógica de login futuro via backend:
+        /*
+        e.preventDefault();
+        fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email.value,
+            senha: senha.value,
+            perfil: perfil.value
+          })
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            window.location.href = '/painel.html';
+          } else {
+            erroLogin.textContent = data.mensagem || "Credenciais inválidas.";
+            erroLogin.hidden = false;
+          }
+        });
+        */
+      });
+    });
+  </script>

@@ -485,3 +485,230 @@ footer.rodape-site a:hover {
     padding: 0 1rem;
   }
 }
+
+
+/* === Estrutura Geral === */
+.login-body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f9f6;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Container Principal === */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* === Caixa do Formulário === */
+.login-box {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.08);
+  max-width: 440px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* === Título === */
+.login-title {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #1c3d27;
+}
+
+/* === Formulário === */
+.login-form label {
+  display: block;
+  font-weight: 600;
+  margin: 0.75rem 0 0.25rem;
+  color: #333;
+}
+
+.input-base {
+  width: 100%;
+  padding: 0.65rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border 0.3s;
+}
+
+.input-base:focus {
+  border-color: #1c3d27;
+  outline: none;
+}
+
+/* === Botão Principal === */
+.btn-primary {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background-color: #1c3d27;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #145232;
+}
+
+/* === Mensagens === */
+.login-error {
+  color: #cc0000;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* === Informação adicional === */
+.login-info {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* === Responsividade === */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .login-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* ==========================================
+   🎨 Estilos para Painel de Usuário Agroverso
+   ========================================== */
+
+/* Corpo do painel */
+.dashboard-body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #eef5f0;
+  color: #1c3d27;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container principal */
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Caixa do painel */
+.dashboard-box {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  max-width: 680px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Título */
+.dashboard-title {
+  font-size: 1.9rem;
+  font-weight: bold;
+  color: #145232;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Subtítulo */
+.dashboard-subtitle {
+  font-size: 1rem;
+  color: #4c5c52;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Mensagem personalizada */
+.dashboard-message h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1c3d27;
+}
+
+.dashboard-message ul {
+  padding-left: 1.2rem;
+  list-style-type: disc;
+  color: #333;
+}
+
+.perfil-texto {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #3a3a3a;
+}
+
+/* Botão sair */
+.btn-secondary {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #ffffff;
+  color: #1c3d27;
+  border: 2px solid #1c3d27;
+  font-weight: 600;
+  border-radius: 8px;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #1c3d27;
+  color: #ffffff;
+}
+
+/* Rodapé do painel */
+.dashboard-footer {
+  text-align: center;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+  .dashboard-box {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .dashboard-title {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-message h2 {
+    font-size: 1.3rem;
+  }
+
+  .btn-secondary {
+    font-size: 1rem;
+  }
+}

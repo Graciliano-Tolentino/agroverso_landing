@@ -222,32 +222,31 @@ footer.footer {
 }
 
 /* ============================================================
- 🎠 Carrossel Institucional – Estilo Padronizado Agroverso
+ 🎠 Carrossel Ajustado – Compacto e Proporcional
  ============================================================ */
 
 .carrossel-container {
-  max-width: 1200px;
-  margin: 2.5rem auto;
+  max-width: 1000px;
+  margin: 2rem auto;
   padding: 0 1rem;
 }
 
 .carrossel {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; /* Mantém proporção widescreen */
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  height: auto;
   background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
 }
 
 .carrossel img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto; /* 🧠 Mantém altura proporcional */
   display: none;
   transition: opacity 0.8s ease-in-out;
-  border-radius: 16px;
+  border-radius: 12px;
 }
 
 .carrossel img.ativo {
@@ -255,6 +254,7 @@ footer.footer {
 }
 
 /* Botões do carrossel */
+
 .carrossel-prev,
 .carrossel-next {
   position: absolute;
@@ -278,24 +278,25 @@ footer.footer {
   transform: translateY(-50%) scale(1.08);
 }
 
-.carrossel-prev { left: 16px; }
-.carrossel-next { right: 16px; }
+.carrossel-prev { left: 12px; }
+.carrossel-next { right: 12px; }
+
+/* Responsividade */
 
 @media (max-width: 768px) {
-  .carrossel {
-    aspect-ratio: 4 / 3;
-    border-radius: 12px;
-  }
-
-  .carrossel img {
-    border-radius: 12px;
+  .carrossel-container {
+    padding: 0 0.5rem;
   }
 
   .carrossel-prev,
   .carrossel-next {
     font-size: 1.5rem;
     padding: 0.3rem 0.6rem;
-    background-color: rgba(255, 255, 255, 0.35);
     backdrop-filter: none;
+    background-color: rgba(255, 255, 255, 0.35);
+  }
+
+  .carrossel img {
+    border-radius: 8px;
   }
 }

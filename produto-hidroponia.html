@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- 🎯 Título e descrição -->
+  <!-- 🎯 SEO e identidade -->
   <title>Hidroponia Inteligente – Agroverso</title>
   <meta name="description" content="Soluções modulares de hidroponia inteligente Agroverso com controle digital, sensores de nutrientes, pH e automação regenerativa. Cultive com inteligência e precisão." />
   <meta name="keywords" content="hidroponia, agroverso, cultivo inteligente, sensores, agricultura urbana" />
   <meta name="author" content="Instituto Graciliana Maria da Conceição" />
 
-  <!-- 🌐 Open Graph -->
+  <!-- 🌐 Open Graph para redes sociais -->
   <meta property="og:title" content="Hidroponia Inteligente – Agroverso" />
   <meta property="og:description" content="Tecnologia regenerativa de cultivo com sensores, controle digital e eficiência total. Conheça a solução Agroverso." />
-  <meta property="og:image" content="https://agroverso.tec.br/assets/produto2.jpg" />
-  <meta property="og:url" content="https://agroverso.tec.br/produto-hidroponia.html" />
+  <meta property="og:image" content="assets/hidroponia-1.jpg" />
+  <meta property="og:url" content="produto-hidroponia.html" />
   <meta property="og:type" content="website" />
 
   <!-- 🎨 Recursos visuais -->
@@ -34,13 +34,13 @@
       <p class="subtitulo-produto">
         Cultivo de precisão com sensores, automação regenerativa e controle digital
       </p>
-      <img src="assets/Produto2.jpg"
-           alt="Sistema de Hidroponia Inteligente Agroverso"
-           class="imagem-produto"
-           loading="lazy"
-           decoding="async"
-           width="600"
-           height="400" />
+
+      <!-- 🎠 Carrossel institucional -->
+      <div class="carrossel" aria-label="Carrossel de imagens do sistema de hidroponia inteligente">
+        <img src="assets/hidroponia-1.jpg" alt="Sistema vertical de hidroponia inteligente em estufa urbana" class="ativo" />
+        <img src="assets/hidroponia-2.jpg" alt="Sensor de nutrientes e pH com leitura contínua no reservatório" />
+        <img src="assets/hidroponia-3.jpg" alt="Painel digital controlando o sistema de hidroponia Agroverso" />
+      </div>
     </section>
 
     <section class="descricao-produto">
@@ -80,6 +80,11 @@
 
   <!-- ⬇️ Rodapé institucional -->
   <div data-include="partials/footer.html"></div>
+
+  <!-- 🔄 Scripts modulares Agroverso -->
   <script src="scripts/includes.js" defer></script>
+  <script src="scripts/carrossel.js" defer></script>
+  <script src="scripts/formulario.js" defer></script>
+  <script src="scripts/utils.js" defer></script>
 </body>
 </html>

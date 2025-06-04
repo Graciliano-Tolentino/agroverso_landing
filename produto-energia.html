@@ -15,8 +15,8 @@
   <!-- 🌐 Open Graph para redes sociais -->
   <meta property="og:title" content="Energia Solar Inteligente – Agroverso" />
   <meta property="og:description" content="Transforme sol em autonomia. Conheça o sistema inteligente de energia solar do Agroverso para áreas rurais, estufas e comunidades regenerativas." />
-  <meta property="og:image" content="https://agroverso.tec.br/assets/produto3.jpg" />
-  <meta property="og:url" content="https://agroverso.tec.br/produto-energia.html" />
+  <meta property="og:image" content="assets/energia-1.jpg" />
+  <meta property="og:url" content="produto-energia.html" />
   <meta property="og:type" content="website" />
 
   <!-- 🎨 Recursos visuais -->
@@ -34,19 +34,19 @@
       <p class="subtitulo-produto">
         Autonomia energética conectada à inteligência digital regenerativa
       </p>
-      <img src="assets/Produto3.jpg"
-           alt="Sistema de Energia Solar Inteligente Agroverso"
-           class="imagem-produto"
-           loading="lazy"
-           decoding="async"
-           width="600"
-           height="400" />
+
+      <!-- 🎠 Carrossel institucional -->
+      <div class="carrossel" aria-label="Carrossel de imagens do sistema de energia solar inteligente">
+        <img src="assets/energia-1.jpg" alt="Painéis solares Agroverso instalados em área rural" class="ativo" />
+        <img src="assets/energia-2.jpg" alt="Aplicativo de monitoramento de geração fotovoltaica em tempo real" />
+        <img src="assets/energia-3.jpg" alt="Instalação solar inteligente em propriedade agroecológica" />
+      </div>
     </section>
 
     <section class="descricao-produto">
       <h3>Sobre o sistema</h3>
       <p>
-        Nosso sistema de <strong>Energia Solar Inteligente</strong> oferece geração fotovoltaica autônoma com
+        Nosso sistema de <strong>Energia Solar Inteligente Agroverso</strong> oferece geração fotovoltaica autônoma com
         monitoramento em tempo real. Ele é integrado ao software Agroverso para garantir
         máxima eficiência, leitura de desempenho, registro de histórico e tomada de decisão baseada em dados.
       </p>
@@ -79,6 +79,11 @@
 
   <!-- ⬇️ Rodapé institucional -->
   <div data-include="partials/footer.html"></div>
+
+  <!-- 🔄 Scripts modulares Agroverso -->
   <script src="scripts/includes.js" defer></script>
+  <script src="scripts/carrossel.js" defer></script>
+  <script src="scripts/formulario.js" defer></script>
+  <script src="scripts/utils.js" defer></script>
 </body>
 </html>

@@ -15,17 +15,17 @@
   <!-- 🌐 Open Graph para redes sociais -->
   <meta property="og:title" content="Irrigação Inteligente – Agroverso" />
   <meta property="og:description" content="Tecnologia regenerativa com sensores de solo, controle automatizado e economia de água. Conheça a solução Agroverso." />
-  <meta property="og:image" content="https://agroverso.tec.br/assets/produto1.jpg" />
-  <meta property="og:url" content="https://agroverso.tec.br/produto-irrigacao.html" />
+  <meta property="og:image" content="assets/irrigacao-1.jpg" />
+  <meta property="og:url" content="produto-irrigacao.html" />
   <meta property="og:type" content="website" />
 
-  <!-- 📎 Recursos visuais -->
+  <!-- 🎨 Recursos visuais -->
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- ⬆️ Cabeçalho modular -->
+  <!-- ⬆️ Cabeçalho institucional -->
   <div data-include="partials/header.html"></div>
 
   <main class="conteudo-produto" role="main" aria-labelledby="titulo-irrigacao">
@@ -34,13 +34,13 @@
       <p class="subtitulo-produto">
         Eficiência hídrica com sensores, controle remoto e economia regenerativa
       </p>
-      <img src="assets/Produto1.jpg"
-           alt="Sistema de Irrigação Inteligente Agroverso"
-           class="imagem-produto"
-           loading="lazy"
-           decoding="async"
-           width="600"
-           height="400" />
+
+      <!-- 🎠 Carrossel institucional -->
+      <div class="carrossel" aria-label="Carrossel de imagens do sistema de irrigação inteligente">
+        <img src="assets/irrigacao-1.jpg" alt="Sistema completo de irrigação Agroverso em campo" class="ativo" />
+        <img src="assets/irrigacao-2.jpg" alt="Sensor de umidade instalado no solo agrícola" />
+        <img src="assets/irrigacao-3.jpg" alt="Aplicativo Agroverso controlando irrigação em tempo real" />
+      </div>
     </section>
 
     <section class="descricao-produto">
@@ -77,8 +77,13 @@
     </section>
   </main>
 
-  <!-- ⬇️ Rodapé modular -->
+  <!-- ⬇️ Rodapé institucional -->
   <div data-include="partials/footer.html"></div>
+
+  <!-- 🔄 Scripts modulares Agroverso -->
   <script src="scripts/includes.js" defer></script>
+  <script src="scripts/carrossel.js" defer></script>
+  <script src="scripts/formulario.js" defer></script>
+  <script src="scripts/utils.js" defer></script>
 </body>
 </html>

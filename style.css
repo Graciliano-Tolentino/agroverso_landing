@@ -1,6 +1,228 @@
 /* ============================================================
+ 🌱 Identidade Institucional – Agroverso
+ ============================================================ */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #f9fdfb;
+  color: #1c1c1c;
+  line-height: 1.6;
+}
+
+header.header-principal {
+  background-color: #004225;
+  color: #ffffff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.logo {
+  width: 96px;
+  margin-bottom: 1rem;
+}
+
+.titulo-site {
+  font-size: 2rem;
+  margin: 0.5rem 0 0;
+}
+
+.slogan {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-top: 0.5rem;
+}
+
+/* Títulos de seções */
+.secao-titulo {
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 2.5rem 0 1.2rem;
+  color: #004225;
+}
+
+/* ============================================================
+ 🧠 Produtos Inteligentes – Agroverso
+ ============================================================ */
+
+.produtos {
+  padding: 0 1rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #1c1c1c;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  max-width: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin: 1rem;
+  color: #004225;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin: 0 1rem 1.2rem;
+  color: #333333;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================================
+ 📞 CTA & Formulário de Orçamento – Agroverso
+ ============================================================ */
+
+.cta {
+  background-color: #e6f3ec;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.cta-texto,
+.form-intro {
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+  font-size: 1rem;
+  color: #1e1e1e;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  background-color: #25d366;
+  color: #ffffff;
+  padding: 0.8rem 1.4rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1da851;
+}
+
+.formulario-orcamento {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.formulario-orcamento label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: #004225;
+}
+
+.formulario-orcamento input,
+.formulario-orcamento select {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.formulario-orcamento button {
+  background-color: #004225;
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-orcamento button:hover {
+  background-color: #00663c;
+}
+
+/* ============================================================
+ 🧾 Rodapé & Estrutura Final – Agroverso
+ ============================================================ */
+
+footer.footer {
+  background-color: #004225;
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+}
+
+.footer a.footer-link {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer a.footer-link:hover {
+  color: #b2f5e2;
+}
+
+/* Responsividade global e refinamento */
+
+@media (max-width: 768px) {
+  .card img {
+    height: 160px;
+  }
+
+  .formulario-orcamento input,
+  .formulario-orcamento select,
+  .formulario-orcamento button {
+    font-size: 0.95rem;
+  }
+
+  .titulo-site {
+    font-size: 1.5rem;
+  }
+
+  .secao-titulo {
+    font-size: 1.3rem;
+  }
+
+  .cta-texto,
+  .form-intro {
+    font-size: 0.95rem;
+  }
+
+  .whatsapp-btn {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+/* ============================================================
  🎠 Carrossel Visual – Agroverso
- 📐 Estético, responsivo, institucional e regenerativo
  ============================================================ */
 
 .carrossel {
@@ -26,8 +248,6 @@
   display: block;
 }
 
-/* 🎯 Botões do carrossel – leves, elegantes e acessíveis */
-
 .carrossel-prev,
 .carrossel-next {
   position: absolute;
@@ -51,8 +271,6 @@
   transform: translateY(-50%) scale(1.08);
 }
 
-/* Posição dos botões */
-
 .carrossel-prev {
   left: 16px;
 }
@@ -60,8 +278,6 @@
 .carrossel-next {
   right: 16px;
 }
-
-/* 📱 Responsividade do carrossel para mobile-first */
 
 @media (max-width: 768px) {
   .carrossel-prev,
@@ -79,25 +295,4 @@
   .carrossel img {
     border-radius: 12px;
   }
-}
-
-/* 🚨 Campo inválido – destaque visual para erro de validação */
-
-input.erro,
-select.erro {
-  border: 2px solid #d92f2f !important;
-  background-color: #ffecec;
-  color: #8b0000;
-}
-
-input.erro::placeholder,
-select.erro option:first-child {
-  color: #aa0000;
-  font-style: italic;
-}
-
-input.erro:focus,
-select.erro:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(217, 47, 47, 0.25);
 }

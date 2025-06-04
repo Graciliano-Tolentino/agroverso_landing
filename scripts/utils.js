@@ -4,25 +4,21 @@
 const AgroUtils = (() => {
   'use strict';
 
-  // 📧 Validação básica de e-mail
-  const validarEmail = (email = '') => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email.trim());
-  };
+  // 📧 Validação básica de e-mail (formato padrão)
+  const validarEmail = (email = '') =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 
-  // 🧾 Valida campo de nome (mínimo 2 caracteres, sem números)
-  const validarNome = (nome = '') => {
-    return /^[a-zA-ZÀ-ú\s]{2,}$/.test(nome.trim());
-  };
+  // 🧾 Validação de nome completo com acentos e mínimo de 2 letras
+  const validarNome = (nome = '') =>
+    /^[a-zA-ZÀ-ÿ\s]{2,}$/.test(nome.trim());
 
-  // 🎯 Verifica se valor não está vazio ou nulo
-  const naoVazio = (valor = '') => {
-    return String(valor).trim() !== '';
-  };
+  // 🎯 Validação de campo não vazio
+  const naoVazio = (valor = '') =>
+    String(valor).trim() !== '';
 
-  // 🔔 Alerta acessível com fallback para alert()
+  // 🔔 Alerta acessível com fallback elegante
   const exibirAlerta = (mensagem = 'Mensagem não definida', tipo = 'info') => {
-    if (typeof Toastify !== 'undefined') {
+    if (typeof Toastify !== 'undefined' && typeof Toastify === 'function') {
       Toastify({
         text: mensagem,
         duration: 5000,
@@ -36,20 +32,20 @@ const AgroUtils = (() => {
     }
   };
 
-  // ✨ Capitaliza nomes próprios (ex: joão da silva → João da Silva)
+  // ✨ Capitaliza nomes próprios (respeitando preposições e conectores)
   const formatarNome = (nome = '') => {
     return nome
       .toLowerCase()
       .split(' ')
       .map(palavra =>
-        ['da', 'de', 'do', 'dos', 'das'].includes(palavra)
+        ['da', 'de', 'do', 'dos', 'das', 'e'].includes(palavra)
           ? palavra
           : palavra.charAt(0).toUpperCase() + palavra.slice(1)
       )
       .join(' ');
   };
 
-  // 🧠 Exporta funções úteis em um objeto único
+  // 🌿 Exporta funções úteis no escopo global AgroUtils
   return {
     validarEmail,
     validarNome,

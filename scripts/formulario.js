@@ -12,12 +12,13 @@
       produto: form.querySelector('#produto')
     };
 
-    const validarEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const validarEmail = (email) =>
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
     function validarCampos() {
       const nomeValido = campos.nome.value.trim().length >= 2;
       const emailValido = validarEmail(campos.email.value.trim());
-      const produtoValido = campos.produto.value !== "";
+      const produtoValido = campos.produto.value !== '';
 
       const erros = [];
 
@@ -25,36 +26,39 @@
       if (!emailValido) erros.push(campos.email);
       if (!produtoValido) erros.push(campos.produto);
 
-      // ✨ Marca visual de erro e foco no primeiro campo inválido
       Object.entries(campos).forEach(([chave, campo]) => {
         const valido =
           (chave === 'nome' && nomeValido) ||
           (chave === 'email' && emailValido) ||
           (chave === 'produto' && produtoValido);
         campo.classList.toggle('erro', !valido);
+        campo.setAttribute('aria-invalid', !valido);
       });
 
       if (erros.length > 0) {
-        erros[0].focus(); // 🔍 Foco no primeiro campo com erro
+        erros[0].focus();
         return false;
       }
 
       return true;
     }
 
-    // 🎯 Remove destaque de erro ao digitar
-    Object.values(campos).forEach(campo => {
-      campo.addEventListener('input', () => campo.classList.remove('erro'));
+    // 🎯 Remove marca de erro ao digitar
+    Object.values(campos).forEach((campo) => {
+      campo.addEventListener('input', () => {
+        campo.classList.remove('erro');
+        campo.removeAttribute('aria-invalid');
+      });
     });
 
-    // 🧭 Mapeamento semântico dos nomes de produtos
+    // 🧭 Mapeamento semântico de produtos
     const produtoLabel = {
       irrigacao: 'Irrigação Inteligente',
       hidroponia: 'Hidroponia Inteligente',
       energia: 'Energia Solar Inteligente'
     };
 
-    // ✉️ Submissão com redirecionamento refinado
+    // ✉️ Submissão do formulário
     form.addEventListener('submit', (event) => {
       event.preventDefault();
 
@@ -66,7 +70,7 @@
       const nome = campos.nome.value.trim();
       const email = campos.email.value.trim();
       const produto = campos.produto.value;
-      const produtoNome = produtoLabel[produto] || produto;
+      const produtoNome = produtoLabel[produto] || 'Produto não especificado';
 
       const mensagem = `
 Olá, equipe Agroverso! 🌿

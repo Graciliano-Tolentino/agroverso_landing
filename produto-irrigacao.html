@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- 🔍 Configurações essenciais -->
+  <!-- ✅ Codificação e Responsividade -->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- 🎯 SEO e identidade digital -->
+  <!-- 🎯 SEO e Identidade Visual Estratégica -->
   <title>Irrigação Inteligente – Agroverso</title>
   <meta name="description" content="Sistema Agroverso de irrigação inteligente com sensores de solo, automação via app e controle regenerativo da água. Economize com tecnologia e preserve o solo." />
   <meta name="keywords" content="irrigação inteligente, agroverso, sensores de solo, agricultura regenerativa, agro tecnologia" />
   <meta name="author" content="Instituto Graciliana Maria da Conceição" />
   <meta name="robots" content="index, follow" />
 
-  <!-- 🌐 Open Graph para redes sociais -->
+  <!-- 🌐 Open Graph para Compartilhamento Social -->
   <meta property="og:title" content="Irrigação Inteligente – Agroverso" />
   <meta property="og:description" content="Tecnologia regenerativa com sensores de solo, controle automatizado e economia de água. Conheça a solução Agroverso." />
   <meta property="og:image" content="assets/images/irrigacao-1.jpg" />
   <meta property="og:url" content="https://agroverso.tec.br/produto-irrigacao.html" />
   <meta property="og:type" content="website" />
 
-  <!-- 📱 Identidade e responsividade -->
+  <!-- 📱 PWA e Identidade -->
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="./style.css" />
-
-  <!-- 🧩 Acessibilidade e performance -->
   <meta name="theme-color" content="#004225" />
   <meta name="color-scheme" content="light dark" />
+
+  <!-- 🎨 Estilo Global Unificado -->
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-  <!-- ⬆️ Cabeçalho institucional (inclusão modular) -->
+  <!-- ⬆️ Cabeçalho institucional (modular via JS) -->
   <div data-include="partials/header.html"></div>
 
+  <!-- 🌱 Conteúdo principal da página -->
   <main class="conteudo-produto" role="main" aria-labelledby="titulo-irrigacao">
+
+    <!-- 💧 Seção de Destaque do Produto -->
     <section class="produto-destaque">
       <h2 id="titulo-irrigacao">Irrigação Inteligente</h2>
       <p class="subtitulo-produto">
@@ -42,17 +45,19 @@
       </p>
 
       <div class="carrossel-container">
-       <div class="carrossel" aria-label="Carrossel institucional Agroverso">
-         <img src="assets/images/irrigacao-1.jpg" class="ativo" alt="..." />
-         <img src="assets/images/irrigacao-2.jpg" alt="..." />
-         <img src="assets/images/irrigacao-3.jpg" alt="..." />
-         <button class="carrossel-prev" aria-label="Anterior">❮</button>
-         <button class="carrossel-next" aria-label="Próximo">❯</button>
-       </div>
-     </div>
+        <div class="carrossel" aria-label="Carrossel institucional do produto Irrigação Inteligente">
+          <img src="assets/images/irrigacao-1.jpg" class="ativo" alt="Sensor de irrigação Agroverso instalado em solo úmido" />
+          <img src="assets/images/irrigacao-2.jpg" alt="Painel de controle remoto para irrigação via app Agroverso" />
+          <img src="assets/images/irrigacao-3.jpg" alt="Sistema de irrigação automatizado em estufa com sensores Agroverso" />
 
+          <!-- Navegação acessível -->
+          <button class="carrossel-prev" aria-label="Imagem anterior">❮</button>
+          <button class="carrossel-next" aria-label="Próxima imagem">❯</button>
+        </div>
+      </div>
     </section>
 
+    <!-- 🧾 Seção de Descrição Técnica e Aplicações -->
     <section class="descricao-produto">
       <h3>Sobre o sistema</h3>
       <p>
@@ -63,16 +68,17 @@
       <ul>
         <li>💧 Economia de até <strong>70% de água</strong> com acionamento preciso</li>
         <li>🌡️ Leitura contínua de umidade e temperatura do solo em tempo real</li>
-        <li>📲 Controle remoto completo via app Agroverso, com notificações</li>
+        <li>📲 Controle remoto completo via app Agroverso, com notificações inteligentes</li>
         <li>🧠 Integração com previsão do tempo e irrigação automática preditiva</li>
         <li>🌱 Preserva a microbiota do solo e evita compactações desnecessárias</li>
       </ul>
 
       <h3>Aplicações recomendadas</h3>
       <p>
-        Ideal para <strong>hortas, pomares, jardins, estufas, viveiros e sistemas agroflorestais</strong>. Aplicável em pequenas propriedades, projetos urbanos, escolas e agricultura familiar.
+        Ideal para <strong>hortas, pomares, jardins, estufas, viveiros e sistemas agroflorestais</strong>. Aplicável em pequenas propriedades, projetos urbanos, escolas, agroecologia comunitária e agricultura familiar.
       </p>
 
+      <!-- 📲 Botão de contato direto -->
       <div class="botao-whatsapp">
         <a href="https://wa.me/5511963372373?text=Olá! Tenho interesse no sistema de Irrigação Inteligente do Agroverso e gostaria de mais informações."
            target="_blank"
@@ -83,12 +89,13 @@
         </a>
       </div>
     </section>
+
   </main>
 
-  <!-- ⬇️ Rodapé institucional (inclusão modular) -->
+  <!-- ⬇️ Rodapé institucional (modular via includes.js) -->
   <div data-include="partials/footer.html"></div>
 
-  <!-- 🔄 Scripts otimizados para desempenho e modularidade -->
+  <!-- ⚙️ Scripts otimizados para desempenho e modularidade -->
   <script src="scripts/includes.js" defer></script>
   <script src="scripts/carrossel.js" defer></script>
   <script src="scripts/formulario.js" defer></script>

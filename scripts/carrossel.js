@@ -13,54 +13,44 @@
 
       let indexAtual = 0;
       const idBase = `carrossel-${carrosselIndex}`;
+      let intervalo; // Para controle refinado da rotação automática
 
       // 🎛️ Botão Anterior
       const btnPrev = document.createElement('button');
       btnPrev.className = 'carrossel-prev';
-      btnPrev.setAttribute('type', 'button');
       btnPrev.setAttribute('aria-label', 'Imagem anterior');
       btnPrev.setAttribute('aria-controls', idBase);
-      btnPrev.setAttribute('tabindex', '0');
-      btnPrev.id = `${idBase}-prev`;
       btnPrev.innerText = '‹';
 
       // 🎛️ Botão Próximo
       const btnNext = document.createElement('button');
       btnNext.className = 'carrossel-next';
-      btnNext.setAttribute('type', 'button');
       btnNext.setAttribute('aria-label', 'Próxima imagem');
       btnNext.setAttribute('aria-controls', idBase);
-      btnNext.setAttribute('tabindex', '0');
-      btnNext.id = `${idBase}-next`;
       btnNext.innerText = '›';
 
-      // 🎯 Inserir botões no DOM
-      carrossel.appendChild(btnPrev);
-      carrossel.appendChild(btnNext);
-
-      // 🆔 Definir ID no container se ainda não existir
+      // 📎 Inserir botões e definir ID do carrossel
+      carrossel.append(btnPrev, btnNext);
       if (!carrossel.id) {
         carrossel.id = idBase;
       }
 
-      // 🧠 Atualiza visibilidade, acessibilidade e foco semântico
+      // 🧠 Atualiza visibilidade e acessibilidade
       function mostrarSlide(index) {
         slides.forEach((slide, i) => {
           const ativo = i === index;
           slide.classList.toggle('ativo', ativo);
           slide.setAttribute('aria-hidden', !ativo);
           slide.setAttribute('tabindex', ativo ? '0' : '-1');
-
-          // Atualiza papel para leitores de tela
           slide.setAttribute('role', 'tabpanel');
           slide.setAttribute('aria-label', `Slide ${i + 1} de ${slides.length}`);
         });
 
-        // 🧭 Atualiza o foco acessível se o slide estiver visível
+        // 🧭 Foco para acessibilidade
         slides[index].focus?.();
       }
 
-      // 🔁 Avançar e retroceder
+      // 🔁 Funções de navegação
       function proximoSlide() {
         indexAtual = (indexAtual + 1) % slides.length;
         mostrarSlide(indexAtual);
@@ -71,25 +61,42 @@
         mostrarSlide(indexAtual);
       }
 
-      // 🖱️ Eventos dos botões
+      // 🖱️ Controles por clique
       btnNext.addEventListener('click', proximoSlide);
       btnPrev.addEventListener('click', slideAnterior);
 
-      // ⏱️ Rotação automática com pausa ao interagir
-      let intervalo = setInterval(proximoSlide, 5000);
-
-      const pausar = () => clearInterval(intervalo);
-      const retomar = () => intervalo = setInterval(proximoSlide, 5000);
-
-      [btnPrev, btnNext, ...slides].forEach(el => {
-        el.addEventListener('mouseenter', pausar);
-        el.addEventListener('mouseleave', retomar);
-        el.addEventListener('focusin', pausar);
-        el.addEventListener('focusout', retomar);
+      // ⌨️ Acessibilidade por teclado (setas ← →)
+      carrossel.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight') {
+          proximoSlide();
+        } else if (event.key === 'ArrowLeft') {
+          slideAnterior();
+        }
       });
 
-      // 🚀 Inicialização do primeiro slide
+      // ⏱️ Controle de rotação automática com inteligência
+      function iniciarRotacao() {
+        if (!intervalo) {
+          intervalo = setInterval(proximoSlide, 5000);
+        }
+      }
+
+      function pausarRotacao() {
+        clearInterval(intervalo);
+        intervalo = null;
+      }
+
+      // 🛡️ Pausar em foco ou interação do usuário
+      [btnPrev, btnNext, ...slides].forEach(el => {
+        el.addEventListener('mouseenter', pausarRotacao);
+        el.addEventListener('mouseleave', iniciarRotacao);
+        el.addEventListener('focusin', pausarRotacao);
+        el.addEventListener('focusout', iniciarRotacao);
+      });
+
+      // 🚀 Inicializa carrossel ao carregar a página
       mostrarSlide(indexAtual);
+      iniciarRotacao();
     });
   });
 })();

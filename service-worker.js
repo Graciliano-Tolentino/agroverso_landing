@@ -1,23 +1,36 @@
-// service-worker.js
+// ===========================================================
 // 🌿 Agroverso | Service Worker regenerativo v2025.06
+// 📁 Responsável por: cache, offline e desempenho PWA
+// ===========================================================
 
 const CACHE_VERSION = 'v2025.06.01';
 const CACHE_NAME = `agroverso-cache-${CACHE_VERSION}`;
 const OFFLINE_URL = '/offline.html';
 
+// 📦 Lista completa de arquivos estáticos essenciais para pré-cache
 const URLS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/offline.html',
+  '/',                       // Página raiz
+  '/index.html',             // Landing principal
+  '/produto-irrigacao.html', // Página de produto
+  '/produto-hidroponia.html',
+  '/produto-energia.html',
+  '/offline.html',           // Página de fallback
   '/style.css',
   '/manifest.json',
+
+  // 🎯 Scripts modulares
   '/scripts/carrossel.js',
   '/scripts/formulario.js',
   '/scripts/utils.js',
+  '/scripts/includes.js',
+
+  // 🔖 Logos e ícones
   '/assets/logo-192.png',
   '/assets/logo-512.png',
   '/assets/logo-monochrome.svg',
   '/assets/favicon.ico',
+
+  // 🌊 Imagens de produtos (para funcionamento offline completo)
   '/assets/irrigacao-1.jpg',
   '/assets/irrigacao-2.jpg',
   '/assets/irrigacao-3.jpg',
@@ -29,9 +42,11 @@ const URLS_TO_CACHE = [
   '/assets/energia-3.jpg'
 ];
 
-// 📦 Pré-carregamento e cache durante a instalação
+// ===========================================================
+// 📦 Instalação – Pré-carrega todos os arquivos essenciais
+// ===========================================================
 self.addEventListener('install', event => {
-  self.skipWaiting(); // Ativa imediatamente após instalação
+  self.skipWaiting(); // ⚡ Ativa o service worker imediatamente
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(URLS_TO_CACHE);
@@ -39,33 +54,38 @@ self.addEventListener('install', event => {
   );
 });
 
-// 🔄 Ativação e limpeza de caches antigos
+// ===========================================================
+// 🔄 Ativação – Limpa caches antigos e assume controle das abas
+// ===========================================================
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
       Promise.all(
         keys.map(key => {
           if (key !== CACHE_NAME) {
-            return caches.delete(key);
+            return caches.delete(key); // 🧹 Remove versões antigas
           }
         })
       )
     )
   );
-  self.clients.claim(); // Assume controle de todas as abas imediatamente
+  self.clients.claim(); // 🛠️ Assume o controle imediatamente sem recarregar
 });
 
-// 🌐 Intercepta requisições e responde com rede > cache > offline.html
+// ===========================================================
+// 🌐 Intercepta requisições GET e aplica lógica de resposta
+// ===========================================================
 self.addEventListener('fetch', event => {
-  if (event.request.method !== 'GET') return;
+  if (event.request.method !== 'GET') return; // 🚫 Ignora POST, PUT etc.
 
   event.respondWith(
     fetch(event.request)
       .then(response => {
-        // Cache opcionalmente atualizado aqui (futuro)
+        // ✅ Futuro: salvar cópia no cache dinamicamente se desejado
         return response;
       })
-      .catch(() =>
+      .catch(() => 
+        // 🔁 Tenta usar o cache, senão exibe página offline
         caches.match(event.request).then(cached =>
           cached || caches.match(OFFLINE_URL)
         )

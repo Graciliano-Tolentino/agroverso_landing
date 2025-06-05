@@ -13,7 +13,7 @@
   <meta name="author" content="Instituto Graciliana Maria da Conceição" />
   <meta name="robots" content="index, follow" />
 
-  <!-- 🌐 Open Graph / Social Sharing -->
+  <!-- 🌐 Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Agroverso – Tecnologia regenerativa para o campo brasileiro" />
   <meta property="og:description" content="Tecnologia regenerativa com sabedoria, força e beleza para o agro do Brasil." />
@@ -26,16 +26,37 @@
   <meta name="theme-color" content="#004225" />
   <meta name="color-scheme" content="light dark" />
 
-  <!-- 🎨 Estilo Global Unificado -->
-  <link rel="stylesheet" href="./style.css" />
+  <!-- 🎨 Estilos Globais -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="menu-lateral.css" />
 </head>
 
 <body>
-  <script src="scripts/router-auto.js"></script>
 
-  <!-- ⬆️ Cabeçalho modular e institucional -->
+  <!-- ☰ Botão Hamburguer -->
+  <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuLateral">
+    ☰
+  </button>
+
+  <!-- 📋 Menu Lateral -->
+  <nav id="menuLateral" class="menu-lateral" role="navigation" aria-label="Menu lateral Agroverso" tabindex="-1">
+    <a href="index.html">🏠 Início</a>
+    <a href="login.html">🔐 Login</a>
+    <a href="dashboard.html">📊 Painel Geral</a>
+    <a href="dashboard-admin.html">👑 Painel Admin</a>
+    <a href="dashboard-gerente.html">📈 Painel Gerente</a>
+    <a href="dashboard-lider.html">🧭 Painel Líder</a>
+    <a href="dashboard-tecnico.html">🔧 Painel Técnico</a>
+    <a href="produto-irrigacao.html">💧 Irrigação</a>
+    <a href="produto-hidroponia.html">🌿 Hidroponia</a>
+    <a href="produto-energia.html">🔋 Energia Solar</a>
+  </nav>
+
+  <!-- ⬆️ Cabeçalho institucional -->
   <header class="header-principal" role="banner">
-    <img src="assets/images/logo.png" alt="Logo do Agroverso" class="logo" />
+    <a href="index.html" class="logo-link" aria-label="Voltar à página inicial do Agroverso">
+      <img src="assets/images/logo.png" alt="Logotipo do Agroverso" class="logo" style="height: 64px; width: auto;" decoding="async" loading="eager" />
+    </a>
     <h1 class="titulo-site">Agroverso</h1>
     <p class="slogan">
       Tecnologia regenerativa com <strong>sabedoria</strong>,
@@ -43,10 +64,8 @@
     </p>
   </header>
 
-  <!-- 🌿 Início do conteúdo principal -->
+  <!-- 🌿 Conteúdo principal -->
   <main class="conteudo-produto" role="main" aria-label="Conteúdo principal do Agroverso">
-
-    <!-- 🌱 Produtos inteligentes com estrutura responsiva -->
     <section class="produtos" aria-labelledby="titulo-produtos">
       <h2 id="titulo-produtos" class="secao-titulo">Nossos Produtos Inteligentes</h2>
 
@@ -71,7 +90,7 @@
       </div>
     </section>
 
-    <!-- 🤝 Chamada para ação (CTA) com formulário de orçamento -->
+    <!-- 💬 Formulário de Orçamento -->
     <section class="cta" aria-labelledby="titulo-cta">
       <h2 id="titulo-cta" class="secao-titulo">Vamos conversar?</h2>
       <p class="cta-texto">
@@ -113,10 +132,9 @@
         <button type="submit">Solicitar Orçamento</button>
       </form>
     </section>
-
   </main>
 
-  <!-- 🧭 Rodapé institucional simples e funcional -->
+  <!-- 🧭 Rodapé Institucional -->
   <footer class="rodape-site" role="contentinfo">
     <p>
       © 2025 <strong>Agroverso</strong> • Uma iniciativa do
@@ -127,5 +145,8 @@
     </p>
   </footer>
 
+  <!-- 🧠 Scripts -->
+  <script src="scripts/router-auto.js" defer></script>
+  <script src="scripts/menu-lateral.js" defer></script>
 </body>
 </html>

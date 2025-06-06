@@ -35,10 +35,9 @@
   color: var(--cor-destaque);
 }
 
-/* 🧭 Rodapé Institucional */
 .rodape-site {
-  background-color: var(--cor-principal);
-  color: var(--cor-clara);
+  background-color: var(--cor-principal);   /* verde escuro */
+  color: var(--cor-clara);                  /* texto branco padrão */
   text-align: center;
   padding: var(--espaco-lg) var(--espaco-sm);
   font-size: 0.95rem;
@@ -50,28 +49,34 @@
 .rodape-site p {
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
+  color: var(--cor-clara); /* 🔁 ajuste aplicado aqui */
 }
 
 .rodape-site a {
   color: var(--cor-clara);
   text-decoration: underline;
-  transition: color 0.3s ease, outline 0.2s ease;
+  transition: color 0.3s ease;
 }
 
 .rodape-site a:hover,
 .rodape-site a:focus {
   color: var(--cor-destaque);
-  outline: 2px dashed var(--cor-secundaria);
+  outline: 2px dashed var(--cor-destaque);
   outline-offset: 3px;
-}
-
-/* ✅ Destaque exclusivo do nome do instituto */
-.rodape-instituicao {
-  margin-top: var(--espaco-sm);
 }
 
 .instituto-destaque {
   color: var(--cor-destaque);
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+
+/* ✅ Apenas o nome do instituto com destaque */
+.instituto-destaque {
+  color: var(--cor-destaque); /* verde claro */
   display: block;
   font-weight: 600;
   font-size: 1rem;

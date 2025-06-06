@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- 🌐 Metadados essenciais -->
+  <!-- 🌐 Metadados estratégicos -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-  <!-- 🧭 SEO e Acessibilidade -->
-  <title>Login • Agroverso</title>
-  <meta name="description" content="Acesse com segurança o sistema Agroverso. Perfis disponíveis: Administrador Geral, Gerente, Líder de Equipe e Técnico de Campo." />
-  <meta name="keywords" content="login, agroverso, autenticação, sistema, perfis de usuário" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Login Seguro • Agroverso</title>
+  <meta name="description" content="Acesse o painel inteligente do Agroverso com segurança, precisão e responsabilidade. Perfis distintos para cada função." />
   <meta name="author" content="Instituto Graciliana Maria da Conceição" />
   <meta name="robots" content="noindex, nofollow" />
 
@@ -17,26 +15,26 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 </head>
+
 <body class="login-body">
 
-  <!-- 🌐 Cabeçalho institucional -->
-  <header class="header-principal">
-    <nav class="navegacao-principal">
-      <ul class="nav-menu">
-        <li><a href="index.html">🏠 Início</a></li>
-        <li><a href="login.html">🔐 Login</a></li>
-        <li><a href="dashboard.html">📊 Painel</a></li>
-      </ul>
-    </nav>
+  <!-- Cabeçalho institucional -->
+  <header class="header-principal" role="banner">
+    <a href="index.html" class="logo-link" aria-label="Voltar à página inicial do Agroverso">
+      <img src="assets/images/logo.png" alt="Logotipo do Agroverso" class="logo" />
+    </a>
+    <h1 class="titulo-site">Agroverso</h1>
+    <p class="slogan">Tecnologia regenerativa com <strong>sabedoria</strong>, <strong>força</strong> e <strong>beleza</strong></p>
   </header>
 
-  <main class="login-container">
+  <!-- Conteúdo principal do login -->
+  <main class="login-container" role="main" aria-label="Formulário de login seguro para acesso ao Agroverso">
     <section class="login-box" role="form" aria-labelledby="login-titulo">
-      <h1 id="login-titulo" class="login-title">Acesso Seguro ao Sistema Agroverso</h1>
+      <h2 id="login-titulo" class="login-title">Acesso Seguro ao Sistema Agroverso</h2>
 
       <form id="form-login" class="login-form" method="POST" novalidate aria-describedby="login-info">
         <p id="login-info" class="login-info">
-          Faça login usando seu e-mail institucional, senha pessoal e selecione corretamente seu perfil de acesso.
+          Use seu e-mail institucional, senha pessoal e selecione corretamente o perfil de acesso para entrar.
         </p>
 
         <label for="email">E-mail institucional:</label>
@@ -54,7 +52,7 @@
           <option value="tecnico">Técnico de Campo</option>
         </select>
 
-        <button type="submit" class="btn-primary" aria-label="Entrar no sistema">Entrar</button>
+        <button type="submit" class="btn-primary" aria-label="Entrar no sistema Agroverso">Entrar</button>
 
         <p class="login-error" id="erro-login" role="alert" hidden>
           E-mail, senha ou perfil inválidos. Verifique os dados e tente novamente.
@@ -63,8 +61,18 @@
     </section>
   </main>
 
-  <!-- 🔐 Script de autenticação simulada -->
-  <script src="scripts/login.js"></script>
+  <!-- Rodapé institucional -->
+  <footer class="rodape-site" role="contentinfo">
+    <div class="rodape-conteudo">
+      <p class="rodape-direitos">© 2025 <strong>Agroverso</strong> – Todos os direitos reservados.</p>
+      <p class="rodape-instituicao">Uma iniciativa do <strong>Instituto Graciliana Maria da Conceição</strong></p>
+      <nav class="rodape-links" aria-label="Links institucionais do rodapé">
+        <a href="index.html" class="rodape-link">← Voltar para a Página Inicial</a>
+      </nav>
+    </div>
+  </footer>
 
+  <!-- Script de autenticação simulada -->
+  <script src="scripts/login.js" defer></script>
 </body>
 </html>

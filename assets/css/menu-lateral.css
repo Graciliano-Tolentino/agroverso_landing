@@ -1,9 +1,30 @@
+/* ============================================================================
+📚 menu-lateral.css – Estilo do Menu Lateral Hamburguer Agroverso
+============================================================================ */
+
+/* 🧱 Menu oculto inicialmente à esquerda */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 240px;
+  height: 100%;
+  background-color: var(--cor-principal);
+  color: var(--cor-clara);
+  padding: var(--espaco-md);
+  transition: left 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
 /* ✅ Menu ativado via JS */
 .menu-lateral-ativo {
   left: 0;
 }
 
-/* 🔗 Estilo dos links no menu */
+/* 🔗 Estilo dos links */
 .menu-lateral a {
   display: block;
   margin-bottom: var(--espaco-sm);
@@ -27,7 +48,7 @@
   padding-top: var(--espaco-sm);
 }
 
-/* 💡 Destaque do painel correspondente */
+/* 💡 Link ativo destacado */
 .menu-lateral a.ativo {
   font-weight: 700;
   text-decoration: underline;

@@ -53,7 +53,6 @@
   font-weight: 700;
   color: var(--cor-principal);
   text-align: center;
-  margin-bottom: var(--espaco-md);
 }
 
 /* 🧠 Informações */
@@ -88,7 +87,6 @@
   padding: 0.75rem 1rem;
   font-size: 1rem;
   border-radius: 8px;
-  margin-bottom: var(--espaco-sm);
 }
 
 .login-form input,

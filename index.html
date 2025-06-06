@@ -37,11 +37,13 @@
 
 <body>
 
-  <!-- ☰ Botão Hamburguer -->
-<button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuLateral">☰</button>
+  <!-- ☰ Botão Hamburguer-->
+<button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuLateral">
+  ☰
+</button>
 
-<!-- 📋 Menu Lateral -->
-<nav id="menuLateral" class="menu-lateral" role="navigation" aria-label="Menu lateral Agroverso" tabindex="-1">
+<!-- 📋 Menu lateral -->
+<nav id="menuLateral" class="menu-lateral" aria-label="Menu lateral" tabindex="-1">
   <a href="index.html">🏠 Início</a>
   <a href="login.html">🔐 Login</a>
   <div id="menuPrivado" hidden>
@@ -51,6 +53,7 @@
     <a href="dashboard-tecnico.html">🔧 Painel Técnico</a>
   </div>
 </nav>
+
 
 
   <!-- ⬆️ Cabeçalho institucional centralizado -->
@@ -161,6 +164,7 @@
   <script src="scripts/router-auto.js" defer></script>
   <script src="scripts/menu-lateral.js" defer></script>
   <script src="scripts/auth.js" defer></script>
+  <link rel="stylesheet" href="assets/css/menu-lateral.css" />
 
 </body>
 </html>

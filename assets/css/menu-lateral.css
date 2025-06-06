@@ -1,0 +1,47 @@
+/* ✅ Menu ativado via JS */
+.menu-lateral-ativo {
+  left: 0;
+}
+
+/* 🔗 Estilo dos links no menu */
+.menu-lateral a {
+  display: block;
+  margin-bottom: var(--espaco-sm);
+  color: var(--cor-clara);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.menu-lateral a:hover,
+.menu-lateral a:focus {
+  color: var(--cor-destaque);
+  outline: none;
+}
+
+/* 🔐 Seção privada (painéis) */
+#menuPrivado {
+  margin-top: var(--espaco-lg);
+  border-top: 1px solid var(--cor-clara);
+  padding-top: var(--espaco-sm);
+}
+
+/* 💡 Destaque do painel correspondente */
+.menu-lateral a.ativo {
+  font-weight: 700;
+  text-decoration: underline;
+  color: var(--cor-destaque);
+}
+
+/* 📱 Responsivo para telas pequenas */
+@media (max-width: 480px) {
+  .menu-lateral {
+    width: 200px;
+    padding: var(--espaco-sm);
+  }
+
+  .menu-lateral a {
+    font-size: 0.95rem;
+  }
+}

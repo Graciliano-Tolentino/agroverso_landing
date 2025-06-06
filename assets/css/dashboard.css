@@ -1,131 +1,114 @@
-/* ============================================================================
-📊 dashboard.css – Estilo de Painéis Institucionais do Agroverso
-👑 Gerente • Técnico • Admin • Líder • Visual limpo, responsivo e modular
-============================================================================ */
+/* ================================================================================
+📊 dashboard.css – Estilo para Painéis Agroverso
+🌱 Modular, acessível, responsivo e regenerativo
+================================================================================ */
 
-/* 🧱 Área principal do painel */
+/* Corpo do painel */
+.dashboard-body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #f0f9f4, #d8f3dc);
+  color: #1c1c1c;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* Container principal */
 .dashboard-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--espaco-lg) var(--espaco-md);
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 80, 40, 0.15);
+  padding: 2rem;
+}
+
+/* Bloco central */
+.dashboard-box {
   display: flex;
   flex-direction: column;
-  gap: var(--espaco-xl);
+  gap: 1.5rem;
 }
 
-/* 🧾 Título da área do painel */
-.dashboard-titulo {
+/* Título principal */
+.dashboard-title {
   font-size: 1.8rem;
-  text-align: left;
-  color: var(--cor-principal);
-  margin-bottom: var(--espaco-md);
-  border-bottom: 2px solid var(--cor-secundaria);
-  padding-bottom: 0.5rem;
-}
-
-/* 🧩 Cards de informação (métricas, status etc) */
-.dashboard-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--espaco-lg);
-  justify-content: space-between;
-}
-
-.dashboard-card {
-  flex: 1 1 260px;
-  background-color: var(--cor-clara);
-  padding: var(--espaco-md);
-  border-radius: 12px;
-  box-shadow: var(--sombra-media);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.dashboard-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--sombra-forte);
-}
-
-.dashboard-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: var(--cor-principal);
-}
-
-.dashboard-card p {
-  font-size: 1rem;
-  color: var(--cor-texto);
-  line-height: 1.5;
-}
-
-/* 📋 Tabela de dados */
-.dashboard-tabela {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.95rem;
-  background-color: var(--cor-clara);
-  border: 1px solid var(--cor-borda);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: var(--sombra-leve);
-}
-
-.dashboard-tabela th,
-.dashboard-tabela td {
-  padding: 0.85rem;
-  text-align: left;
-  border-bottom: 1px solid var(--cor-borda);
-}
-
-.dashboard-tabela th {
-  background-color: var(--cor-media);
-  color: var(--cor-principal);
-  font-weight: 600;
-}
-
-.dashboard-tabela tr:hover {
-  background-color: #f0f9f5;
-}
-
-/* 🔘 Botões padrão em painéis */
-.dashboard-btn {
-  padding: 0.65rem 1.2rem;
-  font-size: 0.95rem;
   font-weight: bold;
-  color: var(--cor-clara);
-  background-color: var(--cor-principal);
+  color: #004225;
+  margin: 0;
+}
+
+/* Subtítulo */
+.dashboard-subtitle {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #3a3a3a;
+  margin-top: -0.5rem;
+}
+
+/* Mensagem do painel */
+.dashboard-message {
+  background-color: #f6fdf9;
+  border-left: 4px solid #0a7d49;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.dashboard-message ul {
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.dashboard-message li {
+  margin-bottom: 0.5rem;
+}
+
+/* Rodapé */
+.dashboard-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+/* Botão de sair */
+.btn-secondary {
+  background-color: #d62828;
+  color: white;
   border: none;
   border-radius: 8px;
+  padding: 0.65rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.dashboard-btn:hover {
-  background-color: #025e36;
+.btn-secondary:hover {
+  background-color: #a4161a;
 }
 
-/* ============================================================================
-📱 Responsividade dos cards e tabelas
-============================================================================ */
-
-@media (max-width: 768px) {
-  .dashboard-cards {
-    flex-direction: column;
+/* Responsividade */
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 1.25rem;
   }
 
-  .dashboard-card {
-    width: 100%;
-  }
-
-  .dashboard-titulo {
+  .dashboard-title {
     font-size: 1.5rem;
   }
 
-  .dashboard-container {
-    padding: var(--espaco-md);
+  .dashboard-message {
+    font-size: 0.95rem;
   }
 
-  .dashboard-tabela th,
-  .dashboard-tabela td {
-    padding: 0.6rem;
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
   }
 }

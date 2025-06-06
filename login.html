@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- 🌐 Metadados estratégicos -->
+  <!-- 🌐 Metadados Estratégicos para Alta Conversão e Indexação Controlada -->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
   
   <title>Login Seguro • Agroverso</title>
-  <meta name="description" content="Acesse o painel inteligente do Agroverso com segurança, precisão e responsabilidade. Perfis distintos para cada função." />
+  <meta name="description" content="Acesse o painel inteligente Agroverso com segurança regenerativa, controle e precisão. Perfis distintos para cada função profissional." />
   <meta name="author" content="Instituto Graciliana Maria da Conceição" />
-  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1C3D27" />
 
-  <!-- 🎨 Estilo institucional -->
+  <!-- 🔗 Estilos principais -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="login.css" />
+
+  <!-- 🖼️ Favicon e identidade -->
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 </head>
 
 <body class="login-body">
 
-  <!-- Cabeçalho institucional -->
-  <header class="header-principal" role="banner">
+  <!-- 🎯 Cabeçalho institucional com logo posicionada -->
+  <header class="header-principal" role="banner" aria-label="Cabeçalho institucional Agroverso">
     <a href="index.html" class="logo-link" aria-label="Voltar à página inicial do Agroverso">
-      <img src="assets/images/logo.png" alt="Logotipo do Agroverso" class="logo" />
+      <img src="assets/images/logo-login.png" alt="Logo do Agroverso" class="logo-superior" />
     </a>
-    <h1 class="titulo-site">Agroverso</h1>
-    <p class="slogan">Tecnologia regenerativa com <strong>sabedoria</strong>, <strong>força</strong> e <strong>beleza</strong></p>
+    <div class="cabecalho-texto">
+      <h1 class="titulo-site" aria-level="1">Agroverso</h1>
+      <p class="slogan">Tecnologia regenerativa com <strong>sabedoria</strong>, <strong>força</strong> e <strong>beleza</strong></p>
+    </div>
   </header>
 
-  <!-- Conteúdo principal do login -->
-  <main class="login-container" role="main" aria-label="Formulário de login seguro para acesso ao Agroverso">
+  <!-- 🧩 Conteúdo principal: login seguro e inteligente -->
+  <main class="login-container" role="main" aria-label="Área principal de autenticação do sistema Agroverso">
     <section class="login-box" role="form" aria-labelledby="login-titulo">
       <h2 id="login-titulo" class="login-title">Acesso Seguro ao Sistema Agroverso</h2>
 
       <form id="form-login" class="login-form" method="POST" novalidate aria-describedby="login-info">
         <p id="login-info" class="login-info">
-          Use seu e-mail institucional, senha pessoal e selecione corretamente o perfil de acesso para entrar.
+          Use seu e-mail institucional, senha pessoal e selecione corretamente o perfil de acesso.
+          Pressione <kbd>Enter</kbd> para enviar ou <kbd>F1</kbd> para suporte.
         </p>
 
         <label for="email">E-mail institucional:</label>
-        <input type="email" id="email" name="email" class="input-base" placeholder="seunome@agroverso.tec.br" required />
+        <input type="email" id="email" name="email" class="input-base" placeholder="seunome@agroverso.tec.br" required autofocus />
 
         <label for="senha">Senha:</label>
         <input type="password" id="senha" name="senha" class="input-base" placeholder="••••••••" minlength="6" required />
@@ -61,18 +68,43 @@
     </section>
   </main>
 
-  <!-- Rodapé institucional -->
-  <footer class="rodape-site" role="contentinfo">
+  <!-- 🔻 Rodapé institucional regenerativo -->
+  <footer class="rodape-site" role="contentinfo" aria-label="Rodapé institucional do sistema Agroverso">
     <div class="rodape-conteudo">
       <p class="rodape-direitos">© 2025 <strong>Agroverso</strong> – Todos os direitos reservados.</p>
       <p class="rodape-instituicao">Uma iniciativa do <strong>Instituto Graciliana Maria da Conceição</strong></p>
-      <nav class="rodape-links" aria-label="Links institucionais do rodapé">
+      <nav class="rodape-links" aria-label="Links institucionais">
         <a href="index.html" class="rodape-link">← Voltar para a Página Inicial</a>
+        <a href="https://wa.me/5511963372373" class="rodape-link" target="_blank" rel="noopener" accesskey="1">
+          📞 Suporte Técnico (F1)
+        </a>
       </nav>
     </div>
   </footer>
 
-  <!-- Script de autenticação simulada -->
-  <script src="scripts/login.js" defer></script>
+  <!-- 🔐 Script refinado de autenticação e suporte -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const emailInput = document.getElementById("email");
+      emailInput.focus(); // redundância proativa
+
+      // 🧭 Atalho F1 abre suporte em nova aba
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "F1") {
+          e.preventDefault();
+          window.open("https://wa.me/5511963372373", "_blank");
+        }
+      });
+
+      // 💡 (opcional) Submissão personalizada com Enter em qualquer campo
+      const form = document.getElementById("form-login");
+      form.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && e.target.tagName !== "TEXTAREA") {
+          e.preventDefault();
+          form.requestSubmit();
+        }
+      });
+    });
+  </script>
 </body>
 </html>

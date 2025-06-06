@@ -1,68 +1,76 @@
-/* ============================================================================
-📚 menu-lateral.css – Estilo do Menu Lateral Hamburguer Agroverso
-============================================================================ */
+/* ==========================================================================================
+🎨 menu-lateral.css – Menu Lateral Inteligente Agroverso
+🌱 Navegação com sabedoria, força e beleza. Acessível, refinado e responsivo.
+========================================================================================== */
 
-/* 🧱 Menu oculto inicialmente à esquerda */
 .menu-lateral {
   position: fixed;
   top: 0;
-  left: -260px;
-  width: 240px;
-  height: 100%;
-  background-color: var(--cor-principal);
-  color: var(--cor-clara);
-  padding: var(--espaco-md);
-  transition: left 0.3s ease;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background-color: #1C3D27;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease, box-shadow 0.2s ease-in-out;
   z-index: 1000;
   overflow-y: auto;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
-  outline: none;
 }
 
-/* ✅ Menu ativado via JS */
-.menu-lateral-ativo {
-  left: 0;
+.menu-lateral.aberto {
+  transform: translateX(0);
 }
 
-/* 🔗 Estilo dos links */
 .menu-lateral a {
   display: block;
-  margin-bottom: var(--espaco-sm);
-  color: var(--cor-clara);
+  margin: 1.2rem 0;
+  color: #ffffff;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.5rem 1rem;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease-in-out;
 }
 
 .menu-lateral a:hover,
 .menu-lateral a:focus {
-  color: var(--cor-destaque);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #FFD700; /* Ouro agroverso */
   outline: none;
 }
 
-/* 🔐 Seção privada (painéis) */
-#menuPrivado {
-  margin-top: var(--espaco-lg);
-  border-top: 1px solid var(--cor-clara);
-  padding-top: var(--espaco-sm);
+.menu-lateral a:focus-visible {
+  outline: 2px dashed #ffffff;
+  outline-offset: 2px;
 }
 
-/* 💡 Link ativo destacado */
-.menu-lateral a.ativo {
-  font-weight: 700;
-  text-decoration: underline;
-  color: var(--cor-destaque);
+.menu-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background-color: #1C3D27;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  z-index: 1100;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* 📱 Responsivo para telas pequenas */
-@media (max-width: 480px) {
+.menu-toggle:hover,
+.menu-toggle:focus {
+  background-color: #256D47;
+  outline: none;
+}
+
+@media (max-width: 600px) {
   .menu-lateral {
-    width: 200px;
-    padding: var(--espaco-sm);
-  }
-
-  .menu-lateral a {
-    font-size: 0.95rem;
+    width: 100%;
+    max-width: 300px;
   }
 }
+

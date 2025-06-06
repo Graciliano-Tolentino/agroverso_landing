@@ -1,64 +1,38 @@
-/* ================================================================================
-🔐 login.css – Estilo Refinado da Tela de Login Agroverso
-🌿 Acessibilidade, Conversão e Beleza Inteligente com Sabedoria e Força
-================================================================================ */
+/* ==========================================================================================
+🔐 login.css – Estilo refinado da tela de Login Agroverso
+🌿 Identidade visual com sabedoria, força e beleza
+========================================================================================== */
 
-/* 🎯 Logo institucional no topo esquerdo */
-.logo-superior {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  height: 60px;
-  z-index: 10;
+/* 🎨 Variáveis globais */
+:root {
+  --cor-principal: #1C3D27;
+  --cor-clara: #ffffff;
+  --cor-media: #eaf3ed;
+  --cor-texto: #222222;
+  --cor-borda: #cccccc;
+  --cor-erro: #b20000;
+  --cor-alerta: #ffcc00;
+
+  --espaco-sm: 0.5rem;
+  --espaco-md: 1rem;
+  --espaco-lg: 1.5rem;
+  --espaco-xl: 2rem;
+
+  --sombra-media: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* 🧱 Cabeçalho alinhado com texto */
-.header-principal {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
-  width: 100%;
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 2rem 1rem 0;
-}
-
-.cabecalho-texto {
-  display: flex;
-  flex-direction: column;
-}
-
-.titulo-site {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: var(--cor-principal);
-  margin: 0;
-}
-
-.slogan {
-  font-size: 1rem;
-  color: var(--cor-texto);
-  margin: 0.25rem 0 0;
-}
-
-/* ============================================================================
-🧍 Corpo exclusivo da tela de login
-============================================================================ */
+/* 🧍 Corpo da tela de login */
 .login-body {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(to bottom right, var(--cor-media), var(--cor-clara));
-  padding-top: var(--espaco-xl);
   font-family: 'Segoe UI', sans-serif;
+  padding-top: var(--espaco-xl);
 }
 
-/* ============================================================================
-🧱 Container principal do formulário
-============================================================================ */
+/* 📦 Container principal */
 .login-container {
   max-width: 420px;
   width: 90%;
@@ -72,14 +46,7 @@
   gap: var(--espaco-md);
 }
 
-/* ============================================================================
-📋 Bloco e título do formulário
-============================================================================ */
-.login-box {
-  display: flex;
-  flex-direction: column;
-}
-
+/* 📋 Título */
 .login-title {
   font-size: 1.6rem;
   font-weight: 700;
@@ -88,9 +55,7 @@
   margin-bottom: var(--espaco-md);
 }
 
-/* ============================================================================
-🧠 Informação acessível e inputs refinados
-============================================================================ */
+/* 🧠 Informativo acessível */
 .login-info {
   font-size: 0.95rem;
   color: var(--cor-texto);
@@ -98,6 +63,7 @@
   line-height: 1.5;
 }
 
+/* 🧾 Formulário */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -121,9 +87,7 @@
   border-color: var(--cor-principal);
 }
 
-/* ============================================================================
-🔘 Botão institucional de envio
-============================================================================ */
+/* 🔘 Botão */
 .login-form button {
   background-color: var(--cor-principal);
   color: var(--cor-clara);
@@ -141,9 +105,7 @@
   transform: scale(1.02);
 }
 
-/* ============================================================================
-⚠️ Mensagem de erro com acessibilidade e contraste
-============================================================================ */
+/* ⚠️ Mensagem de erro */
 .login-error {
   color: var(--cor-erro);
   background-color: #fde8e8;
@@ -171,25 +133,10 @@
   }
 }
 
-/* ============================================================================
-📱 Responsividade aprimorada (Mobile First)
-============================================================================ */
+/* 📱 Responsividade (mobile-first) */
 @media (max-width: 480px) {
   .login-container {
     padding: var(--espaco-lg) var(--espaco-sm);
-  }
-
-  .header-principal {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .titulo-site {
-    font-size: 1.4rem;
-  }
-
-  .slogan {
-    font-size: 0.9rem;
   }
 
   .login-title {
@@ -200,11 +147,5 @@
   .login-form select,
   .login-form button {
     font-size: 0.95rem;
-  }
-
-  .logo-superior {
-    top: 10px;
-    left: 10px;
-    height: 50px;
   }
 }

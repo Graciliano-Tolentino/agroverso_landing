@@ -37,22 +37,8 @@
 
 <body>
 
-  <!-- ☰ Botão Hamburguer-->
-<button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuLateral">
-  ☰
-</button>
-
-<!-- 📋 Menu lateral -->
-<nav id="menuLateral" class="menu-lateral" tabindex="-1">
-    <a href="login.html">🔐 Login</a>
-  <div id="menuPrivado" hidden>
-    <a href="dashboard-admin.html">👑 Painel Admin</a>
-    <a href="dashboard-gerente.html">📈 Painel Gerente</a>
-    <a href="dashboard-lider.html">🧭 Painel Líder</a>
-    <a href="dashboard-tecnico.html">🔧 Painel Técnico</a>
-  </div>
-</nav>
-
+  
+<div data-include="partials/menu.html"></div>
 
 
   <!-- ⬆️ Cabeçalho institucional centralizado -->
@@ -148,12 +134,9 @@
   <!-- 🧭 Rodapé Institucional -->
   <footer class="rodape-site" role="contentinfo">
     <p>
-      © 2025 AGROVERSO
-</p> Uma iniciativa do
-<p>      
-<a>Instituto Graciliana Maria da Conceição</a>.
-</p>
-    
+      © 2025 <strong>Agroverso</strong> • Uma iniciativa do
+      <a href="https://institutograciliana.org" target="_blank" rel="noopener noreferrer">Instituto Graciliana Maria da Conceição</a>.
+    </p>
     <p>
       CNPJ: 31.083.093/0001-99 • Todos os direitos reservados.
     </p>
@@ -162,8 +145,7 @@
   <!-- 🧠 Scripts Essenciais -->
   <script src="scripts/router-auto.js" defer></script>
   <script src="scripts/menu-lateral.js" defer></script>
-  <script src="scripts/auth.js" defer></script>
-  <link rel="stylesheet" href="assets/css/menu-lateral.css" />
+  <script src="scripts/includes.js" defer></script>
 
 </body>
 </html>

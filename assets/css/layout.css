@@ -53,7 +53,7 @@
 }
 
 .rodape-site a {
-  color: var(--cor-secundaria);
+  color: var(--cor-clara);
   text-decoration: underline;
   transition: color 0.3s ease, outline 0.2s ease;
 }

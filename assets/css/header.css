@@ -1,0 +1,93 @@
+/* ==========================================================================================
+🎨 header.css – Estilos exclusivos para o cabeçalho institucional do Agroverso
+🌿 Foco em identidade, centralização, acessibilidade e responsividade
+========================================================================================== */
+
+/* 🟩 Estrutura principal */
+.header-principal {
+  position: relative;
+  width: 100%;
+  background-color: #1C3D27; /* Verde institucional */
+  color: #ffffff;
+  text-align: center;
+  padding: 3rem 1rem 2.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 🌿 Logotipo central */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo-refinada {
+  max-width: 160px;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* 📛 Título e slogan */
+.titulo-site {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.slogan {
+  font-size: 1.15rem;
+  font-weight: 300;
+  margin-top: 0.5rem;
+  color: #f0f0f0;
+}
+
+.slogan strong {
+  font-weight: 600;
+  color: #FFD700; /* Ouro Agroverso */
+}
+
+/* 🔐 Botão de login (canto esquerdo superior) */
+.botao-login-superior {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 8px;
+  z-index: 10;
+  transition: transform 0.2s ease;
+}
+
+.botao-login-superior:hover {
+  transform: scale(1.08);
+}
+
+/* ==========================================================================================
+📱 Responsividade: Mobile First
+========================================================================================== */
+@media (max-width: 600px) {
+  .logo-refinada {
+    max-width: 120px;
+  }
+
+  .titulo-site {
+    font-size: 1.8rem;
+  }
+
+  .slogan {
+    font-size: 1rem;
+  }
+
+  .botao-login-superior {
+    width: 36px;
+    height: 36px;
+    top: 0.8rem;
+    left: 0.8rem;
+  }
+}

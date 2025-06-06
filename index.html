@@ -13,6 +13,9 @@
   <meta name="author" content="Instituto Graciliana Maria da Conceição" />
   <meta name="robots" content="index, follow" />
 
+  <!-- ✅ SEO Avançado: Canonical -->
+  <link rel="canonical" href="https://agroverso.tec.br" />
+
   <!-- 🌐 Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Agroverso – Tecnologia regenerativa para o campo brasileiro" />
@@ -33,131 +36,101 @@
   <link rel="stylesheet" href="assets/css/carrossel.css" />
   <link rel="stylesheet" href="assets/css/responsivo.css" />
   <link rel="stylesheet" href="menu-lateral.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+
 </head>
 
 <body>
-
-  
-<!-- 🌿 Ícone personalizado que leva ao Login -->
-<a href="login.html"
-   class="menu-login-icon"
-   aria-label="Acessar login do sistema Agroverso">
-  <img src="assets/images/logo-login.png"
-       alt="Acessar Login"
-       class="menu-login-img"
-       decoding="async"
-       loading="eager" />
-</a>
+  <!-- ⬆️ Cabeçalho institucional -->
+  <div data-include="partials/header.html"></div>
 
 
-  <!-- ⬆️ Cabeçalho institucional centralizado -->
-<header class="header-principal" role="banner">
-  <div class="logo-wrapper">
-    <a href="login.html" class="btn-login-icon" aria-label="Entrar no sistema Agroverso">
-  <img src="assets/images/logo-login.png" alt="Login" class="btn-login-img" />
-    </a>
-  </div>
-  <h1 class="titulo-site">Agroverso</h1>
-  <p class="slogan">
-    Tecnologia regenerativa com <strong>sabedoria</strong>,
-    <strong>força</strong> e <strong>beleza</strong>
-  </p>
-</header>
 
 
-  <!-- 🔄 Início do conteúdo principal -->
-  <main>
+<!-- 🔄 Início do conteúdo principal -->
+<main>
 
-    
-    <!-- 🎓 Cursos Inteligentes Agroverso -->
-    <section class="produtos" aria-labelledby="titulo-cursos">
-      <h2 id="titulo-cursos" class="secao-titulo">Cursos Inteligentes Agroverso</h2>
+  <!-- 🎓 Cursos Inteligentes Agroverso -->
+  <section class="produtos" aria-labelledby="titulo-cursos">
+    <h2 id="titulo-cursos" class="secao-titulo">Cursos Inteligentes Agroverso</h2>
 
-      <div class="cards-container">
+    <div class="cards-container">
 
-        <a href="produto-irrigacao.html" class="card" aria-label="Curso de Irrigação Inteligente">
-          <img src="assets/images/Produto1.jpg" alt="Curso de Irrigação Inteligente" loading="lazy" />
-          <h3>Irrigação Inteligente</h3>
-          <p>Aprenda a configurar sistemas de irrigação com sensores de solo, automação e controle digital em tempo real.</p>
-        </a>
-
-        <a href="produto-hidroponia.html" class="card" aria-label="Curso de Hidroponia Inteligente">
-          <img src="assets/images/Produto2.jpg" alt="Curso de Hidroponia Inteligente" loading="lazy" />
-          <h3>Hidroponia Inteligente</h3>
-          <p>Domine o cultivo hidropônico com sensores de pH, EC e temperatura da solução nutritiva. Gestão de precisão aplicada.</p>
-        </a>
-
-        <a href="produto-energia.html" class="card" aria-label="Curso de Energia Solar">
-          <img src="assets/images/Produto3.jpg" alt="Curso de Energia Solar para o Agro" loading="lazy" />
-          <h3>Energia Solar para o Agro</h3>
-          <p>Implante e monitore microgerações fotovoltaicas com software Agroverso. Aprenda sobre inversores, módulos e autonomia.</p>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- 💬 Formulário de Orçamento -->
-    <section class="cta" aria-labelledby="titulo-cta">
-      <h2 id="titulo-cta" class="secao-titulo">Vamos conversar?</h2>
-      <p class="cta-texto">
-        Entre em contato direto ou solicite um orçamento personalizado com a nossa equipe técnica.
-      </p>
-
-      <a class="whatsapp-btn"
-         href="https://wa.me/5511963372373?text=Olá! Quero um orçamento Agroverso."
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="Fale agora via WhatsApp com o Agroverso">
-        📲 Fale agora via WhatsApp
+      <a href="produto-irrigacao.html" class="card" aria-label="Curso de Irrigação Inteligente">
+        <img src="assets/images/Produto1.jpg" alt="Curso de Irrigação Inteligente" loading="lazy" />
+        <h3>Irrigação Inteligente</h3>
+        <p>Aprenda a configurar sistemas com sensores de solo, automação de válvulas e controle digital regenerativo.</p>
       </a>
 
-      <p class="form-intro">
-        Ou envie seus dados no formulário abaixo. Responderemos com atenção, sabedoria e uma proposta sob medida:
-      </p>
+      <a href="produto-hidroponia.html" class="card" aria-label="Curso de Hidroponia Inteligente">
+        <img src="assets/images/Produto2.jpg" alt="Curso de Hidroponia Inteligente" loading="lazy" />
+        <h3>Hidroponia Inteligente</h3>
+        <p>Domine o cultivo hidropônico com sensores de pH, EC e temperatura. Eficiência com precisão e beleza.</p>
+      </a>
 
-      <form id="orcamento-form"
-            class="formulario-orcamento"
-            aria-label="Formulário de solicitação de orçamento Agroverso"
-            autocomplete="on"
-            novalidate>
+      <a href="produto-energia.html" class="card" aria-label="Curso de Energia Solar para o Agro">
+        <img src="assets/images/Produto3.jpg" alt="Curso de Energia Solar para o Agro" loading="lazy" />
+        <h3>Energia Solar para o Agro</h3>
+        <p>Implante e monitore geração fotovoltaica com software Agroverso. Autonomia energética com sabedoria.</p>
+      </a>
 
-        <label for="nome">Nome completo:</label>
-        <input type="text" id="nome" name="nome" placeholder="Seu nome" required autocomplete="name" />
+    </div>
+  </section>
 
-        <label for="email">E-mail de contato:</label>
-        <input type="email" id="email" name="email" placeholder="seu@email.com" required autocomplete="email" />
-
-        <label for="produto">Produto de interesse:</label>
-        <select id="produto" name="produto" required>
-          <option value="">Escolha um produto</option>
-          <option value="irrigacao">Irrigação Inteligente</option>
-          <option value="hidroponia">Hidroponia Inteligente</option>
-          <option value="energia">Energia Solar Inteligente</option>
-        </select>
-
-        <button type="submit">Solicitar Orçamento</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- 🧭 Rodapé Institucional -->
-  <footer class="rodape-site" role="contentinfo">
-    <p>
-      © 2025 AGROVERSO
-</p> Uma iniciativa do
-<p>      
-<a>Instituto Graciliana Maria da Conceição</a>.
-</p>
-    
-    <p>
-      CNPJ: 31.083.093/0001-99 • Todos os direitos reservados.
+  <!-- 💬 Formulário de Orçamento -->
+  <section class="cta" aria-labelledby="titulo-cta">
+    <h2 id="titulo-cta" class="secao-titulo">Vamos conversar?</h2>
+    <p class="cta-texto">
+      Entre em contato direto ou solicite um orçamento personalizado com a nossa equipe técnica.
     </p>
-  </footer>
 
-  <!-- 🧠 Scripts Essenciais (ordem corrigida) -->
-  <script src="scripts/includes.js" defer></script>
-  <script src="scripts/menuLateral.js" defer></script>
+    <a class="whatsapp-btn"
+       href="https://wa.me/5511963372373?text=Olá! Quero um orçamento Agroverso."
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Fale agora via WhatsApp com o Agroverso">
+      📲 Fale agora via WhatsApp
+    </a>
 
-   
+    <p class="form-intro">
+      Ou envie seus dados no formulário abaixo. Responderemos com atenção, sabedoria e uma proposta sob medida:
+    </p>
+
+    <form id="orcamento-form"
+          class="formulario-orcamento"
+          aria-label="Formulário de solicitação de orçamento Agroverso"
+          autocomplete="on"
+          novalidate>
+
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" name="nome" placeholder="Seu nome" required autocomplete="name" />
+
+      <label for="email">E-mail de contato:</label>
+      <input type="email" id="email" name="email" placeholder="seu@email.com" required autocomplete="email" />
+
+      <label for="produto">Produto de interesse:</label>
+      <select id="produto" name="produto" required>
+        <option value="">Escolha um produto</option>
+        <option value="irrigacao">Irrigação Inteligente</option>
+        <option value="hidroponia">Hidroponia Inteligente</option>
+        <option value="energia">Energia Solar Inteligente</option>
+      </select>
+
+      <button type="submit">Solicitar Orçamento</button>
+    </form>
+  </section>
+</main>
+
+<!-- 🧭 Rodapé Institucional Agroverso -->
+<footer class="rodape-site" role="contentinfo" aria-label="Rodapé institucional do Agroverso">
+  <p>© 2025 <strong>AGROVERSO</strong></p>
+  <p>Uma iniciativa do <strong>Instituto Graciliana Maria da Conceição</strong></p>
+  <p>CNPJ: 31.083.093/0001-99 • Todos os direitos reservados.</p>
+</footer>
+
+<!-- 🧠 Scripts Essenciais do Agroverso -->
+<script src="scripts/includes.js" defer></script>
+<script src="scripts/menuLateral.js" defer></script>
+
 </body>
 </html>

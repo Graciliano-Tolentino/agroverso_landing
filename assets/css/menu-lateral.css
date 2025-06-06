@@ -128,3 +128,8 @@
     border-radius: 5px;
   }
 }
+
+.icon-login {
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}

@@ -1,19 +1,27 @@
 <!-- partials/header.html -->
 <header class="header-principal" role="banner" aria-label="Cabeçalho institucional do Agroverso">
-  <div class="logo-container" aria-hidden="true">
-    <img src="assets/logo.svg"
-         alt="Logotipo do Agroverso"
-         class="logo-refinada"
-         width="96"
-         height="96"
-         decoding="async"
-         loading="eager" />
+
+  <!-- 🔐 Botão de login -->
+  <a href="login.html" class="botao-login-superior" aria-label="Entrar no sistema Agroverso">
+    <img src="assets/images/login.png" alt="Login" width="32" height="32" />
+  </a>
+
+  <!-- 🌿 Logo central com link para a página inicial -->
+  <div class="logo-container" aria-hidden="false">
+    <a href="index.html" aria-label="Voltar para a página inicial do Agroverso">
+      <img src="assets/images/logo.png"
+           alt="Logotipo do Agroverso"
+           class="logo-refinada"
+           width="96"
+           height="96"
+           decoding="async"
+           loading="eager" />
+    </a>
   </div>
 
+  <!-- 📛 Título e slogan -->
   <div class="texto-logo">
-    <h1 class="titulo-site">
-      Agroverso
-    </h1>
+    <h1 class="titulo-site">Agroverso</h1>
     <p class="slogan">
       Tecnologia regenerativa com
       <strong>sabedoria</strong>,
@@ -21,4 +29,5 @@
       <strong>beleza</strong>
     </p>
   </div>
+
 </header>

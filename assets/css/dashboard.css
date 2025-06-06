@@ -1,114 +1,41 @@
-/* ================================================================================
-📊 dashboard.css – Estilo para Painéis Agroverso
-🌱 Modular, acessível, responsivo e regenerativo
-================================================================================ */
+/* ==========================================================================================
+📊 dashboard.css – Layout geral do Painel Administrativo Agroverso
+🌿 Modular, responsivo e compatível com a identidade institucional
+========================================================================================== */
 
-/* Corpo do painel */
+/* Corpo principal */
 .dashboard-body {
+  background-color: #f4f6f8;
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #f0f9f4, #d8f3dc);
-  color: #1c1c1c;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
+}
+
+/* Container principal do dashboard */
+.dashboard-container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
   padding: 2rem 1rem;
 }
 
-/* Container principal */
-.dashboard-container {
-  width: 100%;
-  max-width: 720px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 80, 40, 0.15);
-  padding: 2rem;
-}
-
-/* Bloco central */
-.dashboard-box {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* Título principal */
-.dashboard-title {
+/* Título da seção */
+.dashboard-titulo {
   font-size: 1.8rem;
-  font-weight: bold;
-  color: #004225;
-  margin: 0;
+  font-weight: 700;
+  color: var(--cor-principal, #1C3D27);
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
-/* Subtítulo */
-.dashboard-subtitle {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #3a3a3a;
-  margin-top: -0.5rem;
-}
+/* Responsividade adicional para painéis */
+@media (max-width: 768px) {
+  .dashboard-titulo {
+    font-size: 1.4rem;
+    text-align: left;
+  }
 
-/* Mensagem do painel */
-.dashboard-message {
-  background-color: #f6fdf9;
-  border-left: 4px solid #0a7d49;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.dashboard-message ul {
-  padding-left: 1.25rem;
-  margin-top: 0.5rem;
-}
-
-.dashboard-message li {
-  margin-bottom: 0.5rem;
-}
-
-/* Rodapé */
-.dashboard-footer {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 1rem;
-}
-
-/* Botão de sair */
-.btn-secondary {
-  background-color: #d62828;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 0.65rem 1.2rem;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: #a4161a;
-}
-
-/* Responsividade */
-@media (max-width: 480px) {
   .dashboard-container {
-    padding: 1.25rem;
-  }
-
-  .dashboard-title {
-    font-size: 1.5rem;
-  }
-
-  .dashboard-message {
-    font-size: 0.95rem;
-  }
-
-  .btn-secondary {
-    width: 100%;
-    justify-content: center;
+    padding: 1rem;
   }
 }

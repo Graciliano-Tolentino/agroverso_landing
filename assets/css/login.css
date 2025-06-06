@@ -1,9 +1,9 @@
 /* ==========================================================================================
-🔐 login.css – Estilo refinado da tela de Login Agroverso
-🌿 Identidade visual com sabedoria, força e beleza
+🔐 login.css – Tela de Login Agroverso
+🌿 Com sabedoria, força e beleza institucional
 ========================================================================================== */
 
-/* 🎨 Variáveis globais */
+/* 🎨 Variáveis Globais */
 :root {
   --cor-principal: #1C3D27;
   --cor-clara: #ffffff;
@@ -21,7 +21,7 @@
   --sombra-media: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* 🧍 Corpo da tela de login */
+/* 🧍 Corpo da Tela */
 .login-body {
   display: flex;
   flex-direction: column;
@@ -32,15 +32,15 @@
   padding-top: var(--espaco-xl);
 }
 
-/* 📦 Container principal */
+/* 📦 Container Central */
 .login-container {
   max-width: 420px;
-  width: 90%;
+  width: 100%;
+  margin: 0 auto;
   background-color: var(--cor-clara);
   padding: var(--espaco-xl) var(--espaco-md);
   border-radius: 16px;
   box-shadow: var(--sombra-media);
-  margin-top: var(--espaco-md);
   display: flex;
   flex-direction: column;
   gap: var(--espaco-md);
@@ -55,7 +55,7 @@
   margin-bottom: var(--espaco-md);
 }
 
-/* 🧠 Informativo acessível */
+/* 🧠 Informações */
 .login-info {
   font-size: 0.95rem;
   color: var(--cor-texto);
@@ -68,16 +68,21 @@
   display: flex;
   flex-direction: column;
   gap: var(--espaco-md);
+  margin: 0;
+  padding: 0;
 }
 
 .login-form input,
-.login-form select {
+.login-form select,
+.login-form button {
+  width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid var(--cor-borda);
   border-radius: 8px;
   font-size: 1rem;
+  border: 1px solid var(--cor-borda);
   background-color: var(--cor-clara);
   color: var(--cor-texto);
+  box-sizing: border-box;
   transition: border-color 0.2s ease;
 }
 
@@ -87,16 +92,12 @@
   border-color: var(--cor-principal);
 }
 
-/* 🔘 Botão */
+/* 🔘 Botão de Entrar */
 .login-form button {
   background-color: var(--cor-principal);
   color: var(--cor-clara);
-  padding: 0.85rem;
-  font-size: 1rem;
   font-weight: bold;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -105,7 +106,7 @@
   transform: scale(1.02);
 }
 
-/* ⚠️ Mensagem de erro */
+/* ⚠️ Mensagem de Erro */
 .login-error {
   color: var(--cor-erro);
   background-color: #fde8e8;
@@ -133,7 +134,7 @@
   }
 }
 
-/* 📱 Responsividade (mobile-first) */
+/* 📱 Responsividade */
 @media (max-width: 480px) {
   .login-container {
     padding: var(--espaco-lg) var(--espaco-sm);

@@ -26,52 +26,47 @@
   <meta name="theme-color" content="#004225" />
   <meta name="color-scheme" content="light dark" />
 
-  <!-- 🎨 Estilo centralizado -->
-  <link rel="stylesheet" href="./style.css" />
+  <!-- 🎨 Estilos Modulares do Agroverso -->
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/produtos.css" />
+  <link rel="stylesheet" href="assets/css/carrossel.css" />
+  <link rel="stylesheet" href="assets/css/responsivo.css" />
+</head>
 
-<!-- ⬆️ Cabeçalho institucional -->
+<body>
+  <!-- ⬆️ Cabeçalho institucional -->
   <header class="header-principal" role="banner">
     <a href="index.html" class="logo-link" aria-label="Voltar à página inicial do Agroverso">
-      <img src="assets/images/logo.png" alt="Logotipo do Agroverso" class="logo" style="height: 64px; width: auto;" decoding="async" loading="eager" />
+      <img src="assets/images/logo.png" alt="Logotipo do Agroverso" class="logo" decoding="async" loading="eager" />
     </a>
     <h1 class="titulo-site">Agroverso</h1>
     <p class="slogan">
       Tecnologia regenerativa com <strong>sabedoria</strong>,
       <strong>força</strong> e <strong>beleza</strong>
     </p>
-</head>
+  </header>
 
-<body>
-  <!-- ⬆️ Cabeçalho institucional (modular via includes.js) -->
-  <div data-include="partials/header.html"></div>
-
-  <!-- ⚡ Conteúdo principal com foco em autonomia energética -->
+  <!-- ⚡ Conteúdo principal -->
   <main class="conteudo-produto" role="main" aria-labelledby="titulo-energia">
-    <section class="produto-destaque">
-      <h2 id="titulo-energia">Energia Solar Inteligente</h2>
-      <p class="subtitulo-produto">
-        Autonomia energética conectada à inteligência digital regenerativa
+    <section>
+      <h2 id="titulo-energia" class="titulo-produto">Energia Solar Inteligente</h2>
+      <p>
+        Autonomia energética conectada à inteligência digital regenerativa.
       </p>
+    </section>
 
-
-
-
-
-<!-- =========================================================================
-🎠 Carrossel de Imagens do Produto – Agroverso
-🌱 Responsivo, acessível e institucional
-========================================================================= -->
-<div class="carrossel-container" aria-label="Galeria de imagens do produto Agroverso">
-  <div class="carrossel">
-    <img src="assets/images/energia-1.jpg" class="ativo" 
-         alt="Sistema Agroverso instalado em campo com sensores de irrigação" />
-    <img src="assets/images/energia-2.jpg" 
-         alt="Painel digital Agroverso exibindo dados em tempo real" />
-    <img src="assets/images/energia-3.jpg" 
-         alt="Operador configurando o sistema de energia solar inteligente Agroverso" />
-  </div>
-</div>
-
+    <!-- 🎠 Carrossel de imagens -->
+    <section aria-labelledby="galeria-energia">
+      <h3 id="galeria-energia" class="secao-titulo">Galeria do Sistema</h3>
+      <div class="carrossel-container" aria-label="Galeria de imagens do sistema de energia solar Agroverso">
+        <div class="carrossel">
+          <img src="assets/images/energia-1.jpg" alt="Sistema Agroverso instalado com painéis solares em campo" />
+          <img src="assets/images/energia-2.jpg" alt="Painel digital Agroverso exibindo dados em tempo real" />
+          <img src="assets/images/energia-3.jpg" alt="Operador configurando o sistema com app de monitoramento" />
+        </div>
+      </div>
+    </section>
 
     <!-- 🔋 Seção de descrição funcional e aplicada -->
     <section class="descricao-produto">
@@ -81,7 +76,7 @@
       </p>
 
       <h3>Benefícios principais</h3>
-      <ul>
+      <ul class="lista-tecnica">
         <li>⚡ <strong>Monitoramento remoto em tempo real</strong> por aplicativo ou dashboard web</li>
         <li>🌞 <strong>Geração limpa, silenciosa e contínua</strong> com impacto ambiental positivo</li>
         <li>📊 Visualização gráfica de geração, consumo e eficiência</li>
@@ -95,12 +90,14 @@
       </p>
 
       <!-- 📲 Botão de orçamento via WhatsApp -->
-      <div class="botao-whatsapp">
+      <div class="chamada-final">
+        <h3>Solicite seu orçamento agora mesmo</h3>
+        <p>Atendimento especializado para sua propriedade, comunidade ou iniciativa regenerativa.</p>
         <a href="https://wa.me/5511963372373?text=Olá! Tenho interesse no sistema de Energia Solar Inteligente do Agroverso e gostaria de um orçamento personalizado."
            target="_blank"
            rel="noopener noreferrer"
-           class="whatsapp-btn"
-           aria-label="Solicitar orçamento de Energia Solar Inteligente via WhatsApp">
+           class="botao-acao"
+           aria-label="Solicitar orçamento via WhatsApp com a equipe Agroverso">
           📲 Solicitar orçamento via WhatsApp
         </a>
       </div>
@@ -108,7 +105,7 @@
 
   </main>
 
-<!-- 🧭 Rodapé Institucional -->
+  <!-- 🧭 Rodapé Institucional -->
   <footer class="rodape-site" role="contentinfo">
     <p>
       © 2025 <strong>Agroverso</strong> • Uma iniciativa do
@@ -119,7 +116,7 @@
     </p>
   </footer>
 
-  <!-- 🧠 Scripts -->
+  <!-- 🧠 Scripts Essenciais -->
   <script src="scripts/router-auto.js" defer></script>
   <script src="scripts/menu-lateral.js" defer></script>
 </body>

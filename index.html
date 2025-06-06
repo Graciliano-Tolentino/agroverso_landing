@@ -26,8 +26,12 @@
   <meta name="theme-color" content="#004225" />
   <meta name="color-scheme" content="light dark" />
 
-  <!-- 🎨 Estilos Globais -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- 🎨 Estilos Modulares do Agroverso -->
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+  <link rel="stylesheet" href="assets/css/carrossel.css" />
+  <link rel="stylesheet" href="assets/css/responsivo.css" />
   <link rel="stylesheet" href="menu-lateral.css" />
 </head>
 
@@ -52,57 +56,45 @@
     <a href="produto-energia.html">🔋 Energia Solar</a>
   </nav>
 
-  <!-- ⬆️ Cabeçalho institucional -->
-  <header class="header-principal" role="banner">
+  <!-- ⬆️ Cabeçalho institucional centralizado -->
+<header class="header-principal" role="banner">
+  <div class="logo-wrapper">
     <a href="index.html" class="logo-link" aria-label="Voltar à página inicial do Agroverso">
-      <img src="assets/images/logo.png" alt="Logotipo do Agroverso" class="logo" style="height: 64px; width: auto;" decoding="async" loading="eager" />
+      <img src="assets/images/logo.png" alt="Logotipo do Agroverso" class="logo" decoding="async" loading="eager" />
     </a>
-    <h1 class="titulo-site">Agroverso</h1>
-    <p class="slogan">
-      Tecnologia regenerativa com <strong>sabedoria</strong>,
-      <strong>força</strong> e <strong>beleza</strong>
-    </p>
-  </header>
+  </div>
+  <h1 class="titulo-site">Agroverso</h1>
+  <p class="slogan">
+    Tecnologia regenerativa com <strong>sabedoria</strong>,
+    <strong>força</strong> e <strong>beleza</strong>
+  </p>
+</header>
+
 
   <!-- 🔄 Início do conteúdo principal -->
   <main>
 
-    <!-- 🎠 Carrossel de imagens do produto Agroverso -->
-    <section aria-labelledby="galeria-produtos">
-      <h2 id="galeria-produtos" class="secao-titulo">Agroverso em ação</h2>
-
-      <div class="carrossel-container" aria-label="Galeria de imagens do Agroverso em campo">
-        <div class="carrossel">
-          <img src="assets/images/produto1.jpg" alt="Sistema Agroverso instalado com sensores de irrigação" />
-          <img src="assets/images/produto2.jpg" alt="Painel digital Agroverso mostrando dados em tempo real" />
-          <img src="assets/images/produto3.jpg" alt="Instalação de energia solar Agroverso integrada com vegetação" />
-        </div>
-      </div>
-    </section>
-
-    <!-- 🎓 Cursos Inteligentes com Conversão • Padrão Agroverso -->
+    
+    <!-- 🎓 Cursos Inteligentes Agroverso -->
     <section class="produtos" aria-labelledby="titulo-cursos">
       <h2 id="titulo-cursos" class="secao-titulo">Cursos Inteligentes Agroverso</h2>
 
       <div class="cards-container">
 
-        <!-- Curso 1 -->
-        <a href="curso-irrigacao.html" class="card" aria-label="Ver detalhes do curso de Irrigação Inteligente">
-          <img src="assets/images/curso-irrigacao.jpg" alt="Curso de Irrigação Inteligente" loading="lazy" />
+        <a href="curso-irrigacao.html" class="card" aria-label="Curso de Irrigação Inteligente">
+          <img src="assets/images/Produto1.jpg" alt="Curso de Irrigação Inteligente" loading="lazy" />
           <h3>Irrigação Inteligente</h3>
           <p>Aprenda a configurar sistemas de irrigação com sensores de solo, automação e controle digital em tempo real.</p>
         </a>
 
-        <!-- Curso 2 -->
-        <a href="curso-hidroponia.html" class="card" aria-label="Ver detalhes do curso de Hidroponia Inteligente">
-          <img src="assets/images/curso-hidroponia.jpg" alt="Curso de Hidroponia Inteligente" loading="lazy" />
+        <a href="curso-hidroponia.html" class="card" aria-label="Curso de Hidroponia Inteligente">
+          <img src="assets/images/Produto2.jpg" alt="Curso de Hidroponia Inteligente" loading="lazy" />
           <h3>Hidroponia Inteligente</h3>
           <p>Domine o cultivo hidropônico com sensores de pH, EC e temperatura da solução nutritiva. Gestão de precisão aplicada.</p>
         </a>
 
-        <!-- Curso 3 -->
-        <a href="curso-energia.html" class="card" aria-label="Ver detalhes do curso de Energia Solar para o Agro">
-          <img src="assets/images/curso-energia.jpg" alt="Curso de Energia Solar Agroverso" loading="lazy" />
+        <a href="curso-energia.html" class="card" aria-label="Curso de Energia Solar">
+          <img src="assets/images/Produto3.jpg" alt="Curso de Energia Solar para o Agro" loading="lazy" />
           <h3>Energia Solar para o Agro</h3>
           <p>Implante e monitore microgerações fotovoltaicas com software Agroverso. Aprenda sobre inversores, módulos e autonomia.</p>
         </a>
@@ -165,7 +157,7 @@
     </p>
   </footer>
 
-  <!-- 🧠 Scripts essenciais -->
+  <!-- 🧠 Scripts Essenciais -->
   <script src="scripts/router-auto.js" defer></script>
   <script src="scripts/menu-lateral.js" defer></script>
 </body>

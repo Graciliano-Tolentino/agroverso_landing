@@ -1,0 +1,120 @@
+/* ============================================================================
+🔐 login.css – Estilo da Tela de Login Agroverso
+🎯 Foco em acessibilidade, conversão e simplicidade institucional
+============================================================================ */
+
+/* 🧍 Corpo exclusivo da tela de login */
+.login-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, var(--cor-media), var(--cor-clara));
+  padding-top: var(--espaco-xl);
+}
+
+/* 🧱 Container principal do formulário */
+.login-container {
+  max-width: 420px;
+  width: 90%;
+  background-color: var(--cor-clara);
+  padding: var(--espaco-xl) var(--espaco-md);
+  border-radius: 16px;
+  box-shadow: var(--sombra-media);
+  margin-top: var(--espaco-md);
+}
+
+/* 📋 Bloco do formulário */
+.login-box {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🧾 Título do formulário */
+.login-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--cor-principal);
+  text-align: center;
+  margin-bottom: var(--espaco-md);
+}
+
+/* 🧠 Informações acessíveis */
+.login-info {
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+  margin-bottom: var(--espaco-sm);
+  line-height: 1.5;
+}
+
+/* 🧾 Formulário */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-md);
+}
+
+/* ✏️ Inputs */
+.login-form input,
+.login-form select {
+  padding: 0.75rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--cor-clara);
+}
+
+/* 🔘 Botão de envio */
+.login-form button {
+  background-color: var(--cor-principal);
+  color: var(--cor-clara);
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-form button:hover {
+  background-color: #025e36;
+  transform: scale(1.02);
+}
+
+/* ⚠️ Mensagem de erro */
+.login-error {
+  color: var(--cor-erro);
+  background-color: #fde8e8;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--cor-alerta);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: none;
+}
+
+.login-error[hidden] {
+  display: none !important;
+}
+
+/* ============================================================================
+📱 Responsividade (Mobile First)
+============================================================================ */
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: var(--espaco-lg) var(--espaco-sm);
+  }
+
+  .login-title {
+    font-size: 1.3rem;
+  }
+
+  .login-form input,
+  .login-form select,
+  .login-form button {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,131 @@
+/* ============================================================================
+📊 dashboard.css – Estilo de Painéis Institucionais do Agroverso
+👑 Gerente • Técnico • Admin • Líder • Visual limpo, responsivo e modular
+============================================================================ */
+
+/* 🧱 Área principal do painel */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--espaco-lg) var(--espaco-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xl);
+}
+
+/* 🧾 Título da área do painel */
+.dashboard-titulo {
+  font-size: 1.8rem;
+  text-align: left;
+  color: var(--cor-principal);
+  margin-bottom: var(--espaco-md);
+  border-bottom: 2px solid var(--cor-secundaria);
+  padding-bottom: 0.5rem;
+}
+
+/* 🧩 Cards de informação (métricas, status etc) */
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-lg);
+  justify-content: space-between;
+}
+
+.dashboard-card {
+  flex: 1 1 260px;
+  background-color: var(--cor-clara);
+  padding: var(--espaco-md);
+  border-radius: 12px;
+  box-shadow: var(--sombra-media);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-forte);
+}
+
+.dashboard-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--cor-principal);
+}
+
+.dashboard-card p {
+  font-size: 1rem;
+  color: var(--cor-texto);
+  line-height: 1.5;
+}
+
+/* 📋 Tabela de dados */
+.dashboard-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background-color: var(--cor-clara);
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--sombra-leve);
+}
+
+.dashboard-tabela th,
+.dashboard-tabela td {
+  padding: 0.85rem;
+  text-align: left;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.dashboard-tabela th {
+  background-color: var(--cor-media);
+  color: var(--cor-principal);
+  font-weight: 600;
+}
+
+.dashboard-tabela tr:hover {
+  background-color: #f0f9f5;
+}
+
+/* 🔘 Botões padrão em painéis */
+.dashboard-btn {
+  padding: 0.65rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: var(--cor-clara);
+  background-color: var(--cor-principal);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-btn:hover {
+  background-color: #025e36;
+}
+
+/* ============================================================================
+📱 Responsividade dos cards e tabelas
+============================================================================ */
+
+@media (max-width: 768px) {
+  .dashboard-cards {
+    flex-direction: column;
+  }
+
+  .dashboard-card {
+    width: 100%;
+  }
+
+  .dashboard-titulo {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-container {
+    padding: var(--espaco-md);
+  }
+
+  .dashboard-tabela th,
+  .dashboard-tabela td {
+    padding: 0.6rem;
+  }
+}

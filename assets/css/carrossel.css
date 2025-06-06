@@ -1,0 +1,76 @@
+/* ============================================================================
+🎠 carrossel.css – Estilo de Galeria Horizontal Agroverso
+📸 Compatível com telas sensíveis ao toque, mouse e acessibilidade
+============================================================================ */
+
+/* 🧱 Container externo do carrossel */
+.carrossel-container {
+  max-width: 960px;
+  margin: var(--espaco-xl) auto;
+  padding: var(--espaco-md);
+  background-color: var(--cor-clara);
+  border-radius: 16px;
+  box-shadow: var(--sombra-leve);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+/* 🎢 Linha horizontal de imagens */
+.carrossel {
+  display: flex;
+  gap: var(--espaco-md);
+  scroll-snap-type: x mandatory;
+}
+
+/* 🖼️ Imagens internas do carrossel */
+.carrossel img {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  max-height: 480px;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: var(--sombra-media);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carrossel img:hover {
+  transform: scale(1.025);
+  box-shadow: var(--sombra-forte);
+}
+
+/* 🎛️ Scrollbar visual em navegadores modernos */
+.carrossel-container::-webkit-scrollbar {
+  height: 6px;
+}
+.carrossel-container::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 3px;
+}
+.carrossel-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ============================================================================
+📱 Responsividade
+============================================================================ */
+@media (max-width: 768px) {
+  .carrossel-container {
+    padding: var(--espaco-sm);
+  }
+
+  .carrossel {
+    gap: var(--espaco-sm);
+  }
+
+  .carrossel img {
+    max-height: 280px;
+    border-radius: 10px;
+  }
+}

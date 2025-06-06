@@ -1,9 +1,9 @@
 // =======================================================================================
 // 📂 menu-lateral.js – Comportamento do menu lateral Agroverso
-// 🧠 Refinado com sabedoria, força e beleza para navegação acessível e segura
+// 🧠 Compatível com includes.js e carregamento dinâmico do menu hamburguer
 // =======================================================================================
 
-document.addEventListener("DOMContentLoaded", () => {
+function initMenuLateral() {
   const botaoToggle = document.querySelector(".menu-toggle");
   const menuLateral = document.getElementById("menuLateral");
 
@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const classeAtivo = "menu-lateral-ativo";
 
-  // 🎯 Alterna visibilidade do menu
   const abrirMenu = () => {
     menuLateral.classList.add(classeAtivo);
     botaoToggle.setAttribute("aria-expanded", "true");
@@ -31,13 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
     estaAberto ? fecharMenu() : abrirMenu();
   };
 
-  // 🖱️ Clique no botão hamburguer
   botaoToggle.addEventListener("click", (e) => {
     e.stopPropagation();
     alternarMenu();
   });
 
-  // ❌ Fechar ao clicar fora do menu
   document.addEventListener("click", (e) => {
     const clicouFora = !menuLateral.contains(e.target) && !botaoToggle.contains(e.target);
     if (menuLateral.classList.contains(classeAtivo) && clicouFora) {
@@ -45,10 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ⌨️ Fechar com tecla ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && menuLateral.classList.contains(classeAtivo)) {
       fecharMenu();
     }
   });
-});
+}

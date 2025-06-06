@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Painel • Agroverso</title>
+  <meta name="description" content="Painel inteligente Agroverso adaptado para cada tipo de perfil. Acesse com segurança." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+</head>
+
+<body class="dashboard-body">
+
+  <!-- Cabeçalho institucional -->
+  <header class="header-principal" role="banner">
+    <a href="index.html" class="logo-link" aria-label="Voltar à página inicial do Agroverso">
+      <img src="assets/images/logo.png" alt="Logotipo do Agroverso" class="logo" />
+    </a>
+    <h1 class="titulo-site">Agroverso</h1>
+    <p class="slogan">Tecnologia regenerativa com <strong>sabedoria</strong>, <strong>força</strong> e <strong>beleza</strong></p>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="dashboard-container" role="main" aria-label="Painel de Controle Agroverso">
+    <section class="dashboard-box" aria-labelledby="painel-titulo">
+      <h2 id="painel-titulo" class="dashboard-title">🎯 Painel Personalizado</h2>
+
+      <p class="dashboard-subtitle" id="subtitulo-perfil">
+        Este painel será personalizado conforme seu perfil de acesso.
+      </p>
+
+      <div id="mensagem-perfil" class="dashboard-message" role="region" aria-live="polite">
+        <!-- Conteúdo injetado via JS -->
+      </div>
+
+      <div class="dashboard-footer">
+        <button onclick="sair()" class="btn-secondary" aria-label="Encerrar sessão e voltar ao login">🚪 Sair</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé institucional -->
+  <footer class="rodape-site" role="contentinfo">
+    <div class="rodape-conteudo">
+      <p class="rodape-direitos">© 2025 <strong>Agroverso</strong> – Todos os direitos reservados.</p>
+      <p class="rodape-instituicao">Uma iniciativa do <strong>Instituto Graciliana Maria da Conceição</strong></p>
+      <nav class="rodape-links" aria-label="Links institucionais do rodapé">
+        <a href="index.html" class="rodape-link">← Voltar para a Página Inicial</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Script de renderização de perfil -->
+  <script src="scripts/dashboard.js" defer></script>
+</body>
+</html>

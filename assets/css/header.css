@@ -48,13 +48,11 @@
   color: #FFD700; /* Ouro Agroverso */
 }
 
-/* 🔐 Botão de login (canto esquerdo superior) */
+/* 🔐 Botão de login (ícone com texto abaixo) */
 .botao-login-superior {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  width: 44px;
-  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,10 +60,35 @@
   border-radius: 8px;
   z-index: 10;
   transition: transform 0.2s ease;
+  text-decoration: none;
 }
 
 .botao-login-superior:hover {
   transform: scale(1.08);
+}
+
+/* 💠 Estrutura vertical: ícone + texto */
+.icone-texto-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.texto-login {
+  font-size: 0.75rem;
+  color: var(--branco-puro, #ffffff); /* Branco padrão */
+  line-height: 1;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* 🎯 Comportamento interativo */
+.botao-login-superior:focus .texto-login,
+.botao-login-superior:active .texto-login,
+.botao-login-superior:hover .texto-login {
+  color: var(--ouro-agroverso, #FFD700); /* Ouro ao interagir */
 }
 
 /* ==========================================================================================
@@ -85,9 +108,11 @@
   }
 
   .botao-login-superior {
-    width: 36px;
-    height: 36px;
     top: 0.8rem;
     left: 0.8rem;
+  }
+
+  .texto-login {
+    font-size: 0.7rem;
   }
 }

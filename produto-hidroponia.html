@@ -26,9 +26,15 @@
   <meta name="theme-color" content="#004225" />
   <meta name="color-scheme" content="light dark" />
 
-  <!-- 🎨 Estilo centralizado e refinado -->
-  <link rel="stylesheet" href="./style.css" />
+  <!-- 🎨 Estilos Modulares do Agroverso -->
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/produtos.css" />
+  <link rel="stylesheet" href="assets/css/carrossel.css" />
+  <link rel="stylesheet" href="assets/css/responsivo.css" />
+</head>
 
+<body>
 <!-- ⬆️ Cabeçalho institucional -->
   <header class="header-principal" role="banner">
     <a href="index.html" class="logo-link" aria-label="Voltar à página inicial do Agroverso">
@@ -53,20 +59,19 @@
         Cultivo de precisão com sensores, automação regenerativa e controle digital
       </p>
 
-      <div class="carrossel-container">
-        <div class="carrossel" aria-label="Carrossel institucional de Hidroponia Inteligente">
+      <!-- Carrossel de imagens -->
+     <section atia-labelledby="galeria-hidropondia">
+       <h3 id="galeria-hidroponia" class=secao-titulo">Galeria do Sistema</h3>
+       <div class="carrossel-container" aria-label="Galeria de imagens do sistema de energia solar Agroverso">
+        <div class="carrossel">
           <img src="assets/images/hidroponia-1.jpg" alt="Sistema vertical de hidroponia Agroverso em estufa iluminada" title="Cultivo vertical em ambiente controlado" class="ativo" loading="lazy" />
           <img src="assets/images/hidroponia-2.jpg" alt="Sensores de pH e EC inseridos em reservatório de nutrientes" title="Sensores de calibração para solução nutritiva" loading="lazy" />
           <img src="assets/images/hidroponia-3.jpg" alt="Painel de monitoramento Agroverso exibindo níveis de nutrientes e temperatura" title="Controle digital por dashboard Agroverso" loading="lazy" />
-
-          <!-- Navegação acessível -->
-          <button class="carrossel-prev" aria-label="Imagem anterior">❮</button>
-          <button class="carrossel-next" aria-label="Próxima imagem">❯</button>
         </div>
       </div>
     </section>
 
-    <!-- 🧠 Seção técnica com benefícios do sistema -->
+    <!-- 🧠 Seção de descrição funcional e aplicada -->
     <section class="descricao-produto">
       <h3>Sobre o sistema</h3>
       <p>

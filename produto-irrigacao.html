@@ -26,9 +26,15 @@
   <meta name="theme-color" content="#004225" />
   <meta name="color-scheme" content="light dark" />
 
-  <!-- 🎨 Estilo Global Unificado -->
-  <link rel="stylesheet" href="./style.css" />
+ <!-- 🎨 Estilos Modulares do Agroverso -->
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/produtos.css" />
+  <link rel="stylesheet" href="assets/css/carrossel.css" />
+  <link rel="stylesheet" href="assets/css/responsivo.css" />
+</head>
 
+<body>
 <!-- ⬆️ Cabeçalho institucional -->
   <header class="header-principal" role="banner">
     <a href="index.html" class="logo-link" aria-label="Voltar à página inicial do Agroverso">
@@ -42,28 +48,25 @@
 </head>
 
 <body>
-  <!-- ⬆️ Cabeçalho institucional (modular via JS) -->
+  <!-- ⬆️ Cabeçalho institucional padrão Agroverso -->
   <div data-include="partials/header.html"></div>
 
-  <!-- 🌱 Conteúdo principal da página -->
-  <main class="conteudo-produto" role="main" aria-labelledby="titulo-irrigacao">
-
-    <!-- 💧 Seção de Destaque do Produto -->
+  <!-- 🌿 Conteúdo principal do produto -->
+  <main class="conteudo-produto" role="main" aria-labelledby="titulo-hidroponia">
     <section class="produto-destaque">
-      <h2 id="titulo-irrigacao">Irrigação Inteligente</h2>
+      <h2 id="titulo-irrigacao">Irrigacao Inteligente</h2>
       <p class="subtitulo-produto">
         Eficiência hídrica com sensores, controle remoto e economia regenerativa
       </p>
 
-      <div class="carrossel-container">
-        <div class="carrossel" aria-label="Carrossel institucional do produto Irrigação Inteligente">
-          <img src="assets/images/irrigacao-1.jpg" class="ativo" alt="Sensor de irrigação Agroverso instalado em solo úmido" />
-          <img src="assets/images/irrigacao-2.jpg" alt="Painel de controle remoto para irrigação via app Agroverso" />
-          <img src="assets/images/irrigacao-3.jpg" alt="Sistema de irrigação automatizado em estufa com sensores Agroverso" />
-
-          <!-- Navegação acessível -->
-          <button class="carrossel-prev" aria-label="Imagem anterior">❮</button>
-          <button class="carrossel-next" aria-label="Próxima imagem">❯</button>
+      <!-- Carrossel de imagens -->
+     <section atia-labelledby="galeria-irrigacao">
+       <h3 id="galeria-hidroponia" class=secao-titulo">Galeria do Sistema</h3>
+       <div class="carrossel-container" aria-label="Galeria de imagens do sistema de Irrigação Inteligente">
+        <div class="carrossel">
+          <img src="assets/images/hidroponia-1.jpg" alt="Sistema vertical de hidroponia Agroverso em estufa iluminada" title="Cultivo vertical em ambiente controlado" class="ativo" loading="lazy" />
+          <img src="assets/images/hidroponia-2.jpg" alt="Sensores de pH e EC inseridos em reservatório de nutrientes" title="Sensores de calibração para solução nutritiva" loading="lazy" />
+          <img src="assets/images/hidroponia-3.jpg" alt="Painel de monitoramento Agroverso exibindo níveis de nutrientes e temperatura" title="Controle digital por dashboard Agroverso" loading="lazy" />
         </div>
       </div>
     </section>

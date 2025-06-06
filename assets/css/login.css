@@ -1,6 +1,6 @@
 /* ==========================================================================================
 🔐 login.css – Tela de Login Agroverso
-🌿 Com sabedoria, força e beleza institucional
+🌿 Refinada com sabedoria, força e beleza institucional
 ========================================================================================== */
 
 /* 🎨 Variáveis Globais */
@@ -13,6 +13,7 @@
   --cor-erro: #b20000;
   --cor-alerta: #ffcc00;
 
+  --espaco-xs: 0.25rem;
   --espaco-sm: 0.5rem;
   --espaco-md: 1rem;
   --espaco-lg: 1.5rem;
@@ -67,22 +68,34 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: var(--espaco-md);
+  gap: var(--espaco-sm);
   margin: 0;
   padding: 0;
+}
+
+.login-form label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--cor-texto);
 }
 
 .login-form input,
 .login-form select,
 .login-form button {
   width: 100%;
+  box-sizing: border-box;
   padding: 0.75rem 1rem;
-  border-radius: 8px;
   font-size: 1rem;
+  border-radius: 8px;
+  margin-bottom: var(--espaco-sm);
+}
+
+.login-form input,
+.login-form select {
   border: 1px solid var(--cor-borda);
   background-color: var(--cor-clara);
   color: var(--cor-texto);
-  box-sizing: border-box;
   transition: border-color 0.2s ease;
 }
 

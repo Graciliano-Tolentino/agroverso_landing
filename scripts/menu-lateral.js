@@ -1,13 +1,16 @@
 // =======================================================================================
-// 📂 menu-lateral.js – Comportamento do menu lateral Agroverso
-// 🧠 Compatível com includes.js e carregamento dinâmico do menu hamburguer
+// ☰ menu-lateral.js – Controle do Menu Hamburguer Agroverso
+// 🌱 Compatível com includes.js e carregamento assíncrono
 // =======================================================================================
 
 function initMenuLateral() {
   const botaoToggle = document.querySelector(".menu-toggle");
   const menuLateral = document.getElementById("menuLateral");
 
-  if (!botaoToggle || !menuLateral) return;
+  if (!botaoToggle || !menuLateral) {
+    console.warn("[Agroverso] ⚠️ Botão ou menu lateral não encontrados no DOM.");
+    return;
+  }
 
   const classeAtivo = "menu-lateral-ativo";
 
@@ -30,21 +33,32 @@ function initMenuLateral() {
     estaAberto ? fecharMenu() : abrirMenu();
   };
 
+  // 🖱️ Clique no botão ☰
   botaoToggle.addEventListener("click", (e) => {
     e.stopPropagation();
     alternarMenu();
   });
 
+  // ❌ Fechar ao clicar fora
   document.addEventListener("click", (e) => {
-    const clicouFora = !menuLateral.contains(e.target) && !botaoToggle.contains(e.target);
-    if (menuLateral.classList.contains(classeAtivo) && clicouFora) {
+    if (
+      !menuLateral.contains(e.target) &&
+      !botaoToggle.contains(e.target) &&
+      menuLateral.classList.contains(classeAtivo)
+    ) {
       fecharMenu();
     }
   });
 
+  // ⌨️ Fecha com tecla Esc
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && menuLateral.classList.contains(classeAtivo)) {
       fecharMenu();
     }
   });
+
+  console.info("[Agroverso] ✅ Menu lateral ativado com sucesso.");
 }
+
+// 🌐 Torna a função acessível globalmente para includes.js
+window.initMenuLateral = initMenuLateral;

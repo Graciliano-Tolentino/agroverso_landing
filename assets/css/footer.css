@@ -1,26 +1,55 @@
-/* ============================================================================
-🧭 footer.css – Rodapé Institucional Modular Agroverso
-🎯 Foco em contraste, acessibilidade e separação semântica
-============================================================================ */
+/* ==========================================================================================
+🦶 footer.css – Estilos exclusivos para o rodapé institucional do Agroverso
+🌿 Identidade, respeito ancestral, clareza legal e navegabilidade mínima
+========================================================================================== */
 
 .rodape-site {
-  background-color: var(--cor-clara);
-  color: var(--cor-texto); /* texto preto */
+  background-color: var(--cor-principal, #1C3D27);
+  color: var(--cor-clara, #ffffff);
+  padding: 2rem 1rem;
   text-align: center;
-  padding: var(--espaco-lg) var(--espaco-sm);
   font-size: 0.95rem;
   line-height: 1.6;
-  border-top: 3px solid var(--cor-principal);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.rodape-site a {
-  color: var(--cor-principal);
-  text-decoration: underline;
-  transition: color 0.3s ease;
+.rodape-direitos,
+.rodape-instituicao {
+  margin: 0.5rem 0;
 }
 
-.rodape-site a:hover,
-.rodape-site a:focus {
-  color: var(--cor-secundaria);
+.instituto-destaque {
+  font-weight: bold;
+  color: #FFD700; /* Dourado Agroverso */
+}
+
+.frase-povo-originario {
+  margin-top: 1.2rem;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #FFD700;
+}
+
+.frase-povo-originario small {
+  display: block;
+  font-size: 0.75rem;
+  color: #ffffff;
+  margin-top: 0.2rem;
+}
+
+.rodape-links {
+  margin-top: 1.5rem;
+}
+
+.rodape-links a {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.rodape-links a:hover {
+  color: #FFD700;
+  border-color: #FFD700;
 }

@@ -12,20 +12,21 @@
   <meta name="author" content="Instituto Graciliana Maria da Conceição" />
   <meta name="theme-color" content="#1C3D27" />
 
-  <!-- 🎨 Estilos principais -->
-  <link rel="stylesheet" href="login.css" />
+  <!-- 🎨 Estilos Modulares -->
+  <link rel="stylesheet" href="assets/css/login.css" />
   <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
 
-  <!-- 🖼️ Favicon e identidade -->
+  <!-- 🖼️ Favicon -->
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 </head>
 
 <body class="login-body">
 
-  <!-- ✅ Cabeçalho modularizado -->
+  <!-- ✅ Cabeçalho institucional do Agroverso -->
   <div data-include="partials/header.html"></div>
 
-  <!-- 🧩 Conteúdo principal -->
+  <!-- 🧩 Conteúdo principal: formulário de login -->
   <main class="login-container" role="main" aria-label="Área principal de autenticação do sistema Agroverso">
     <section class="login-box" role="form" aria-labelledby="login-titulo">
       <h2 id="login-titulo" class="login-title">Acesso Seguro ao Sistema Agroverso</h2>
@@ -60,29 +61,19 @@
     </section>
   </main>
 
-  <!-- 🔻 Rodapé institucional regenerativo -->
-  <footer class="rodape-site" role="contentinfo" aria-label="Rodapé institucional do sistema Agroverso">
-    <div class="rodape-conteudo">
-      <p class="rodape-direitos">© 2025 <strong>Agroverso</strong> – Todos os direitos reservados.</p>
-      <p class="rodape-instituicao">Uma iniciativa do <strong>Instituto Graciliana Maria da Conceição</strong></p>
-      <nav class="rodape-links" aria-label="Links institucionais">
-        <a href="index.html" class="rodape-link">← Voltar para a Página Inicial</a>
-        <a href="https://wa.me/5511963372373" class="rodape-link" target="_blank" rel="noopener" accesskey="1">
-          📞 Suporte Técnico (F1)
-        </a>
-      </nav>
-    </div>
-  </footer>
+  <!-- ✅ Rodapé institucional do Agroverso -->
+  <div data-include="partials/footer.html"></div>
 
-  <!-- 🔁 Includes dinâmicos e acessibilidade -->
+  <!-- 🔁 Script para carregar includes -->
   <script src="scripts/includes.js" defer></script>
 
-  <!-- 🔐 Script de login inteligente -->
+  <!-- 🔐 Script inteligente de login -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const emailInput = document.getElementById("email");
       emailInput.focus();
 
+      // F1 = Suporte via WhatsApp
       window.addEventListener("keydown", (e) => {
         if (e.key === "F1") {
           e.preventDefault();
@@ -90,6 +81,7 @@
         }
       });
 
+      // Enter para submissão
       const form = document.getElementById("form-login");
       form.addEventListener("keydown", (e) => {
         if (e.key === "Enter" && e.target.tagName !== "TEXTAREA") {

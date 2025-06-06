@@ -162,3 +162,25 @@
     font-size: 0.95rem;
   }
 }
+
+.voltar-home {
+  margin-top: var(--espaco-md);
+  text-align: center;
+}
+
+.btn-voltar {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  color: var(--cor-principal);
+  border: 2px solid var(--cor-principal);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-voltar:hover {
+  background-color: var(--cor-principal);
+  color: var(--cor-clara);
+}

@@ -1,6 +1,6 @@
 // ==========================================================================================
 // 🔄 includes.js – Inclusão dinâmica de componentes HTML parciais (Agroverso)
-// 🌱 Agora com suporte a reinicialização de scripts como menu-lateral.js após incluir HTML
+// 🌱 Versão refinada com sincronização inteligente e execução modular pós-carregamento
 // ==========================================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -17,18 +17,22 @@ document.addEventListener("DOMContentLoaded", () => {
       const conteudo = await resposta.text();
       elemento.innerHTML = conteudo;
 
-      console.info(`[includes.js] ✅ Include carregado com sucesso: ${caminho}`);
+      console.info(`[includes.js] ✅ Include carregado: ${caminho}`);
+
+      // 🎯 Executa initMenuLateral() se o include for do menu
+      if (caminho.includes("menu.html") && typeof window.initMenuLateral === "function") {
+        window.initMenuLateral();
+        console.info("[includes.js] ☰ initMenuLateral() executado após incluir menu.");
+      }
+
     } catch (erro) {
-      console.error(`[includes.js] ⚠️ Falha ao carregar: ${caminho}`, erro);
+      console.error(`[includes.js] ❌ Falha ao carregar '${caminho}':`, erro);
       elemento.innerHTML = `<!-- erro ao incluir ${caminho} -->`;
     }
   });
 
-  // ✅ Após todos os includes, reexecutar o menu se necessário
+  // 🔁 Executa ações globais ao final de todos os includes (se necessário futuramente)
   Promise.all(includesPromises).then(() => {
-    if (typeof initMenuLateral === "function") {
-      initMenuLateral();
-      console.info("[includes.js] 🔁 Menu lateral reinicializado após include.");
-    }
+    console.info("[includes.js] ✅ Todos os includes foram processados.");
   });
 });

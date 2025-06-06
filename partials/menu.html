@@ -1,17 +1,24 @@
+<!-- ☰ Botão Hamburguer Acessível -->
 <button class="menu-toggle"
-        aria-label="Abrir menu"
+        type="button"
+        aria-label="Abrir menu de navegação"
         aria-expanded="false"
         aria-controls="menuLateral">
   ☰
 </button>
 
+<!-- 📋 Menu Lateral com Links Públicos e Privados -->
 <nav id="menuLateral"
      class="menu-lateral"
      tabindex="-1"
-     aria-label="Menu lateral Agroverso"
+     aria-label="Menu lateral do Agroverso"
      aria-hidden="true">
 
+  <!-- 🔓 Navegação pública -->
+  <a href="index.html">🏠 Início</a>
   <a href="login.html">🔐 Login</a>
+
+  <!-- 🔐 Navegação condicional pós-login (liberado via auth.js) -->
   <div id="menuPrivado" hidden>
     <a href="dashboard-admin.html">👑 Painel Admin</a>
     <a href="dashboard-gerente.html">📈 Painel Gerente</a>

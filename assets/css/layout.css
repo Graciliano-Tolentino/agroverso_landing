@@ -65,6 +65,20 @@
   outline-offset: 3px;
 }
 
+/* ✅ Destaque exclusivo do nome do instituto */
+.rodape-instituicao {
+  margin-top: var(--espaco-sm);
+}
+
+.instituto-destaque {
+  color: var(--cor-destaque);
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+
 /* 🧩 Container semântico para seções */
 .section-container {
   max-width: 1200px;

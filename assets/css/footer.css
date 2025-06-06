@@ -1,0 +1,26 @@
+/* ============================================================================
+🧭 footer.css – Rodapé Institucional Modular Agroverso
+🎯 Foco em contraste, acessibilidade e separação semântica
+============================================================================ */
+
+.rodape-site {
+  background-color: var(--cor-clara);
+  color: var(--cor-texto); /* texto preto */
+  text-align: center;
+  padding: var(--espaco-lg) var(--espaco-sm);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-top: 3px solid var(--cor-principal);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.rodape-site a {
+  color: var(--cor-principal);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.rodape-site a:hover,
+.rodape-site a:focus {
+  color: var(--cor-secundaria);
+}

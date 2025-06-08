@@ -1,10 +1,9 @@
 /* ============================================================================
-🦶 footer.css – Rodapé modular Agroverso com sabedoria, força e beleza
+🦶 footer.css – Rodapé Agroverso com hierarquia espiritual refinada (12/10)
 ============================================================================ */
 
-/* 🌿 Estrutura geral */
 .rodape-site {
-  background-color: #004225; /* Verde escuro institucional */
+  background-color: #004225; /* Verde escuro padrão Agroverso */
   color: #ffffff;            /* Texto padrão branco */
   text-align: center;
   padding: var(--espaco-lg) var(--espaco-sm);
@@ -14,30 +13,26 @@
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
-/* 📄 Parágrafos padrões – brancos */
 .rodape-site p {
   margin-bottom: 0.5rem;
   color: #ffffff;
 }
 
-/* ✨ Nome da instituição com destaque sagrado */
 .instituto-destaque {
   color: #f4d35e;
   font-weight: 700;
   font-size: 1rem;
-  display: inline;
   font-family: 'Poppins', sans-serif;
 }
 
-/* 🔐 CNPJ em destaque dourado */
 .rodape-site .cnpj {
   color: #f4d35e;
   font-weight: 600;
   font-size: 0.95rem;
 }
 
-/* 📜 Provérbio Xukuru Kariri com dignidade dourada */
-.rodape-site .frase-opcional {
+/* ✅ Provérbio inteiro em dourado, incluindo texto e autoria */
+.rodape-site .proverbio {
   color: #f4d35e;
   font-style: italic;
   font-size: 0.9rem;

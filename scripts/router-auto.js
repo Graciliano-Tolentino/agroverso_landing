@@ -74,3 +74,22 @@
     console.warn("[Agroverso] router-auto.js falhou:", erro);
   }
 })();
+
+// =======================================================================================
+// 📦 Inclusão automática de cabeçalhos e rodapés com base em data-include
+// =======================================================================================
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("[data-include]").forEach(async (el) => {
+    const file = el.getAttribute("data-include");
+    try {
+      const resp = await fetch(file);
+      if (resp.ok) {
+        el.innerHTML = await resp.text();
+      } else {
+        console.warn(`Erro ao carregar include: ${file}`);
+      }
+    } catch (err) {
+      console.error(`Falha ao incluir arquivo: ${file}`, err);
+    }
+  });
+});

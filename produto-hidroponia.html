@@ -20,7 +20,7 @@
   <meta property="og:url" content="https://agroverso.tec.br/produto-hidroponia.html" />
   <meta property="og:type" content="website" />
 
-  <!-- 🖼️ Identidade visual e recursos de PWA -->
+  <!-- 🖼️ Identidade visual e PWA -->
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#004225" />
@@ -35,21 +35,17 @@
 </head>
 
 <body>
-<!-- ⬆️ Cabeçalho institucional -->
+  <!-- ⬆️ Cabeçalho institucional -->
   <header class="header-principal" role="banner">
     <a href="index.html" class="logo-link" aria-label="Voltar à página inicial do Agroverso">
-      <img src="assets/images/logo.png" alt="Logotipo do Agroverso" class="logo" style="height: 64px; width: auto;" decoding="async" loading="eager" />
+      <img src="assets/images/logo.png" alt="Logotipo do Agroverso" class="logo" decoding="async" loading="eager" />
     </a>
     <h1 class="titulo-site">Agroverso</h1>
     <p class="slogan">
       Tecnologia regenerativa com <strong>sabedoria</strong>,
       <strong>força</strong> e <strong>beleza</strong>
     </p>
-</head>
-
-<body>
-  <!-- ⬆️ Cabeçalho institucional padrão Agroverso -->
-  <div data-include="partials/header.html"></div>
+  </header>
 
   <!-- 🌿 Conteúdo principal do produto -->
   <main class="conteudo-produto" role="main" aria-labelledby="titulo-hidroponia">
@@ -59,71 +55,68 @@
         Cultivo de precisão com sensores, automação regenerativa e controle digital
       </p>
 
-      <!-- Carrossel de imagens -->
-     <section atia-labelledby="galeria-hidropondia">
-       <h3 id="galeria-hidroponia" class=secao-titulo">Galeria do Sistema</h3>
-       <div class="carrossel-container" aria-label="Galeria de imagens do sistema de energia solar Agroverso">
-        <div class="carrossel">
-          <img src="assets/images/hidroponia-1.jpg" alt="Sistema vertical de hidroponia Agroverso em estufa iluminada" title="Cultivo vertical em ambiente controlado" class="ativo" loading="lazy" />
-          <img src="assets/images/hidroponia-2.jpg" alt="Sensores de pH e EC inseridos em reservatório de nutrientes" title="Sensores de calibração para solução nutritiva" loading="lazy" />
-          <img src="assets/images/hidroponia-3.jpg" alt="Painel de monitoramento Agroverso exibindo níveis de nutrientes e temperatura" title="Controle digital por dashboard Agroverso" loading="lazy" />
+      <!-- 🎠 Carrossel com integração total -->
+      <section aria-labelledby="galeria-hidroponia">
+        <h3 id="galeria-hidroponia" class="secao-titulo">Galeria do Sistema</h3>
+        <div class="carrossel-container" aria-label="Galeria de imagens do sistema de hidroponia Agroverso" onclick="abrirCarrosselFullscreen(this)">
+          <div class="carrossel transicao" id="carrossel-hidroponia">
+            <img src="assets/images/hidroponia-1.jpg" alt="Sistema vertical de hidroponia Agroverso em estufa iluminada" loading="lazy" />
+            <img src="assets/images/hidroponia-2.jpg" alt="Sensores de pH e EC inseridos em reservatório de nutrientes" loading="lazy" />
+            <img src="assets/images/hidroponia-3.jpg" alt="Painel de monitoramento Agroverso exibindo níveis de nutrientes e temperatura" loading="lazy" />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 🧠 Seção de descrição funcional e aplicada -->
-    <section class="descricao-produto">
-      <h3>Sobre o sistema</h3>
-      <p>
-        A <strong>Hidroponia Inteligente Agroverso</strong> combina sensores de pH, condutividade elétrica (EC) e temperatura da água com um sistema modular, automatizado e vertical. O controle é feito via aplicativo móvel ou painel web responsivo, permitindo gestão completa da solução nutritiva e do ambiente de cultivo.
-      </p>
+      <!-- 🔘 Botão de fechar fullscreen -->
+      <button id="fecharFullscreen" onclick="fecharCarrosselFullscreen()" hidden aria-hidden="true">Fechar</button>
 
-      <h3>Benefícios principais</h3>
-      <ul>
-        <li>💧 Redução de até <strong>90% no uso de água</strong> comparado à agricultura tradicional</li>
-        <li>📊 Monitoramento contínuo de <strong>pH, EC e temperatura</strong> em tempo real</li>
-        <li>⚙️ Correção automática de nutrientes com base em leituras dos sensores</li>
-        <li>🏙️ Estrutura adaptável para <strong>ambientes urbanos e espaços reduzidos</strong></li>
-        <li>📱 Interface digital com <strong>dashboard intuitivo via app ou navegador</strong></li>
-      </ul>
+      <!-- 🧠 Seção de descrição funcional e aplicada -->
+      <section class="descricao-produto">
+        <h3>Sobre o sistema</h3>
+        <p>
+          A <strong>Hidroponia Inteligente Agroverso</strong> combina sensores de pH, condutividade elétrica (EC) e temperatura da água com um sistema modular, automatizado e vertical. O controle é feito via aplicativo móvel ou painel web responsivo, permitindo gestão completa da solução nutritiva e do ambiente de cultivo.
+        </p>
 
-      <h3>Aplicações recomendadas</h3>
-      <p>
-        Recomendado para <strong>hortas urbanas, produção escolar, containers agrícolas, agricultura familiar intensiva</strong> e projetos de segurança alimentar regenerativa em cidades ou zonas rurais.
-      </p>
+        <h3>Benefícios principais</h3>
+        <ul>
+          <li>💧 Redução de até <strong>90% no uso de água</strong> comparado à agricultura tradicional</li>
+          <li>📊 Monitoramento contínuo de <strong>pH, EC e temperatura</strong> em tempo real</li>
+          <li>⚙️ Correção automática de nutrientes com base em leituras dos sensores</li>
+          <li>🏙️ Estrutura adaptável para <strong>ambientes urbanos e espaços reduzidos</strong></li>
+          <li>📱 Interface digital com <strong>dashboard intuitivo via app ou navegador</strong></li>
+        </ul>
 
-      <!-- 📲 Botão de orçamento via WhatsApp -->
-      <div class="chamada-final">
-        <h3>Solicite seu orçamento agora mesmo</h3>
-        <p>Atendimento especializado para sua propriedade, comunidade ou iniciativa regenerativa.</p>
-        <a href="https://wa.me/5511963372373?text=Olá! Tenho interesse no sistema de Hidroponia Inteligente do Agroverso e gostaria de um orçamento personalizado."
-           target="_blank"
-           rel="noopener noreferrer"
-           class="botao-acao"
-           aria-label="Solicitar orçamento via WhatsApp com a equipe Agroverso">
-          📲 Solicitar orçamento via WhatsApp
-        </a>
-      </div>
+        <h3>Aplicações recomendadas</h3>
+        <p>
+          Recomendado para <strong>hortas urbanas, produção escolar, containers agrícolas, agricultura familiar intensiva</strong> e projetos de segurança alimentar regenerativa em cidades ou zonas rurais.
+        </p>
+
+        <!-- 📲 Botão de orçamento via WhatsApp -->
+        <div class="chamada-final">
+          <h3>Solicite seu orçamento agora mesmo</h3>
+          <p>Atendimento especializado para sua propriedade, comunidade ou iniciativa regenerativa.</p>
+          <a href="https://wa.me/5511963372373?text=Olá! Tenho interesse no sistema de Hidroponia Inteligente do Agroverso e gostaria de um orçamento personalizado."
+             target="_blank"
+             rel="noopener noreferrer"
+             class="botao-acao"
+             aria-label="Solicitar orçamento via WhatsApp com a equipe Agroverso">
+            📲 Solicitar orçamento via WhatsApp
+          </a>
+        </div>
+      </section>
     </section>
   </main>
 
-<!-- 🧭 Rodapé Institucional -->
+  <!-- 🧭 Rodapé Institucional -->
   <footer class="rodape-site" role="contentinfo">
-    <p>
-      © 2025 AGROVERSO
-</p> Uma iniciativa do
-<p>      
-<a>Instituto Graciliana Maria da Conceição</a>.
-</p>
-    
-    <p>
-      CNPJ: 31.083.093/0001-99 • Todos os direitos reservados.
-    </p>
+    <p>© 2025 AGROVERSO</p>
+    <p>Uma iniciativa do <a>Instituto Graciliana Maria da Conceição</a>.</p>
+    <p>CNPJ: 31.083.093/0001-99 • Todos os direitos reservados.</p>
   </footer>
 
   <!-- 🧠 Scripts Essenciais -->
   <script src="scripts/router-auto.js" defer></script>
   <script src="scripts/menu-lateral.js" defer></script>
-
+  <script src="scripts/carrossel.js" defer></script>
 </body>
 </html>

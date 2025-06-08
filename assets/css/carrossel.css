@@ -1,7 +1,7 @@
-/* ============================================================================
-🎠 carrossel.css – Estilo de Galeria Horizontal Agroverso
-📸 Compatível com telas sensíveis ao toque, mouse e acessibilidade
-============================================================================ */
+/* =============================================================================
+🎠 carrossel.css – Galeria Inteligente Agroverso (v12.1)
+📸 Estética total, responsividade refinada, acessibilidade de referência e expansão visual plena
+============================================================================= */
 
 /* 🧱 Container externo do carrossel */
 .carrossel-container {
@@ -24,9 +24,10 @@
   display: flex;
   gap: var(--espaco-md);
   scroll-snap-type: x mandatory;
+  scroll-snap-align: start;
 }
 
-/* 🖼️ Imagens internas do carrossel */
+/* 🖼️ Imagens do carrossel */
 .carrossel img {
   flex-shrink: 0;
   scroll-snap-align: start;
@@ -40,12 +41,19 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* 🧠 Foco por teclado com acessibilidade */
+.carrossel img:focus {
+  outline: 2px solid var(--cor-produto, #7bb661);
+  outline-offset: 4px;
+}
+
+/* 🌟 Hover refinado */
 .carrossel img:hover {
   transform: scale(1.025);
   box-shadow: var(--sombra-forte);
 }
 
-/* 🎛️ Scrollbar visual em navegadores modernos */
+/* 🎛️ Scrollbar refinada */
 .carrossel-container::-webkit-scrollbar {
   height: 6px;
 }
@@ -57,20 +65,145 @@
   background: transparent;
 }
 
-/* ============================================================================
-📱 Responsividade
-============================================================================ */
+/* 📱 Responsividade refinada */
 @media (max-width: 768px) {
   .carrossel-container {
     padding: var(--espaco-sm);
   }
-
   .carrossel {
     gap: var(--espaco-sm);
   }
-
   .carrossel img {
     max-height: 280px;
     border-radius: 10px;
   }
+}
+@media (max-width: 480px) {
+  .carrossel img {
+    max-height: 180px;
+    border-radius: 8px;
+  }
+  #fecharFullscreen {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* ✨ Transições suaves integradas */
+.transicao {
+  transition: all 0.25s ease-in-out;
+}
+
+/* 🎥 Suporte futuro a vídeos (opcional) */
+.carrossel video {
+  border-radius: 12px;
+  max-height: 480px;
+  object-fit: cover;
+}
+
+/* 🌙 Tema escuro automatizado (prefers-color-scheme) */
+@media (prefers-color-scheme: dark) {
+  .carrossel-container {
+    background-color: #1e1e1e;
+  }
+  .carrossel img {
+    background-color: #2a2a2a;
+  }
+}
+
+/* =============================================================================
+🎠 .carrossel.fullscreen – Modo de Galeria Expandida
+============================================================================= */
+.carrossel.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.92);
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 2rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* 🔒 Scroll invisível */
+.carrossel.fullscreen::-webkit-scrollbar {
+  display: none;
+}
+
+/* 🎯 Imagens fullscreen */
+.carrossel.fullscreen img {
+  max-height: 85vh;
+  max-width: 95vw;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+/* 💫 Hover apenas em dispositivos com ponteiro */
+@media (hover: hover) {
+  .carrossel.fullscreen img:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* =============================================================================
+🔘 #fecharFullscreen – Botão flutuante de saída
+============================================================================= */
+#fecharFullscreen {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 10000;
+  background-color: #ffffff;
+  color: #222222;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+/* 🖱️ Hover suave */
+#fecharFullscreen:hover {
+  background-color: #eeeeee;
+  transform: scale(1.05);
+}
+
+/* 📱 Ajustes mobile */
+@media (max-width: 768px) {
+  #fecharFullscreen {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.9rem;
+  }
+}
+
+/* =============================================================================
+🟢 .ativo e .inativo – Controle visual por classe, sem inline styles
+============================================================================= */
+.carrossel img.inativo {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  position: absolute;
+  z-index: 0;
+}
+
+.carrossel img.ativo {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  z-index: 1;
 }

@@ -45,7 +45,7 @@
       Tecnologia regenerativa com <strong>sabedoria</strong>,
       <strong>força</strong> e <strong>beleza</strong>
     </p>
-  </head>
+  </header>
 
   <!-- ⚡ Conteúdo principal -->
   <main class="conteudo-produto" role="main" aria-labelledby="titulo-energia">
@@ -56,17 +56,20 @@
       </p>
     </section>
 
-    <!-- 🎠 Carrossel de imagens -->
+    <!-- 🎠 Carrossel de imagens com integração total -->
     <section aria-labelledby="galeria-energia">
       <h3 id="galeria-energia" class="secao-titulo">Galeria do Sistema</h3>
-      <div class="carrossel-container" aria-label="Galeria de imagens do sistema de energia solar Agroverso">
-        <div class="carrossel">
+      <div class="carrossel-container" aria-label="Galeria de imagens do sistema de energia solar Agroverso" onclick="abrirCarrosselFullscreen(this)">
+        <div class="carrossel transicao" id="carrossel-energia">
           <img src="assets/images/energia-1.jpg" alt="Sistema Agroverso instalado com painéis solares em campo" />
           <img src="assets/images/energia-2.jpg" alt="Painel digital Agroverso exibindo dados em tempo real" />
           <img src="assets/images/energia-3.jpg" alt="Operador configurando o sistema com app de monitoramento" />
         </div>
       </div>
     </section>
+
+    <!-- 🔘 Botão de fechar modo fullscreen -->
+    <button id="fecharFullscreen" onclick="fecharCarrosselFullscreen()" hidden aria-hidden="true">Fechar</button>
 
     <!-- 🔋 Seção de descrição funcional e aplicada -->
     <section class="descricao-produto">
@@ -102,26 +105,18 @@
         </a>
       </div>
     </section>
-
   </main>
 
   <!-- 🧭 Rodapé Institucional -->
   <footer class="rodape-site" role="contentinfo">
-    <p>
-      © 2025 AGROVERSO
-</p> Uma iniciativa do
-<p>      
-<a>Instituto Graciliana Maria da Conceição</a>.
-</p>
-    
-    <p>
-      CNPJ: 31.083.093/0001-99 • Todos os direitos reservados.
-    </p>
+    <p>© 2025 AGROVERSO</p>
+    <p>Uma iniciativa do <a>Instituto Graciliana Maria da Conceição</a>.</p>
+    <p>CNPJ: 31.083.093/0001-99 • Todos os direitos reservados.</p>
   </footer>
 
   <!-- 🧠 Scripts Essenciais -->
   <script src="scripts/router-auto.js" defer></script>
   <script src="scripts/menu-lateral.js" defer></script>
-
+  <script src="scripts/carrossel.js" defer></script>
 </body>
 </html>

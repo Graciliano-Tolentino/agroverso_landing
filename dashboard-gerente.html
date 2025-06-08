@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- =========================================================================================
+  📊 dashboard-gerente.html – Painel do Gerente • Agroverso
+  🌱 Estratégia, coordenação e acompanhamento com segurança regenerativa
+  ========================================================================================== -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,19 +16,19 @@
   <meta name="robots" content="noindex, nofollow" />
 
   <link rel="stylesheet" href="assets/css/dashboard.css" />
-  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 </head>
-<body class="dashboard-body">
 
+<body class="dashboard-body">
   <main class="dashboard-container" role="main" aria-label="Painel do Gerente Agroverso">
-    <section class="dashboard-box">
-      <h1 class="dashboard-title">📊 Painel do Gerente</h1>
+    <section class="dashboard-box" aria-labelledby="painel-titulo">
+      <h1 id="painel-titulo" class="dashboard-title">📊 Painel do Gerente</h1>
 
       <p class="dashboard-subtitle">
         Bem-vindo ao centro de coordenação estratégica. Sua visão é essencial para o bom funcionamento das operações.
       </p>
 
-      <div class="dashboard-message">
+      <div class="dashboard-message" role="region" aria-live="polite">
         <h2>Funções disponíveis:</h2>
         <ul>
           <li>🧭 Acompanhar rotinas de campo em tempo real</li>
@@ -35,49 +40,15 @@
       </div>
 
       <div class="dashboard-footer">
-        <button onclick="sair()" class="btn-secondary" aria-label="Encerrar sessão">🚪 Sair</button>
+        <button onclick="logout()" class="btn-secondary" aria-label="Encerrar sessão com segurança">
+          🚪 Sair do Sistema
+        </button>
       </div>
     </section>
   </main>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-  <title>Painel do Gerente • Agroverso</title>
-  <meta name="description" content="Painel exclusivo para gerentes do Agroverso. Acompanhe equipes, indicadores e fluxos operacionais." />
-  <meta name="author" content="Instituto Graciliana Maria da Conceição" />
-  <meta name="robots" content="noindex, nofollow" />
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/favicon.ico" />
-</head>
-<body class="dashboard-body">
-
-  <main class="dashboard-container" role="main" aria-label="Painel do Gerente Agroverso">
-    <section class="dashboard-box">
-      <h1 class="dashboard-title">📊 Painel do Gerente</h1>
-
-      <p class="dashboard-subtitle">
-        Bem-vindo ao centro de coordenação estratégica. Sua visão é essencial para o bom funcionamento das operações.
-      </p>
-
-      <div class="dashboard-message">
-        <h2>Funções disponíveis:</h2>
-        <ul>
-          <li>🧭 Acompanhar rotinas de campo em tempo real</li>
-          <li>✅ Validar atividades executadas pelos líderes e técnicos</li>
-          <li>📋 Aprovar relatórios, imagens e entregas operacionais</li>
-          <li>🔄 Gerenciar fluxos entre equipes, supervisores e administradores</li>
-          <li>📈 Visualizar indicadores de desempenho e metas por setor</li>
-        </ul>
-      </div>
-
-      <div class="dashboard-footer">
-        <button onclick="sair()" class="btn-secondary" aria-label="Encerrar sessão">🚪 Sair</button>
-      </div>
-    </section>
-  </main>
+  <!-- 🔁 Scripts essenciais Agroverso -->
+  <script src="scripts/auth.js" defer></script>
+  <script src="scripts/logout.js" defer></script>
+</body>
+</html>

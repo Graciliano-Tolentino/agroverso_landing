@@ -34,7 +34,9 @@
   font-weight: 700;
   margin: 0;
   line-height: 1.1;
+  color: white; /* ← Esta linha torna o texto branco */
 }
+
 
 .slogan {
   font-size: 1.15rem;

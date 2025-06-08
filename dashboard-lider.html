@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- =========================================================================================
+  🧭 dashboard-lider.html – Painel do Líder de Equipe • Agroverso
+  🌿 Liderança regenerativa, coordenação de campo e validação com clareza e acessibilidade
+  ========================================================================================== -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,19 +16,19 @@
   <meta name="robots" content="noindex, nofollow" />
 
   <link rel="stylesheet" href="assets/css/dashboard.css" />
-  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 </head>
-<body class="dashboard-body">
 
+<body class="dashboard-body">
   <main class="dashboard-container" role="main" aria-label="Painel do Líder Agroverso">
-    <section class="dashboard-box">
-      <h1 class="dashboard-title">🧭 Painel do Líder de Equipe</h1>
+    <section class="dashboard-box" aria-labelledby="painel-titulo">
+      <h1 id="painel-titulo" class="dashboard-title">🧭 Painel do Líder de Equipe</h1>
 
       <p class="dashboard-subtitle">
         Você é o elo entre o planejamento e a execução. Seu papel é liderar, organizar e garantir a qualidade das operações.
       </p>
 
-      <div class="dashboard-message">
+      <div class="dashboard-message" role="region" aria-live="polite">
         <h2>Funções disponíveis:</h2>
         <ul>
           <li>📌 Distribuir tarefas para técnicos e registrar execução diária</li>
@@ -35,49 +40,15 @@
       </div>
 
       <div class="dashboard-footer">
-        <button onclick="sair()" class="btn-secondary" aria-label="Encerrar sessão">🚪 Sair</button>
+        <button onclick="logout()" class="btn-secondary" aria-label="Encerrar sessão com segurança">
+          🚪 Sair do Sistema
+        </button>
       </div>
     </section>
   </main>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-  <title>Painel do Líder • Agroverso</title>
-  <meta name="description" content="Painel exclusivo para líderes de equipe do Agroverso. Coordene técnicos, valide execuções e envie relatórios." />
-  <meta name="author" content="Instituto Graciliana Maria da Conceição" />
-  <meta name="robots" content="noindex, nofollow" />
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/favicon.ico" />
-</head>
-<body class="dashboard-body">
-
-  <main class="dashboard-container" role="main" aria-label="Painel do Líder Agroverso">
-    <section class="dashboard-box">
-      <h1 class="dashboard-title">🧭 Painel do Líder de Equipe</h1>
-
-      <p class="dashboard-subtitle">
-        Você é o elo entre o planejamento e a execução. Seu papel é liderar, organizar e garantir a qualidade das operações.
-      </p>
-
-      <div class="dashboard-message">
-        <h2>Funções disponíveis:</h2>
-        <ul>
-          <li>📌 Distribuir tarefas para técnicos e registrar execução diária</li>
-          <li>📷 Validar imagens e dados enviados pela equipe de campo</li>
-          <li>📥 Enviar relatórios diários ou semanais à gerência</li>
-          <li>🗺️ Acompanhar mapas, sensores e registros geolocalizados</li>
-          <li>📣 Comunicar ocorrências ou desvios em tempo real</li>
-        </ul>
-      </div>
-
-      <div class="dashboard-footer">
-        <button onclick="sair()" class="btn-secondary" aria-label="Encerrar sessão">🚪 Sair</button>
-      </div>
-    </section>
-  </main>
+  <!-- 🔁 Scripts essenciais -->
+  <script src="scripts/auth.js" defer></script>
+  <script src="scripts/logout.js" defer></script>
+</body>
+</html>

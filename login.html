@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- 🌐 Metadados Estratégicos -->
+  <!-- ======================================================================================
+  🌐 login.html – Tela de Acesso Seguro Agroverso
+  🔐 Refatorado com clareza, acessibilidade, modularidade e experiência regenerativa
+  ======================================================================================= -->
+
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1C3D27" />
+  <meta name="author" content="Instituto Graciliana Maria da Conceição" />
+  <meta name="description" content="Acesse o painel Agroverso com segurança regenerativa, controle preciso e integração por perfil técnico." />
 
   <title>Login Seguro • Agroverso</title>
-  <meta name="description" content="Acesse o painel inteligente Agroverso com segurança regenerativa, controle e precisão. Perfis distintos para cada função profissional." />
-  <meta name="author" content="Instituto Graciliana Maria da Conceição" />
-  <meta name="theme-color" content="#1C3D27" />
 
-  <!-- 🎨 Estilos Modulares -->
+  <!-- 🎨 Estilos -->
+  <link rel="stylesheet" href="assets/css/estilos.css" />
   <link rel="stylesheet" href="assets/css/login.css" />
-
 
   <!-- 🖼️ Favicon -->
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
@@ -22,21 +26,22 @@
 
 <body class="login-body">
 
-  
+  <!-- 🧭 Cabeçalho Padrão (opcional) -->
+  <div data-include="partials/header.html"></div>
 
-  <!-- 🧩 Conteúdo principal: formulário de login -->
+  <!-- 🧩 Formulário Principal de Autenticação -->
   <main class="login-container" role="main" aria-label="Área principal de autenticação do sistema Agroverso">
     <section class="login-box" role="form" aria-labelledby="login-titulo">
       <h2 id="login-titulo" class="login-title">Acesso Seguro ao Sistema Agroverso</h2>
 
       <form id="form-login" class="login-form" method="POST" novalidate aria-describedby="login-info">
         <p id="login-info" class="login-info">
-          Use seu e-mail institucional, senha pessoal e selecione corretamente o perfil de acesso.
-          Pressione <kbd>Enter</kbd> para enviar ou <kbd>F1</kbd> para suporte.
+          Use seu e-mail institucional, senha pessoal e selecione o perfil de acesso.  
+          Pressione <kbd>Enter</kbd> para entrar ou <kbd>F1</kbd> para suporte.
         </p>
 
         <label for="email">E-mail institucional:</label>
-        <input type="email" id="email" name="email" class="input-base" placeholder="seunome@agroverso.tec.br" required autofocus />
+        <input type="email" id="email" name="email" class="input-base" placeholder="seunome@agroverso.tec.br" required />
 
         <label for="senha">Senha:</label>
         <input type="password" id="senha" name="senha" class="input-base" placeholder="••••••••" minlength="6" required />
@@ -56,43 +61,21 @@
           E-mail, senha ou perfil inválidos. Verifique os dados e tente novamente.
         </p>
       </form>
-       <!-- 🔙 Botão visual com imagem para retornar à página inicial -->
+
+      <!-- 🔙 Botão de Retorno Estético -->
       <div class="voltar-home">
-      <a href="index.html" class="btn-voltar" aria-label="Voltar para a Página Inicial">
-      <img src="assets/images/v-pg-ini.png" alt="Voltar para a Página Inicial" class="icone-voltar" />
-      </a>
+        <a href="index.html" class="btn-voltar" aria-label="Voltar para a Página Inicial">
+          <img src="assets/images/v-pg-ini.png" alt="Voltar para a Página Inicial" class="icone-voltar" />
+        </a>
       </div>
     </section>
   </main>
- 
 
-  <!-- 🔁 Script para carregar includes -->
+  <!-- 🔁 Includes e Scripts -->
   <script src="scripts/includes.js" defer></script>
-
-  <!-- 🔐 Script inteligente de login -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const emailInput = document.getElementById("email");
-      emailInput.focus();
-
-      // F1 = Suporte via WhatsApp
-      window.addEventListener("keydown", (e) => {
-        if (e.key === "F1") {
-          e.preventDefault();
-          window.open("https://wa.me/5511963372373", "_blank");
-        }
-      });
-
-      // Enter para submissão
-      const form = document.getElementById("form-login");
-      form.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" && e.target.tagName !== "TEXTAREA") {
-          e.preventDefault();
-          form.requestSubmit();
-        }
-      });
-    });
-  </script>
+  <script src="scripts/auth.js" defer></script>
+  <script src="scripts/login.js" defer></script>
+  <script src="scripts/logout.js" defer></script>
 
 </body>
 </html>

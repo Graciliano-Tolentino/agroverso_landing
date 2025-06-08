@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- ======================================================================================
+  🔧 dashboard-tecnico.html – Painel do Técnico Agroverso
+  🌿 Clareza operacional, execução de campo, segurança regenerativa e UX acessível
+  ======================================================================================= -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,19 +16,19 @@
   <meta name="robots" content="noindex, nofollow" />
 
   <link rel="stylesheet" href="assets/css/dashboard.css" />
-  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 </head>
-<body class="dashboard-body">
 
+<body class="dashboard-body">
   <main class="dashboard-container" role="main" aria-label="Painel Técnico Agroverso">
-    <section class="dashboard-box">
-      <h1 class="dashboard-title">🔧 Painel do Técnico de Campo</h1>
+    <section class="dashboard-box" aria-labelledby="painel-titulo">
+      <h1 id="painel-titulo" class="dashboard-title">🔧 Painel do Técnico de Campo</h1>
 
       <p class="dashboard-subtitle">
         Você está na linha de frente. Seu trabalho conecta a tecnologia ao solo. Registre tudo com precisão e responsabilidade.
       </p>
 
-      <div class="dashboard-message">
+      <div class="dashboard-message" role="region" aria-live="polite">
         <h2>Funções disponíveis:</h2>
         <ul>
           <li>📸 Enviar fotos de campo, vídeos e registros visuais</li>
@@ -35,49 +40,15 @@
       </div>
 
       <div class="dashboard-footer">
-        <button onclick="sair()" class="btn-secondary" aria-label="Encerrar sessão">🚪 Sair</button>
+        <button onclick="logout()" class="btn-secondary" aria-label="Encerrar sessão com segurança">
+          🚪 Sair do Sistema
+        </button>
       </div>
     </section>
   </main>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-  <title>Painel Técnico • Agroverso</title>
-  <meta name="description" content="Painel exclusivo para técnicos de campo do Agroverso. Envie dados, atualize sensores e registre execuções." />
-  <meta name="author" content="Instituto Graciliana Maria da Conceição" />
-  <meta name="robots" content="noindex, nofollow" />
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/favicon.ico" />
-</head>
-<body class="dashboard-body">
-
-  <main class="dashboard-container" role="main" aria-label="Painel Técnico Agroverso">
-    <section class="dashboard-box">
-      <h1 class="dashboard-title">🔧 Painel do Técnico de Campo</h1>
-
-      <p class="dashboard-subtitle">
-        Você está na linha de frente. Seu trabalho conecta a tecnologia ao solo. Registre tudo com precisão e responsabilidade.
-      </p>
-
-      <div class="dashboard-message">
-        <h2>Funções disponíveis:</h2>
-        <ul>
-          <li>📸 Enviar fotos de campo, vídeos e registros visuais</li>
-          <li>📋 Preencher e validar ordens de serviço recebidas</li>
-          <li>📶 Atualizar leituras de sensores (pH, EC, umidade, pressão)</li>
-          <li>📍 Informar localização e anomalias diretamente pelo painel</li>
-          <li>📤 Submeter relatórios de execução para análise da liderança</li>
-        </ul>
-      </div>
-
-      <div class="dashboard-footer">
-        <button onclick="sair()" class="btn-secondary" aria-label="Encerrar sessão">🚪 Sair</button>
-      </div>
-    </section>
-  </main>
+  <!-- 🔁 Scripts de segurança e funcionalidade -->
+  <script src="scripts/auth.js" defer></script>
+  <script src="scripts/logout.js" defer></script>
+</body>
+</html>

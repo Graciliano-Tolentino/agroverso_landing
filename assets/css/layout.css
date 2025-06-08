@@ -1,181 +1,75 @@
 /* ============================================================================
-🧱 layout.css – Estrutura Visual Padrão Agroverso Refinada
-🎯 Cabeçalho, Rodapé, Containers, Títulos e Responsividade 12/10
+🔝 Cabeçalho Institucional – Agroverso 12/10
+🌿 Fundo verde escuro, logotipo refinado, título centralizado e slogan inspirador
 ============================================================================ */
-
-/* 🔝 Cabeçalho Institucional */
 .header-principal {
-  background-color: var(--cor-principal);
-  color: var(--cor-clara);
+  background-color: var(--cor-principal);   /* Verde profundo institucional */
+  color: var(--cor-clara);                  /* Texto claro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: var(--espaco-xl) var(--espaco-sm) var(--espaco-md);
   border-bottom: 6px solid var(--cor-destaque);
   box-shadow: var(--sombra-leve);
-}
-
-.header-principal .logo {
-  height: 80px;
-  width: auto;
-  margin-bottom: var(--espaco-sm);
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
+  gap: 0.4rem;
 }
 
 /* ============================================================================
-🎓 .titulo-site – Título institucional “AGROVERSO” no cabeçalho do site
-🌱 Estilo aplicado com foco em contraste absoluto, responsividade e elegância
+🎓 .titulo-site – Palavra “AGROVERSO” com clareza, impacto e refinamento 12/10
 ============================================================================ */
-
-/* Estilo base para desktops */
 .titulo-site {
-  color: #ffffff;                  /* 🟢 Cor branca absoluta (contraste com fundo escuro) */
-  font-size: 2rem;                 /* 📏 Tamanho de destaque sem exagero */
-  font-weight: 700;               /* 💪 Peso forte para reforçar autoridade institucional */
-  letter-spacing: 0.5px;          /* 🔡 Espaçamento leve entre letras para sofisticação */
-  margin-bottom: 0.25rem;         /* 📐 Espaço sutil abaixo (acomoda slogan se houver) */
-  margin-left: 0.75rem;           /* 📏 Distância lateral do logo */
-  font-family: 'Poppins', sans-serif; /* 🎨 Tipografia moderna e humanizada */
-  text-transform: uppercase;      /* 🔠 Deixa sempre em caixa alta */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); /* 🧠 Sombra sutil para legibilidade */
-  display: inline-block;
-  vertical-align: middle;
+  color: #ffffff;                      /* Branco puro */
+  font-size: 2.4rem;                   /* Maior presença visual */
+  font-weight: 800;                   /* Peso reforçado para autoridade */
+  letter-spacing: 0.75px;              /* Espaçamento preciso */
+  font-family: 'Poppins', sans-serif;  /* Tipografia moderna */
+  margin: 0;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); /* Leitura sobre fundo escuro */
   line-height: 1.2;
 }
 
-/* Adaptação para telas menores */
-@media (max-width: 768px) {
-  .titulo-site {
-    font-size: 1.6rem;             /* 🔄 Ajuste proporcional em celulares */
-    margin-left: 0.5rem;
-    letter-spacing: 0.3px;
-  }
-}
-
-
+/* ============================================================================
+🗣️ .slogan – Frase institucional com emoção regenerativa e clareza visual
+============================================================================ */
 .slogan {
-  font-size: 1rem;
+  font-size: 1.05rem;                        /* Leve ampliação para leitura ideal */
   font-weight: 400;
-  font-style: italic;
-  opacity: 0.95;
-  color: var(--cor-destaque);
-}
-
-.rodape-site {
-  background-color: var(--cor-principal);   /* verde escuro */
-  color: var(--cor-clara);                  /* texto branco padrão */
+  font-family: 'Cabin', sans-serif;         /* Tipografia empática e legível */
+  color: #e6f2ec;                            /* Cor suave clara sobre fundo escuro */
   text-align: center;
-  padding: var(--espaco-lg) var(--espaco-sm);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  border-top: 4px solid var(--cor-destaque);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  line-height: 1.5;
+  max-width: 720px;
+  margin-top: 0.25rem;
+  opacity: 0.96;
 }
 
-.rodape-site p {
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
-  color: var(--cor-clara); /* 🔁 ajuste aplicado aqui */
-}
-
-.rodape-site a {
-  color: var(--cor-clara);
-  text-decoration: underline;
-  transition: color 0.3s ease;
-}
-
-.rodape-site a:hover,
-.rodape-site a:focus {
-  color: var(--cor-destaque);
-  outline: 2px dashed var(--cor-destaque);
-  outline-offset: 3px;
-}
-
-.instituto-destaque {
-  color: var(--cor-destaque);
-  display: block;
+/* 🌟 Destaque para as palavras nobres: sabedoria, força e beleza */
+.slogan strong {
+  color: #f4d35e;     /* Dourado regenerativo */
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-
-/* ✅ Apenas o nome do instituto com destaque */
-.instituto-destaque {
-  color: var(--cor-destaque); /* verde claro */
-  display: block;
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-
-/* 🧩 Container semântico para seções */
-.section-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--espaco-xl) var(--espaco-md);
-}
-
-/* 🎯 Títulos de seção com destaque visual */
-.secao-titulo {
-  font-size: 1.75rem;
-  text-align: center;
-  margin: var(--espaco-lg) auto var(--espaco-md);
-  color: var(--cor-principal);
-  font-weight: 600;
-  position: relative;
-  line-height: 1.3;
-  letter-spacing: 0.3px;
-}
-
-.secao-titulo::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  margin: 0.75rem auto 0;
-  background-color: var(--cor-secundaria);
-  border-radius: 4px;
 }
 
 /* ============================================================================
-📱 Responsividade e Ajustes Visuais Adaptativos
+🌐 Variáveis Globais do Agroverso – Cores, Espaçamentos, Sombras
 ============================================================================ */
+:root {
+  /* 🎨 Paleta de Cores Institucionais */
+  --cor-principal: #004225;       /* Verde profundo regenerativo */
+  --cor-clara: #ffffff;           /* Branco puro para texto principal */
+  --cor-destaque: #f4d35e;        /* Dourado regenerativo – sabedoria */
+  --cor-secundaria: #7bb661;      /* Verde claro para destaques naturais */
+  --cor-suave: #e6f2ec;           /* Verde claro suave para fundos */
+  
+  /* 📏 Espaçamentos Padrão */
+  --espaco-xs: 0.25rem;
+  --espaco-sm: 0.5rem;
+  --espaco-md: 1rem;
+  --espaco-lg: 1.5rem;
+  --espaco-xl: 2rem;
 
-@media (max-width: 768px) {
-  .titulo-site {
-    font-size: 1.6rem;
-  }
-
-  .slogan {
-    font-size: 0.9rem;
-  }
-
-  .rodape-site {
-    font-size: 0.88rem;
-    padding: var(--espaco-md) var(--espaco-sm);
-  }
-
-  .secao-titulo {
-    font-size: 1.5rem;
-  }
-
-  .header-principal .logo {
-    height: 64px;
-  }
-}
-
-.logo-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: var(--espaco-sm);
-}
-
-.logo-link {
-  display: inline-block;
-}
-
-.logo {
-  height: 80px;
-  width: auto;
+  /* 🧱 Sombra para elementos principais */
+  --sombra-leve: 0 2px 6px rgba(0, 0, 0, 0.08);
 }

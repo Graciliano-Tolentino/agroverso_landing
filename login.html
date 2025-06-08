@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <head>
   <!-- ======================================================================================
-  🌐 login.html – Tela de Acesso Seguro Agroverso
-  🔐 Refatorado com clareza, acessibilidade, modularidade e experiência regenerativa
+  🔐 login.html – Tela de Acesso Seguro • Agroverso
+  🌱 Refatorado com clareza, acessibilidade, modularidade e segurança regenerativa
   ======================================================================================= -->
 
   <meta charset="UTF-8" />
@@ -16,35 +16,36 @@
 
   <title>Login Seguro • Agroverso</title>
 
-  <!-- 🎨 Estilos -->
+  <!-- 🎨 Estilos visuais -->
   <link rel="stylesheet" href="assets/css/estilos.css" />
   <link rel="stylesheet" href="assets/css/login.css" />
-
-  <!-- 🖼️ Favicon -->
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 </head>
 
 <body class="login-body">
 
-  <!-- 🧭 Cabeçalho Padrão (opcional) -->
+  <!-- 🧭 Cabeçalho modular opcional -->
   <div data-include="partials/header.html"></div>
 
-  <!-- 🧩 Formulário Principal de Autenticação -->
-  <main class="login-container" role="main" aria-label="Área principal de autenticação do sistema Agroverso">
+  <!-- 🧩 Área principal de autenticação -->
+  <main class="login-container" role="main" aria-label="Área de acesso ao sistema">
     <section class="login-box" role="form" aria-labelledby="login-titulo">
+
       <h2 id="login-titulo" class="login-title">Acesso Seguro ao Sistema Agroverso</h2>
 
       <form id="form-login" class="login-form" method="POST" novalidate aria-describedby="login-info">
         <p id="login-info" class="login-info">
-          Use seu e-mail institucional, senha pessoal e selecione o perfil de acesso.  
+          Use seu e-mail institucional, senha pessoal e selecione o perfil de acesso.<br>
           Pressione <kbd>Enter</kbd> para entrar ou <kbd>F1</kbd> para suporte.
         </p>
 
         <label for="email">E-mail institucional:</label>
-        <input type="email" id="email" name="email" class="input-base" placeholder="seunome@agroverso.tec.br" required />
+        <input type="email" id="email" name="email" class="input-base"
+               placeholder="seunome@agroverso.tec.br" autocomplete="username" required />
 
         <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" class="input-base" placeholder="••••••••" minlength="6" required />
+        <input type="password" id="senha" name="senha" class="input-base"
+               placeholder="••••••••" minlength="6" autocomplete="current-password" required />
 
         <label for="perfil">Perfil de Acesso:</label>
         <select id="perfil" name="perfil" class="input-base" required>
@@ -55,14 +56,16 @@
           <option value="tecnico">Técnico de Campo</option>
         </select>
 
-        <button type="submit" class="btn-primary" aria-label="Entrar no sistema Agroverso">Entrar</button>
+        <button type="submit" class="btn-primary" aria-label="Entrar no sistema Agroverso">
+          Entrar
+        </button>
 
         <p class="login-error" id="erro-login" role="alert" hidden>
           E-mail, senha ou perfil inválidos. Verifique os dados e tente novamente.
         </p>
       </form>
 
-      <!-- 🔙 Botão de Retorno Estético -->
+      <!-- 🔙 Retorno visual à página inicial -->
       <div class="voltar-home">
         <a href="index.html" class="btn-voltar" aria-label="Voltar para a Página Inicial">
           <img src="assets/images/v-pg-ini.png" alt="Voltar para a Página Inicial" class="icone-voltar" />
@@ -71,9 +74,8 @@
     </section>
   </main>
 
-  <!-- 🔁 Includes e Scripts -->
+  <!-- 🔁 Scripts essenciais (sem proteção JWT aqui) -->
   <script src="scripts/includes.js" defer></script>
-  <script src="scripts/auth.js" defer></script>
   <script src="scripts/login.js" defer></script>
   <script src="scripts/logout.js" defer></script>
 

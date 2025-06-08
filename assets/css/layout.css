@@ -20,12 +20,36 @@
   filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
 }
 
+/* ============================================================================
+🎓 .titulo-site – Título institucional “AGROVERSO” no cabeçalho do site
+🌱 Estilo aplicado com foco em contraste absoluto, responsividade e elegância
+============================================================================ */
+
+/* Estilo base para desktops */
 .titulo-site {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-  letter-spacing: 0.5px;
+  color: #ffffff;                  /* 🟢 Cor branca absoluta (contraste com fundo escuro) */
+  font-size: 2rem;                 /* 📏 Tamanho de destaque sem exagero */
+  font-weight: 700;               /* 💪 Peso forte para reforçar autoridade institucional */
+  letter-spacing: 0.5px;          /* 🔡 Espaçamento leve entre letras para sofisticação */
+  margin-bottom: 0.25rem;         /* 📐 Espaço sutil abaixo (acomoda slogan se houver) */
+  margin-left: 0.75rem;           /* 📏 Distância lateral do logo */
+  font-family: 'Poppins', sans-serif; /* 🎨 Tipografia moderna e humanizada */
+  text-transform: uppercase;      /* 🔠 Deixa sempre em caixa alta */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); /* 🧠 Sombra sutil para legibilidade */
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
 }
+
+/* Adaptação para telas menores */
+@media (max-width: 768px) {
+  .titulo-site {
+    font-size: 1.6rem;             /* 🔄 Ajuste proporcional em celulares */
+    margin-left: 0.5rem;
+    letter-spacing: 0.3px;
+  }
+}
+
 
 .slogan {
   font-size: 1rem;

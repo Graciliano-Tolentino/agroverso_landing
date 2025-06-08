@@ -1,39 +1,40 @@
 /* ==========================================================================================
-📋 kanban.css – Estilo do Painel Kanban Agroverso
-🌿 Responsividade, clareza e identidade institucional
+📋 kanban.css – Painel de Tarefas Agroverso
+🌱 Padrão institucional com clareza, fluidez e estética regenerativa
 ========================================================================================== */
 
 .kanban-board {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 2rem 1rem;
   flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+  padding: 2rem 1rem;
 }
 
 .kanban-column {
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-top: 6px solid var(--cor-principal, #1C3D27);
-  border-radius: 8px;
   flex: 1 1 22%;
   min-width: 240px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
+  background-color: #f8faf9;
+  border: 1px solid #dfeee6;
+  border-top: 6px solid var(--cor-principal, #1C3D27);
+  border-radius: 10px;
+  padding: 1.2rem;
   max-height: 80vh;
   overflow-y: auto;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.3s ease;
 }
 
 .kanban-column h3 {
   font-size: 1.1rem;
+  font-weight: 600;
   margin-bottom: 1rem;
   color: var(--cor-principal, #1C3D27);
   text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.5rem;
 }
 
-/* 🗂️ Cartões */
 .kanban-items {
   display: flex;
   flex-direction: column;
@@ -42,43 +43,73 @@
 
 .kanban-card {
   background-color: #ffffff;
-  border-left: 5px solid #1C3D27;
+  border-left: 6px solid transparent;
+  border-radius: 8px;
   padding: 1rem;
-  border-radius: 6px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   cursor: grab;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .kanban-card:hover {
   transform: scale(1.02);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* 🟢 Prioridades com cores visuais */
-.kanban-card[data-prioridade="alta"] {
-  border-left-color: #c62828;
-}
-
-.kanban-card[data-prioridade="media"] {
-  border-left-color: #f9a825;
-}
-
-.kanban-card[data-prioridade="baixa"] {
-  border-left-color: #2e7d32;
-}
-
-/* 📱 Responsivo */
-@media (max-width: 768px) {
-  .kanban-board {
-    flex-direction: column;
-  }
-
-  .kanban-column {
-    width: 100%;
-  }
+.kanban-card.dragging {
+  opacity: 0.6;
+  box-shadow: none;
 }
 
 .kanban-over {
-  background-color: #e3f2fd;
+  background-color: #e6f3ed !important;
+  border: 2px dashed #7bb661;
   transition: background-color 0.2s ease;
+}
+
+/* 🎨 Prioridade visual */
+.kanban-card[data-prioridade="alta"],
+.prioridade-alta {
+  border-left-color: #c62828;
+}
+
+.kanban-card[data-prioridade="media"],
+.prioridade-media {
+  border-left-color: #f9a825;
+}
+
+.kanban-card[data-prioridade="baixa"],
+.prioridade-baixa {
+  border-left-color: #2e7d32;
+}
+
+/* 🏷️ Tipografia interna do card */
+.kanban-titulo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1c3d27;
+  margin-bottom: 0.25rem;
+}
+
+.kanban-descricao {
+  font-size: 0.9rem;
+  color: #495e4d;
+  margin-bottom: 0.5rem;
+}
+
+/* ✅ Botão exclusivo para técnicos */
+.kanban-btn-concluir {
+  background-color: #5cb85c;
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.kanban-btn-concluir:hover {
+  background-color: #4cae4c;
 }

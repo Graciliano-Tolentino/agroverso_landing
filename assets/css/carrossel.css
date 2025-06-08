@@ -5,13 +5,12 @@
 
 /* 🧱 Container externo do carrossel */
 .carrossel-container {
-  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
   max-width: 100%;
-  margin: 2rem auto;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* 🎢 Linha horizontal de imagens com escopo posicional */

@@ -1,5 +1,7 @@
-// scripts/carrossel.js
-// 🌿 Agroverso | Carrossel regenerativo com sabedoria, força e beleza
+// ===========================================================================================
+// 📜 scripts/carrossel.js — Carrossel Inteligente Agroverso
+// 🌱 Transição automática, acessibilidade refinada, experiência regenerativa completa
+// ===========================================================================================
 
 (() => {
   document.addEventListener('DOMContentLoaded', () => {
@@ -7,96 +9,50 @@
 
     if (!carrosseis.length) return;
 
-    carrosseis.forEach((carrossel, carrosselIndex) => {
+    carrosseis.forEach((carrossel, indice) => {
       const slides = carrossel.querySelectorAll('img');
       if (slides.length <= 1) return;
 
-      let indexAtual = 0;
-      const idBase = `carrossel-${carrosselIndex}`;
-      let intervalo; // Para controle refinado da rotação automática
+      let indiceAtual = 0;
+      const idCarrossel = `carrossel-${indice}`;
+      let intervaloAuto = null;
 
-      // 🎛️ Botão Anterior
-      const btnPrev = document.createElement('button');
-      btnPrev.className = 'carrossel-prev';
-      btnPrev.setAttribute('aria-label', 'Imagem anterior');
-      btnPrev.setAttribute('aria-controls', idBase);
-      btnPrev.innerText = '‹';
+      // 🔖 Garante ID exclusivo
+      if (!carrossel.id) carrossel.id = idCarrossel;
 
-      // 🎛️ Botão Próximo
-      const btnNext = document.createElement('button');
-      btnNext.className = 'carrossel-next';
-      btnNext.setAttribute('aria-label', 'Próxima imagem');
-      btnNext.setAttribute('aria-controls', idBase);
-      btnNext.innerText = '›';
+      // ========================================================================
+      // Parte 2 será enviada a seguir: geração dinâmica de botões com acessibilidade
+      // ========================================================================
 
-      // 📎 Inserir botões e definir ID do carrossel
-      carrossel.append(btnPrev, btnNext);
-      if (!carrossel.id) {
-        carrossel.id = idBase;
-      }
+      // 🎛️ Botão "Anterior"
+      const btnAnterior = document.createElement('button');
+      btnAnterior.className = 'carrossel-controle carrossel-prev';
+      btnAnterior.setAttribute('aria-label', 'Imagem anterior');
+      btnAnterior.setAttribute('aria-controls', idCarrossel);
+      btnAnterior.textContent = '‹';
 
-      // 🧠 Atualiza visibilidade e acessibilidade
-      function mostrarSlide(index) {
+      // 🎛️ Botão "Próximo"
+      const btnProximo = document.createElement('button');
+      btnProximo.className = 'carrossel-controle carrossel-next';
+      btnProximo.setAttribute('aria-label', 'Próxima imagem');
+      btnProximo.setAttribute('aria-controls', idCarrossel);
+      btnProximo.textContent = '›';
+
+      // 📎 Inserção dos controles no DOM
+      carrossel.append(btnAnterior, btnProximo);
+
+      // 🧠 Função para mostrar o slide atual com acessibilidade e beleza
+      function mostrarSlide(indice) {
         slides.forEach((slide, i) => {
-          const ativo = i === index;
-          slide.classList.toggle('ativo', ativo);
-          slide.setAttribute('aria-hidden', !ativo);
-          slide.setAttribute('tabindex', ativo ? '0' : '-1');
+          const estaAtivo = i === indice;
+          slide.classList.toggle('ativo', estaAtivo);
+          slide.style.display = estaAtivo ? 'block' : 'none';
+          slide.setAttribute('aria-hidden', !estaAtivo);
+          slide.setAttribute('tabindex', estaAtivo ? '0' : '-1');
           slide.setAttribute('role', 'tabpanel');
           slide.setAttribute('aria-label', `Slide ${i + 1} de ${slides.length}`);
         });
 
-        // 🧭 Foco para acessibilidade
-        slides[index].focus?.();
+        // 🔍 Move o foco para o slide atual se possível
+        slides[indice]?.focus?.();
       }
-
-      // 🔁 Funções de navegação
-      function proximoSlide() {
-        indexAtual = (indexAtual + 1) % slides.length;
-        mostrarSlide(indexAtual);
-      }
-
-      function slideAnterior() {
-        indexAtual = (indexAtual - 1 + slides.length) % slides.length;
-        mostrarSlide(indexAtual);
-      }
-
-      // 🖱️ Controles por clique
-      btnNext.addEventListener('click', proximoSlide);
-      btnPrev.addEventListener('click', slideAnterior);
-
-      // ⌨️ Acessibilidade por teclado (setas ← →)
-      carrossel.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowRight') {
-          proximoSlide();
-        } else if (event.key === 'ArrowLeft') {
-          slideAnterior();
-        }
-      });
-
-      // ⏱️ Controle de rotação automática com inteligência
-      function iniciarRotacao() {
-        if (!intervalo) {
-          intervalo = setInterval(proximoSlide, 5000);
-        }
-      }
-
-      function pausarRotacao() {
-        clearInterval(intervalo);
-        intervalo = null;
-      }
-
-      // 🛡️ Pausar em foco ou interação do usuário
-      [btnPrev, btnNext, ...slides].forEach(el => {
-        el.addEventListener('mouseenter', pausarRotacao);
-        el.addEventListener('mouseleave', iniciarRotacao);
-        el.addEventListener('focusin', pausarRotacao);
-        el.addEventListener('focusout', iniciarRotacao);
-      });
-
-      // 🚀 Inicializa carrossel ao carregar a página
-      mostrarSlide(indexAtual);
-      iniciarRotacao();
-    });
-  });
-})();

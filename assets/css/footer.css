@@ -1,60 +1,46 @@
-/* ==========================================================================================
-🦶 footer.css – Estilos exclusivos para o rodapé institucional do Agroverso
-🌿 Identidade, respeito ancestral, clareza legal e navegabilidade mínima
-========================================================================================== */
+/* ============================================================================
+🦶 footer.css – Rodapé modular Agroverso com sabedoria, força e beleza
+============================================================================ */
 
+/* 🌿 Estrutura geral */
+.rodape-site {
+  background-color: #004225; /* Verde escuro institucional */
+  color: #ffffff;            /* Texto padrão branco */
+  text-align: center;
+  padding: var(--espaco-lg) var(--espaco-sm);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-top: 4px solid var(--cor-destaque);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* 📄 Parágrafos padrões – brancos */
 .rodape-site p {
-  color: #ffffff;              /* Cor branca absoluta */
   margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+/* ✨ Nome da instituição com destaque sagrado */
+.instituto-destaque {
+  color: #f4d35e;
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 🔐 CNPJ em destaque dourado */
+.rodape-site .cnpj {
+  color: #f4d35e;
+  font-weight: 600;
   font-size: 0.95rem;
 }
 
-.instituto-destaque,
-.rodape-site .frase-opcional,
-.rodape-site .rodape-links,
-.rodape-site .rodape-links a {
-  color: #ffffff;              /* Força total: todo conteúdo textual branco */
-}
-
-
-.rodape-direitos,
-.rodape-instituicao {
-  margin: 0.5rem 0;
-}
-
-.instituto-destaque {
-  font-weight: bold;
-  color: #FFD700; /* Dourado Agroverso */
-}
-
-.frase-povo-originario {
-  margin-top: 1.2rem;
+/* 📜 Provérbio Xukuru Kariri com dignidade dourada */
+.rodape-site .frase-opcional {
+  color: #f4d35e;
   font-style: italic;
   font-size: 0.9rem;
-  color: #FFD700;
-}
-
-.frase-povo-originario small {
-  display: block;
-  font-size: 0.75rem;
-  color: #ffffff;
-  margin-top: 0.2rem;
-}
-
-.rodape-links {
-  margin-top: 1.5rem;
-}
-
-.rodape-links a {
-  display: inline-block;
-  color: #ffffff;
-  text-decoration: none;
-  margin: 0 0.5rem;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.rodape-links a:hover {
-  color: #FFD700;
-  border-color: #FFD700;
+  margin-top: var(--espaco-sm);
+  line-height: 1.4;
 }

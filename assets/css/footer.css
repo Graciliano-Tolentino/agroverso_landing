@@ -3,14 +3,19 @@
 🌿 Identidade, respeito ancestral, clareza legal e navegabilidade mínima
 ========================================================================================== */
 
-.rodape-site {
-  background-color: var(--cor-principal, #1C3D27);
-  color: var(--cor-clara, #ffffff);
-  padding: 2rem 1rem;
-  text-align: center;
+.rodape-site p {
+  color: #ffffff;              /* Cor branca absoluta */
+  margin-bottom: 0.5rem;
   font-size: 0.95rem;
-  line-height: 1.6;
 }
+
+.instituto-destaque,
+.rodape-site .frase-opcional,
+.rodape-site .rodape-links,
+.rodape-site .rodape-links a {
+  color: #ffffff;              /* Força total: todo conteúdo textual branco */
+}
+
 
 .rodape-direitos,
 .rodape-instituicao {

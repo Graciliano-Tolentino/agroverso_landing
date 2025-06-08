@@ -1,10 +1,10 @@
 /* ============================================================================
-🦶 footer.css – Rodapé Agroverso com hierarquia espiritual refinada (12/10)
+🎨 Rodapé com distinção cerimonial e institucional refinada
 ============================================================================ */
 
 .rodape-site {
-  background-color: #004225; /* Verde escuro padrão Agroverso */
-  color: #ffffff;            /* Texto padrão branco */
+  background-color: #004225;
+  color: #ffffff;
   text-align: center;
   padding: var(--espaco-lg) var(--espaco-sm);
   font-size: 0.95rem;
@@ -21,21 +21,27 @@
 .instituto-destaque {
   color: #f4d35e;
   font-weight: 700;
-  font-size: 1rem;
   font-family: 'Poppins', sans-serif;
 }
 
 .rodape-site .cnpj {
   color: #f4d35e;
   font-weight: 600;
-  font-size: 0.95rem;
 }
 
-/* ✅ Provérbio inteiro em dourado, incluindo texto e autoria */
-.rodape-site .proverbio {
+/* ✨ Provérbio inteiro em dourado */
+.proverbio {
   color: #f4d35e;
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   margin-top: var(--espaco-sm);
-  line-height: 1.4;
+}
+
+/* 📜 Autoria discreta em branco */
+.proverbio-autoria {
+  color: #ffffff;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-top: -0.4rem;
+  font-style: italic;
 }

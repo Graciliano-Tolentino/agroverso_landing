@@ -156,3 +156,22 @@ html:focus-within {
   h2 { font-size: 1.6rem; }
   h3 { font-size: 1.3rem; }
 }
+
+/* 🎯 Estilo do botão WhatsApp simulando um <button> */
+.whatsapp-btn {
+  display: inline-block;
+  background-color: #1C3D27;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #145f3c;
+}

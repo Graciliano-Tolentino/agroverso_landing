@@ -1,68 +1,60 @@
 // ============================================================================================
 // 🚪 scripts/logout.js – Encerramento de Sessão Agroverso
-// 🌱 Clareza emocional, segurança ética, transição regenerativa e empatia institucional
+// 🌿 Clareza emocional, segurança ética, transição regenerativa e empatia institucional
 // ============================================================================================
 
 (function logoutAgroversoModule() {
-  'use strict'; // 🔒 Modo seguro para evitar erros silenciosos
+  'use strict'; // 🔒 Segurança no escopo isolado
 
-  // 🎯 Define o destino padrão após logout
-  const URL_DESTINO = "login.html";
+  // 🎯 Redirecionamento após logout
+  const URL_DESTINO = "logout.html";
 
-  // 🔍 Busca refinada por todos os botões com atributo universal de logout
+  // 🔍 Aplica atributos de acessibilidade a todos os botões de logout
   document.addEventListener("DOMContentLoaded", () => {
     const botoesLogout = document.querySelectorAll('[data-logout], [onclick="logout()"]');
 
     if (botoesLogout.length === 0) {
-      console.warn("[Agroverso] ⚠️ Nenhum botão de logout encontrado na página.");
+      console.warn("[Agroverso] ⚠️ Nenhum botão de logout encontrado.");
       return;
     }
 
-    // ♿ Adiciona acessibilidade e dica de título
-    botoesLogout.forEach((botao) => {
-      botao.setAttribute("aria-label", "Encerrar sessão Agroverso com segurança");
-      botao.setAttribute("title", "Clique para sair da plataforma Agroverso");
+    botoesLogout.forEach((btn) => {
+      btn.setAttribute("aria-label", "Encerrar sessão com segurança");
+      btn.setAttribute("title", "Clique para sair do sistema Agroverso");
     });
   });
 
   /**
-   * 🔚 Função global – Logout regenerativo e institucional
-   * Exposta globalmente como `window.logout` para fácil chamada em qualquer contexto
+   * 🔚 logout – Função global institucional de encerramento de sessão
    */
   window.logout = function () {
-    // 🛡️ Confirmação empática antes de encerrar sessão
-    const confirmarSaida = confirm(
+    const confirmar = confirm(
       "Tem certeza que deseja encerrar sua sessão no Agroverso?\n\nVocê poderá fazer login novamente a qualquer momento."
     );
 
-    if (!confirmarSaida) {
-      console.info("[Agroverso] 🚫 Saída cancelada pelo usuário.");
+    if (!confirmar) {
+      console.info("[Agroverso] 🚫 Logout cancelado pelo usuário.");
       return;
     }
 
-    // 🧼 Limpeza ética e criteriosa da sessão
-    const chavesParaLimpar = [
-      "agro_token",           // Token de autenticação
-      "usuario_perfil",       // Perfil RBAC
-      "usuario_email"         // E-mail institucional
-    ];
-
-    chavesParaLimpar.forEach((chave) => {
+    // 🧼 Limpeza ética dos dados de sessão
+    const chaves = ["agro_token", "usuario_perfil", "usuario_email"];
+    chaves.forEach((chave) => {
       localStorage.removeItem(chave);
-      sessionStorage.removeItem(chave); // Caso existam dados em ambos os escopos
+      sessionStorage.removeItem(chave);
     });
 
-    // 📢 Mensagem de encerramento com tom humano e regenerativo
+    // 📢 Confirmação emocional e regenerativa
     alert(
       "🌿 Sessão encerrada com sucesso.\n\n" +
-      "Agradecemos pela sua presença no Agroverso.\n" +
-      "Continue cultivando tecnologia com sabedoria, força e beleza."
+      "Agradecemos por fazer parte do Agroverso.\n" +
+      "Continue cultivando sabedoria, força e beleza."
     );
 
-    // ⏳ Delay para garantir leitura e respiro do usuário
+    // ⏳ Pequeno delay para assimilação
     setTimeout(() => {
       window.location.href = URL_DESTINO;
-    }, 1200); // Tempo ideal para absorver a mensagem
+    }, 1200);
   };
 
-})(); // 🔚 Encerramento do módulo logoutAgroversoModule
+})(); // 🔚 Final do módulo logoutAgroversoModule

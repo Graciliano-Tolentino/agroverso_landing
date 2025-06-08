@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <!-- ======================================================================================
-  🔧 dashboard-tecnico.html – Painel do Técnico Agroverso
+  🔧 dashboard-tecnico.html – Painel Técnico Agroverso
   🌿 Clareza operacional, execução de campo, segurança regenerativa e UX acessível
   ======================================================================================= -->
 
@@ -15,15 +15,15 @@
   <meta name="author" content="Instituto Graciliana Maria da Conceição" />
   <meta name="theme-color" content="#1C3D27" />
 
-  <!-- 🎨 Estilos principais -->
+  <!-- 🎨 Estilos com caminhos corretos -->
   <link rel="stylesheet" href="assets/css/dashboard.css" />
   <link rel="stylesheet" href="assets/css/header.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
+  <link rel="stylesheet" href="assets/css/kanban.css" />
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 </head>
 
-<body class="dashboard-body">
-
+<body class="dashboard-body" data-perfil="tecnico">
   <!-- ✅ Cabeçalho institucional -->
   <div data-include="partials/header-dashboard.html"></div>
 
@@ -32,16 +32,17 @@
     <section class="dashboard-box" aria-labelledby="painel-titulo">
       <h2 id="painel-titulo" class="dashboard-titulo">Painel Técnico – Execução de Campo</h2>
 
-      <div class="dashboard-message" role="region" aria-live="polite">
-        <h3>Funções disponíveis:</h3>
-        <ul>
-          <li>📸 Enviar fotos de campo, vídeos e registros visuais</li>
-          <li>📋 Preencher e validar ordens de serviço recebidas</li>
-          <li>📶 Atualizar leituras de sensores (pH, EC, umidade, pressão)</li>
-          <li>📍 Informar localização e anomalias diretamente pelo painel</li>
-          <li>📤 Submeter relatórios de execução para análise da liderança</li>
-        </ul>
-      </div>
+      <!-- ✅ Painel Kanban com ação direta -->
+      <section class="kanban-board" aria-label="Painel de Tarefas Técnicas">
+        <div class="kanban-column" data-status="a-fazer">
+          <h3>A Fazer</h3>
+          <div class="kanban-items" id="a-fazer"></div>
+        </div>
+        <div class="kanban-column" data-status="concluidas">
+          <h3>Concluídas</h3>
+          <div class="kanban-items" id="concluidas"></div>
+        </div>
+      </section>
     </section>
   </main>
 
@@ -52,5 +53,7 @@
   <script src="scripts/includes.js" defer></script>
   <script src="scripts/auth.js" defer></script>
   <script src="scripts/logout.js" defer></script>
+  <script src="scripts/kanban-config.js" defer></script>
+  <script src="scripts/kanban-tecnico.js" defer></script>
 </body>
 </html>

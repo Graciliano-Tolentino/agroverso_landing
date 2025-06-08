@@ -23,8 +23,7 @@
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 </head>
 
-<body class="dashboard-body">
-
+<body class="dashboard-body" data-perfil="administrador">
   <!-- ✅ Cabeçalho institucional do Agroverso -->
   <div data-include="partials/header-dashboard.html"></div>
 
@@ -38,9 +37,7 @@
       <section class="kanban-board" aria-label="Painel Kanban de Tarefas">
         <div class="kanban-column" data-status="a-fazer">
           <h3>A Fazer</h3>
-          <div class="kanban-items" id="a-fazer">
-            <!-- Cartões serão inseridos aqui -->
-          </div>
+          <div class="kanban-items" id="a-fazer"></div>
         </div>
 
         <div class="kanban-column" data-status="em-execucao">
@@ -58,8 +55,6 @@
           <div class="kanban-items" id="pendencias"></div>
         </div>
       </section>
-
-      
     </section>
   </main>
 
@@ -71,6 +66,5 @@
   <script src="scripts/kanban.js" defer></script>
   <script src="scripts/auth.js" defer></script>
   <script src="scripts/logout.js" defer></script>
-
 </body>
 </html>

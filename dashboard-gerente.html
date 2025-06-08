@@ -13,23 +13,27 @@
   <title>Painel do Gerente • Agroverso</title>
   <meta name="description" content="Painel exclusivo para gerentes do Agroverso. Acompanhe equipes, indicadores e fluxos operacionais." />
   <meta name="author" content="Instituto Graciliana Maria da Conceição" />
-  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1C3D27" />
 
+  <!-- 🎨 Estilos principais -->
   <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 </head>
 
 <body class="dashboard-body">
+
+  <!-- ✅ Cabeçalho institucional -->
+  <div data-include="partials/header-dashboard.html"></div>
+
+  <!-- 🧩 Conteúdo principal -->
   <main class="dashboard-container" role="main" aria-label="Painel do Gerente Agroverso">
     <section class="dashboard-box" aria-labelledby="painel-titulo">
-      <h1 id="painel-titulo" class="dashboard-title">📊 Painel do Gerente</h1>
-
-      <p class="dashboard-subtitle">
-        Bem-vindo ao centro de coordenação estratégica. Sua visão é essencial para o bom funcionamento das operações.
-      </p>
+      <h2 id="painel-titulo" class="dashboard-titulo">Painel Estratégico – Gerência Operacional</h2>
 
       <div class="dashboard-message" role="region" aria-live="polite">
-        <h2>Funções disponíveis:</h2>
+        <h3>Funções disponíveis:</h3>
         <ul>
           <li>🧭 Acompanhar rotinas de campo em tempo real</li>
           <li>✅ Validar atividades executadas pelos líderes e técnicos</li>
@@ -38,16 +42,14 @@
           <li>📈 Visualizar indicadores de desempenho e metas por setor</li>
         </ul>
       </div>
-
-      <div class="dashboard-footer">
-        <button onclick="logout()" class="btn-secondary" aria-label="Encerrar sessão com segurança">
-          🚪 Sair do Sistema
-        </button>
-      </div>
     </section>
   </main>
 
-  <!-- 🔁 Scripts essenciais Agroverso -->
+  <!-- ✅ Rodapé institucional -->
+  <div data-include="partials/footer.html"></div>
+
+  <!-- 🔁 Scripts institucionais -->
+  <script src="scripts/includes.js" defer></script>
   <script src="scripts/auth.js" defer></script>
   <script src="scripts/logout.js" defer></script>
 </body>

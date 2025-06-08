@@ -13,23 +13,27 @@
   <title>Painel Técnico • Agroverso</title>
   <meta name="description" content="Painel exclusivo para técnicos de campo do Agroverso. Envie dados, atualize sensores e registre execuções." />
   <meta name="author" content="Instituto Graciliana Maria da Conceição" />
-  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1C3D27" />
 
+  <!-- 🎨 Estilos principais -->
   <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 </head>
 
 <body class="dashboard-body">
+
+  <!-- ✅ Cabeçalho institucional -->
+  <div data-include="partials/header-dashboard.html"></div>
+
+  <!-- 🧩 Conteúdo principal -->
   <main class="dashboard-container" role="main" aria-label="Painel Técnico Agroverso">
     <section class="dashboard-box" aria-labelledby="painel-titulo">
-      <h1 id="painel-titulo" class="dashboard-title">🔧 Painel do Técnico de Campo</h1>
-
-      <p class="dashboard-subtitle">
-        Você está na linha de frente. Seu trabalho conecta a tecnologia ao solo. Registre tudo com precisão e responsabilidade.
-      </p>
+      <h2 id="painel-titulo" class="dashboard-titulo">Painel Técnico – Execução de Campo</h2>
 
       <div class="dashboard-message" role="region" aria-live="polite">
-        <h2>Funções disponíveis:</h2>
+        <h3>Funções disponíveis:</h3>
         <ul>
           <li>📸 Enviar fotos de campo, vídeos e registros visuais</li>
           <li>📋 Preencher e validar ordens de serviço recebidas</li>
@@ -38,16 +42,14 @@
           <li>📤 Submeter relatórios de execução para análise da liderança</li>
         </ul>
       </div>
-
-      <div class="dashboard-footer">
-        <button onclick="logout()" class="btn-secondary" aria-label="Encerrar sessão com segurança">
-          🚪 Sair do Sistema
-        </button>
-      </div>
     </section>
   </main>
 
-  <!-- 🔁 Scripts de segurança e funcionalidade -->
+  <!-- ✅ Rodapé institucional -->
+  <div data-include="partials/footer.html"></div>
+
+  <!-- 🔁 Scripts institucionais -->
+  <script src="scripts/includes.js" defer></script>
   <script src="scripts/auth.js" defer></script>
   <script src="scripts/logout.js" defer></script>
 </body>

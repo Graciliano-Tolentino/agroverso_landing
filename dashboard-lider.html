@@ -13,23 +13,27 @@
   <title>Painel do Líder • Agroverso</title>
   <meta name="description" content="Painel exclusivo para líderes de equipe do Agroverso. Coordene técnicos, valide execuções e envie relatórios." />
   <meta name="author" content="Instituto Graciliana Maria da Conceição" />
-  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1C3D27" />
 
+  <!-- 🎨 Estilos principais -->
   <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 </head>
 
 <body class="dashboard-body">
+
+  <!-- ✅ Cabeçalho institucional -->
+  <div data-include="partials/header-dashboard.html"></div>
+
+  <!-- 🧩 Conteúdo principal -->
   <main class="dashboard-container" role="main" aria-label="Painel do Líder Agroverso">
     <section class="dashboard-box" aria-labelledby="painel-titulo">
-      <h1 id="painel-titulo" class="dashboard-title">🧭 Painel do Líder de Equipe</h1>
-
-      <p class="dashboard-subtitle">
-        Você é o elo entre o planejamento e a execução. Seu papel é liderar, organizar e garantir a qualidade das operações.
-      </p>
+      <h2 id="painel-titulo" class="dashboard-titulo">Painel Operacional – Liderança de Campo</h2>
 
       <div class="dashboard-message" role="region" aria-live="polite">
-        <h2>Funções disponíveis:</h2>
+        <h3>Funções disponíveis:</h3>
         <ul>
           <li>📌 Distribuir tarefas para técnicos e registrar execução diária</li>
           <li>📷 Validar imagens e dados enviados pela equipe de campo</li>
@@ -38,16 +42,14 @@
           <li>📣 Comunicar ocorrências ou desvios em tempo real</li>
         </ul>
       </div>
-
-      <div class="dashboard-footer">
-        <button onclick="logout()" class="btn-secondary" aria-label="Encerrar sessão com segurança">
-          🚪 Sair do Sistema
-        </button>
-      </div>
     </section>
   </main>
 
-  <!-- 🔁 Scripts essenciais -->
+  <!-- ✅ Rodapé institucional -->
+  <div data-include="partials/footer.html"></div>
+
+  <!-- 🔁 Scripts institucionais -->
+  <script src="scripts/includes.js" defer></script>
   <script src="scripts/auth.js" defer></script>
   <script src="scripts/logout.js" defer></script>
 </body>

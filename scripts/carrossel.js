@@ -1,6 +1,6 @@
 // ===========================================================================================
-// 📜 scripts/carrossel.js — Carrossel Inteligente Agroverso (v12)
-// 🌿 Múltiplas instâncias, acessibilidade total, animação, lazy loading e controle externo
+// 📜 scripts/carrossel.js — Carrossel Inteligente Agroverso (v12.3)
+// 🌿 Swipe no mobile, botões flutuantes no desktop, múltiplas instâncias, foco e acessibilidade total
 // ===========================================================================================
 
 (() => {
@@ -17,7 +17,7 @@
       const idCarrossel = carrossel.id || `carrossel-${indice}`;
       carrossel.id = idCarrossel;
 
-      // 🔘 Criação dos botões
+      // 🔘 Botões de navegação flutuantes
       const btnAnterior = document.createElement('button');
       btnAnterior.className = 'carrossel-controle carrossel-prev';
       btnAnterior.setAttribute('aria-label', 'Imagem anterior');
@@ -32,20 +32,20 @@
 
       carrossel.append(btnAnterior, btnProximo);
 
-      // 🎙️ Elemento oculto para leitores de tela (aria-live)
+      // 🎙️ Elemento para leitores de tela (aria-live)
       const announcer = document.createElement('div');
       announcer.id = `announce-${idCarrossel}`;
       announcer.className = 'sr-only';
       announcer.setAttribute('aria-live', 'polite');
       carrossel.appendChild(announcer);
 
-      // 🌀 Transição suave entre slides
+      // 🌀 Transições e carregamento otimizado
       slides.forEach((slide) => {
         slide.classList.add('transicao');
         slide.setAttribute('loading', 'lazy');
       });
 
-      // 🧠 Função principal de exibição
+      // 🧠 Função principal para alternar slides
       const mostrarSlide = (indice) => {
         slides.forEach((slide, i) => {
           const ativo = i === indice;
@@ -55,15 +55,15 @@
           slide.setAttribute('tabindex', ativo ? '0' : '-1');
           slide.setAttribute('role', 'tabpanel');
           slide.setAttribute('aria-label', `Slide ${i + 1} de ${slides.length}`);
-          slide.style.display = ativo ? 'block' : 'none';
         });
 
         const announcerEl = document.getElementById(`announce-${idCarrossel}`);
         if (announcerEl) announcerEl.textContent = `Slide ${indice + 1} de ${slides.length}`;
+
         slides[indice]?.focus?.();
       };
 
-      // 🔁 Eventos de navegação
+      // 🔁 Navegação com os botões
       btnAnterior.addEventListener('click', () => {
         indiceAtual = (indiceAtual - 1 + slides.length) % slides.length;
         mostrarSlide(indiceAtual);
@@ -76,7 +76,7 @@
 
       mostrarSlide(indiceAtual);
 
-      // 📲 Suporte a swipe (mobile)
+      // 📲 Suporte a swipe em dispositivos móveis
       let touchStartX = 0;
       let touchEndX = 0;
 
@@ -94,8 +94,8 @@
 })();
 
 // ===========================================================================================
-// 🖥️ Modo fullscreen — Galeria Expandida Agroverso (v12)
-// 🔐 Animação, acessibilidade total, teclado, reversibilidade e foco restaurado
+// 🖥️ Modo fullscreen — Galeria Expandida Agroverso (v12.3)
+// 🔐 Foco restaurado, reversibilidade animada, controle por teclado
 // ===========================================================================================
 
 (() => {
@@ -109,9 +109,8 @@
     focoAnterior = document.activeElement;
     carrossel.classList.add('fullscreen', 'transicao');
 
-    // 🔀 Força reflow para garantir transição
+    // Força reflow para garantir transição suave
     void carrossel.offsetWidth;
-
     requestAnimationFrame(() => {
       carrossel.classList.add('ativo');
     });
@@ -146,10 +145,10 @@
 
       document.body.style.overflow = '';
       focoAnterior?.focus?.();
-    }, 250); // Tempo igual à duração da transição
+    }, 250); // duração da transição
   };
 
-  // 🎹 Navegação por teclado no modo fullscreen
+  // 🎹 Teclado: ESC, ←, →
   document.addEventListener('keydown', (event) => {
     if (!carrosselAtivo) return;
 
@@ -168,8 +167,7 @@
 })();
 
 // ===========================================================================================
-// 🔁 API Pública – Controle Programático de Carrosseis Agroverso
-// 🧩 Ideal para CMSs, integrações com frameworks ou automação frontend
+// 🔁 API Pública — Controle Externo via window.AgroversoCarrossel
 // ===========================================================================================
 
 window.AgroversoCarrossel = {

@@ -1,6 +1,6 @@
 /* =============================================================================
-🎠 carrossel.css – Galeria Inteligente Agroverso (v12.1)
-📸 Estética total, responsividade refinada, acessibilidade de referência e expansão visual plena
+🎠 carrossel.css – Galeria Inteligente Agroverso (v12.2)
+📱 Swipe no mobile, botões flutuantes no desktop, foco acessível, animações suaves
 ============================================================================= */
 
 /* 🧱 Container externo do carrossel */
@@ -19,8 +19,9 @@
   scrollbar-color: #ccc transparent;
 }
 
-/* 🎢 Linha horizontal de imagens */
+/* 🎢 Linha horizontal de imagens com escopo posicional */
 .carrossel {
+  position: relative; /* Contém os botões flutuantes */
   display: flex;
   gap: var(--espaco-md);
   scroll-snap-type: x mandatory;
@@ -41,13 +42,13 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 🧠 Foco por teclado com acessibilidade */
+/* 🧠 Acessibilidade por foco no teclado */
 .carrossel img:focus {
   outline: 2px solid var(--cor-produto, #7bb661);
   outline-offset: 4px;
 }
 
-/* 🌟 Hover refinado */
+/* 🌟 Hover em dispositivos com ponteiro */
 .carrossel img:hover {
   transform: scale(1.025);
   box-shadow: var(--sombra-forte);
@@ -63,6 +64,42 @@
 }
 .carrossel-container::-webkit-scrollbar-track {
   background: transparent;
+}
+
+/* ✨ Botões flutuantes no desktop */
+.carrossel-controle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #1c1c1c;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.carrossel-controle:hover {
+  background-color: #eeeeee;
+  transform: translateY(-50%) scale(1.1);
+}
+.carrossel-prev {
+  left: -20px;
+}
+.carrossel-next {
+  right: -20px;
+}
+
+/* 🚫 Esconde botões no mobile/touch */
+@media (hover: none) and (pointer: coarse) {
+  .carrossel-controle {
+    display: none;
+  }
 }
 
 /* 📱 Responsividade refinada */
@@ -149,7 +186,7 @@
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
 }
 
-/* 💫 Hover apenas em dispositivos com ponteiro */
+/* 💫 Hover em dispositivos com ponteiro */
 @media (hover: hover) {
   .carrossel.fullscreen img:hover {
     transform: scale(1.02);
@@ -176,13 +213,12 @@
   transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
-/* 🖱️ Hover suave */
 #fecharFullscreen:hover {
   background-color: #eeeeee;
   transform: scale(1.05);
 }
 
-/* 📱 Ajustes mobile */
+/* 📱 Ajustes mobile para botão flutuante */
 @media (max-width: 768px) {
   #fecharFullscreen {
     font-size: 0.9rem;

@@ -1,0 +1,163 @@
+/* ============================================================================
+🏠 home.css – Estilos da Landing Page Agroverso
+🎓 Cursos Inteligentes + CTA Conversivo + Formulário de Orçamento
+============================================================================ */
+
+/* 🎓 Container de cards dos cursos */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--espaco-lg);
+  padding: var(--espaco-md) var(--espaco-sm);
+  max-width: 1200px;
+  margin: 0 auto var(--espaco-xl);
+}
+
+/* 📦 Card individual */
+.card {
+  background-color: var(--cor-clara);
+  border-radius: 12px;
+  box-shadow: var(--sombra-media);
+  padding: var(--espaco-md);
+  text-align: center;
+  text-decoration: none;
+  color: var(--cor-texto);
+  max-width: 300px;
+  flex: 1 1 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: var(--espaco-sm);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--cor-principal);
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+  line-height: 1.5;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-forte);
+}
+
+/* ============================================================================
+📬 Bloco CTA com formulário
+============================================================================ */
+
+.cta {
+  background-color: var(--cor-media);
+  padding: var(--espaco-xl) var(--espaco-md);
+  text-align: center;
+  border-radius: 16px;
+  border: 1px solid var(--cor-borda);
+  box-shadow: var(--sombra-leve);
+  margin-top: var(--espaco-xl);
+}
+
+.cta-texto {
+  max-width: 720px;
+  margin: 0 auto var(--espaco-md);
+  font-size: 1rem;
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+/* 💬 Botão WhatsApp */
+.whatsapp-btn {
+  display: inline-block;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-clara);
+  padding: 0.9rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: var(--espaco-md);
+}
+
+.whatsapp-btn:hover {
+  background-color: var(--cor-sucesso);
+  transform: scale(1.05);
+}
+
+/* 🧾 Formulário de orçamento */
+.formulario-orcamento {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-md);
+}
+
+.formulario-orcamento label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--cor-principal);
+}
+
+.formulario-orcamento input,
+.formulario-orcamento select {
+  padding: 0.75rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--cor-clara);
+}
+
+.formulario-orcamento button {
+  background-color: var(--cor-principal);
+  color: var(--cor-clara);
+  padding: 0.85rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-orcamento button:hover {
+  background-color: #025e36;
+}
+
+/* ============================================================================
+📱 Responsividade Mobile First
+============================================================================ */
+
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+
+  .cta {
+    padding: var(--espaco-lg) var(--espaco-sm);
+  }
+
+  .whatsapp-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .formulario-orcamento {
+    padding: 0 var(--espaco-sm);
+  }
+}

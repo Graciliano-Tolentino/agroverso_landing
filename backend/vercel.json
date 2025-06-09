@@ -1,0 +1,58 @@
+{
+  // ============================================================================================
+  // ⚙️ vercel.json – Configuração de Deploy FastAPI Backend • Agroverso
+  // ============================================================================================
+  // 📌 Este arquivo informa à Vercel como construir e rotear o backend em Python (FastAPI).
+  //     Ele permite que chamadas para /api/* sejam tratadas pela aplicação backend.
+  // --------------------------------------------------------------------------------------------
+  // ✨ Escrito com sabedoria (separação de domínios), força (desempenho estável) e beleza
+  //     (estrutura minimalista, padronizada e elegante para ambientes fullstack).
+  // ============================================================================================
+
+  "builds": [
+    {
+      "src": "backend/main.py",
+      "use": "@vercel/python"
+    }
+  ],
+
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/main.py"
+    }
+  ]
+}
+
+{
+  // ============================================================================================
+  // 🧭 Rotas Adicionais e Fallback Inteligente – Versão Estendida Agroverso
+  // ============================================================================================
+  // 📌 Esta extensão permite:
+  //   - Manter o frontend funcional mesmo se o backend estiver fora do ar
+  //   - Servir arquivos estáticos HTML/CSS/JS normalmente
+  //   - Redirecionar corretamente chamadas para a API separadamente do cliente
+  // ============================================================================================
+
+  "builds": [
+    {
+      "src": "backend/main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "frontend/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/$1"
+    }
+  ]
+}

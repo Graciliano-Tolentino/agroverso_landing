@@ -1,0 +1,177 @@
+/* ================================================================================
+🌱 base.css – Núcleo Visual do Projeto Agroverso
+🎯 Reset, Tipografia, Tokens Visuais Globais, Acessibilidade e Integração com Dashboards
+================================================================================ */
+
+/* 🔄 RESET UNIVERSAL */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌐 HTML BASE */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+  font-size: 100%; /* base para rem */
+}
+
+/* 🧍 Corpo do site */
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  background-color: var(--cor-fundo-claro, #f4f9f6);
+  color: var(--cor-texto, #1e1e1e);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ================================================================================
+🎨 TOKENS VISUAIS – VARIÁVEIS CSS GLOBAIS
+================================================================================ */
+
+:root {
+  /* 🎨 Cores institucionais */
+  --cor-principal: #004225;
+  --cor-secundaria: #25d366;
+  --cor-destaque: #b2f5e2;
+
+  --cor-clara: #ffffff;
+  --cor-media: #f4f9f6;
+  --cor-escura: #1c1c1c;
+
+  --cor-texto: #1e1e1e;
+  --cor-fundo-claro: #f4f9f6;
+  --cor-sucesso: #1da851;
+  --cor-erro: #b91c1c;
+  --cor-alerta: #e53935;
+  --cor-info: #4d7c0f;
+
+  --cor-borda: #cbd5cb;
+  --cor-placeholder: #888888;
+
+  /* 🎯 Kanban e dashboards */
+  --cor-coluna-kanban: #f9f9f9;
+  --cor-linha-borda-kanban: #cfd8dc;
+
+  /* ✨ Sombras */
+  --sombra-leve: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --sombra-media: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --sombra-forte: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* 📏 Espaçamentos base */
+  --espaco-xs: 0.5rem;
+  --espaco-sm: 1rem;
+  --espaco-md: 1.5rem;
+  --espaco-lg: 2rem;
+  --espaco-xl: 3rem;
+}
+
+/* ================================================================================
+🔤 TIPOGRAFIA GLOBAL – Hierarquia e Leitura Suave
+================================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--cor-principal);
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.45rem; }
+h4 { font-size: 1.2rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.9rem; }
+
+p {
+  font-size: 1rem;
+  margin-bottom: var(--espaco-sm);
+  color: var(--cor-texto);
+}
+
+/* ================================================================================
+🧩 ELEMENTOS GLOBAIS – Containers, Imagens, Inputs, Placeholder
+================================================================================ */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--espaco-sm);
+}
+
+.container-fluid {
+  width: 100%;
+  padding: var(--espaco-sm);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+::placeholder {
+  color: var(--cor-placeholder);
+  opacity: 1;
+}
+
+/* ================================================================================
+♿️ ACESSIBILIDADE & NAVEGAÇÃO POR TECLADO
+================================================================================ */
+
+[hidden] {
+  display: none !important;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px dashed var(--cor-secundaria);
+  outline-offset: 4px;
+  transition: outline 0.3s ease;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* ================================================================================
+📱 MOBILE FIRST – Ajustes tipográficos para telas menores
+================================================================================ */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 95%;
+  }
+
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.3rem; }
+}
+
+/* 🎯 Estilo do botão WhatsApp simulando um <button> */
+.whatsapp-btn {
+  display: inline-block;
+  background-color: #1C3D27;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #145f3c;
+}
